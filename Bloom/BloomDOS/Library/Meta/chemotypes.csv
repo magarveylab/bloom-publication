@@ -1,0 +1,25 @@
+chemotype,library_name
+Aminocoumarin,
+Aminoglycoside,
+Antimetabolite,
+BetaLactam,
+Bisindole,
+Butyrolactone,
+Cyclodipeptide,
+Ectoine,
+Glycolipid,
+Indole,
+Isonitrile,
+Lincosamide,
+Melanin,
+NonRibosomalPeptide,"['aminoacid', 'azole']"
+NRPS-IndependentSiderophore,
+Nucleoside,['nucleoside']
+Phenazine,
+Phenyl,
+Phosphonate,
+Ripp,
+Terpene,['terpene']
+TypeIIPolyketide,['type2pk']
+TypeIPolyketide,['polyketide']
+FattyAcid,['fattyacid']

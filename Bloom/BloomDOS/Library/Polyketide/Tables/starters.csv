@@ -1,0 +1,84 @@
+substrate_id,substrate_family,description,notation,smiles,avoid_dereplication
+,,lactic acid,Lact,CC(O)[13C](=O)S,TRUE
+,,isovalerate,Isoval,CC(C)C[13C](=O)S,TRUE
+,,2-methylbutyrate,2_MeBut,CCC(C)[13C](=O)S,TRUE
+,,butyrate,But,CCC[13C](=O)S,TRUE
+,,glycolate,Glycol,O=[13C](S)CO,TRUE
+,,cyclohexanecarboxylic acid,CHC,O=[13C](S)C1CCCCC1,TRUE
+,,"3,4-dihydroxycyclohexanecarboxylate",3_4_DHCHC,O=[13C](S)C1CCC(O)C(O)C1,TRUE
+,,benzoate,Benz,O=[13C](S)c1ccccc1,TRUE
+,,p-aminobenzoate,PABA,Nc1ccc([13C](=O)S)cc1,TRUE
+"3,5-AHBA","3,5-AHBA",3-amino-5-hydroxybenzoic acid,3_5_AHBA,Nc1cc([13C](S)=O)cc(O)[c:1]1,TRUE
+,,3-amino-4-hydroxybenzoate,3_4_AHBA,Nc1cc([13C](=O)S)ccc1O,TRUE
+,,"3,5-dihydroxybenzoate",DHBA,O=[13C](S)c1cc(O)cc(O)c1,TRUE
+,,"2,3,5,6-tetrahydroxy-4-methylbenzoate",2_3_5_6_OH_4_MeBenz,Cc1c(O)c(O)c([13C](=O)S)c(O)c1O,TRUE
+,,3-aminobutyrate,3NBut,NC(C[13C](S)=O)C,TRUE
+,,phenylacetate,PheAc,O=[13C](S)Cc1ccccc1,TRUE
+,,4-aminobutyrate,4NBut,NCCC[13C](=O)S,TRUE
+,,beta-2-aminoisobutyrate,beta-AIB,CC(CN)[13C](=O)S,TRUE
+,,acetyl_coa,Acetyl,C[13C](=O)S,TRUE
+,,4-carbothioatobutanoate,4_CarbBut,O=C(O)CCC[13C](=O)S,TRUE
+,,isobutyrate,Isobut,CC(C)[13C](=O)S,TRUE
+,,4-hydroxybenzoate,4_OH_Benz,O=[13C](S)c1ccc(O)cc1,TRUE
+,,3-hydroxydodecanoic_acid,3_OH_DDC,CCCCCCCCCC(O)C[13C](=O)S,TRUE
+,,12-methyl-tridecanoic acid,iC14:0,CC(C)CCCCCCCCCC[13C](=O)S,TRUE
+,,octanoate,Octanoate,CCCCCCC[13C](=O)S,TRUE
+,,methoxyformate,MeOF,CO[13C](=O)S,TRUE
+,,phenylpropanoic acid,PPA,O=[13C](S)CCCc1ccccc1,TRUE
+,,dodecadienoic acid,DDCA,CCCCCCCC=CC=C[13C](=O)S,TRUE
+,,2-hydroxy-4-methylpentanoate,2_OH_4_MePent,CC(C)CC(O)[13C](=O)S,TRUE
+tCin,tCin,trans-cinnamoyl,TransCin,O=[13C](S)C=Cc1ccccc1,TRUE
+,,formylamide,Formylamide,CN(C=O)C[13C](=O)S,TRUE
+,,7-methyloctanoic acid,7_Me_Oct,CC(C)CCCCC[13C](=O)S,TRUE
+,,niacin,Niacin,O=[13C](S)c1cccnc1,TRUE
+,,phenyl pyruvic acid,PPA,O=[13C](S)C(O)Cc1ccccc1,TRUE
+,,p_hydroxphenylacetate,PHPA,O=[13C](S)Cc1ccc(O)cc1,TRUE
+,,"trans-cyclopentane-1,2-dicarboxylic",trans_1_2_CPDA,O=[13C](O)C1CCCC1C(=O)S,TRUE
+,,3_4_dihydroxybenzoate,3_4_di_OH_benz,COc1ccc([13C](=O)S)cc1O,TRUE
+,,g-guanidinobutyrate,Guanbut,N=C(N)NCCC[13C](=O)S,TRUE
+,,salicyclate,salicyclate,O=[13C](S)c1ccccc1O,TRUE
+,,3-hydroxydecanoic acid,C10:0-OH(3),CCCCCCCC(O)C[13C](=O)S,TRUE
+,,pentadecanoic acid,PDCA,CCCCCCCCCCCCCC[13C](=O)S,TRUE
+,,palmitic acid,PAL,O=[13C](S)CCCCCCCCCCCCCCC,TRUE
+,,3-hydroxyhexadecanoic acid,C16:0-OH(3),CCCCCCCCCCCCCC(O)C[13C](=O)S,TRUE
+,,8-hydroxy-8-methylnonanoic acid,HMNA,CC(C)(O)CCCCCC[13C](=O)S,TRUE
+,,picolinic acid,Picolinic,O=[13C](S)c1ccccn1,TRUE
+,,2-3-dihydroxybenzoate,2_3_OH_Benz,O=[13C](S)c1cccc(O)c1O,TRUE
+,,3-hydroxy-6-methyloctanoic acid,3_OH_6_MeOct,CCC(C)CCC(O)C[13C](=O)S,TRUE
+,,3-hydroxy-13-methyltetradecanoic acid,3_OH_13_MeTDC,CC(C)CCCCCCCCCC(O)C[13C](=O)S,TRUE
+,,3-hydroxytetradecanoic acid,3_OH_TDC,CCCCCCCCCCCC(O)C[13C](=O)S,TRUE
+,,(Z)-pentenylcinnamoyl-threonine,Z_PCT,CCCC=Cc1ccccc1C=CC(=O)NC([13C](=O)S)C(C)O,TRUE
+,,dehydrobutyrine_butanoic acid_starter,DHB,CC=C(NC(=O)CCCC(=O)O)[13C](=O)S,TRUE
+,,triMe,triMe,O=[13C](S)C(C)(C)C,TRUE
+,,guadinomine starter 1,Gaud_S1,NC(N[13C](S)=O)=N,TRUE
+,,guadinomine starter 2,Gaud_S2,S[13C](C1CN(C(N1)=N)C(N)=O)=O,TRUE
+,,acrylic_acid,acrylic,C=C[13C](S)=O,TRUE
+C3:0,MeMal,propanoic acid,C3:0,CC[13C](S)=O,TRUE
+,,3-Amino-5-nonenoic acid,3N5Non,CCC/C=C/CC(N)C[13C](S)=O,TRUE
+,,4-hydroxybutyl acrylate | Xanthomonadin,4HBA,Oc1cc([13C](S)=O)ccc1,TRUE
+,,enolether,enolether,C=C([13C](S)=O)OC,TRUE
+,,SMe-ABQ | quinolidomicin A1,SMe-ABQ,S[13C](C1=C(C(C=C(C1=O)N)=O)SC)=O,TRUE
+,,N-hydroxytriazene | triacsin,N-hydroxytriazene,O=[13C](S)/C=N/N=N/O,TRUE
+,,MeMal-starter | DH-P450 | TM-124,MeMal | DH-P450,OCC[13C](S)=O,TRUE
+,,3-aminosalicylate,Antimycin_starter,O=CNc1cccc([13C](S)=O)c1O,TRUE
+,,Br-5-hexynoate,Br-5-hexynoate,BrC#CCCC[13C](S)=O,TRUE
+,,beta-Ala,beta-Ala,NCC[13C](S)=O,TRUE
+,,pyrrole,pyrrole,S[13C](C1=CC=CN1)=O,TRUE
+,,malonic acid,malonic acid,S[13C](CC(O)=O)=O,TRUE
+,,CHC,CHC,O=[13C](C1CCC(CC1)[*])S,TRUE
+,,"2,6-A-AHBA","2,6-A-AHBA",[*]c1c([13C](S)=O)c([*])c(O)cc1N[*],TRUE
+,,beta-Phe,beta-Phe,[*]NC(c1ccccc1)C[13C](S)=O,TRUE
+,,3-OH-HexylMal,3-OH-HexylMal,S[13C](CC(O)CCCCC)=O,TRUE
+2Cl-pyrrole,Py-2-Car,2Cl-pyrrole,2Cl-pyrrole,S[13C](C1=CC(Cl)=C(Cl)N1)=O,TRUE
+,,2-CyPC,2-CYCLOPENTANONE CARBOXYLATE,O=C1CCCC1[13C](S)=O,TRUE
+,,Me-HexaMal,Me-HexaMal,CCC(C)CCCC[13C](S)=O,TRUE
+"1,3BPG","1,3BPG","1,3-Bisphosphoglycerate","1,3BPG",O[C@@H]([13C](S)=O)COP(O)(O)=O,TRUE
+3OHPic,3OHPic,3-hydroxypicolinic acid,3OHPic,OC1=CC=CN=C1[13C](S)=O,TRUE
+BamSt,BamSt,Bacillomycin D starter,BamSt,CC(C)CCCCCCCCCC(C[13C](S)=O)N,TRUE
+4Hba,benz,4-hydroxybenzoic acid,4Hba,O=[13C](S)C1=CC=C(C=C1)O,TRUE
+Dda,long_chain_fa,"2E,4E-tetradecadienoic acid",Dda,S[13C](/C=C/C=C/CCCCCCCCC)=O,TRUE
+AMTDA,long_chain_fa,3-Amino-12-methyltridecanoic acid,AMTDA,CC(CCCCCCCCC(N)C[13C](S)=O)C,TRUE
+EtMalAm,EtMal,(2R)-2-ethylmalonamyl-CoA,EtMalAm,CC[C@H]([13C](S)=O)C(N)=O,TRUE
+oxoMal,Mal,(2S)-2(2-oxobutyl)malonyl-CoA,oxoMal,O=[13C](S)CCCC(C)=O,TRUE
+OH13MePda,long_chain_fa,2-Hydroxy-13-methylpentadecanoic acid,OH13MePda,OC([13C](S)=O)CCCCCCCCCCC(CC)C,TRUE
+6MHpA,long_chain_fa,6-Methylheptanoic acid,6MHpA,S[13C](CCCCC(C)C)=O,TRUE

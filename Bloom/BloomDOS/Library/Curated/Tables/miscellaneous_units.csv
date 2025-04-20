@@ -1,0 +1,39 @@
+notation,description,smiles,enums,derivatize,do_H_queries,do_hybridization_queries,do_heteroatom_n_queries,do_atom_n_queries,do_charge_queries,ignore_patt_idx,smarts_atoms_to_ignore,variable_enums,uniquify
+_2_DEOXYFORTAMINE,2-deoxyfortamine,CNC1C(OC)CC(N)C(O)C1O,['sugar'],True,True,True,True,True,False,[],[],[],True
+FORTAMINE,Fortamine,CNC1C(O)C(O)C(N)C(O)C1OC,['sugar'],True,True,True,True,True,False,[],[],[],True
+Aeap,"1-amino-2-(N-amidino-pyrrolinyl)ethyl,",N=C(N)N1CC=C(CCN)C1,[],True,True,True,True,True,False,[],[],[],True
+Phenazine,Actinomycin_phenazine,Cc1c2oc3c(C)ccc(C=O)c3nc-2c(C=O)c(N)c1=O,[],True,True,True,True,True,False,[],[],[],True
+OHMe-Expoxyketone,Hydroxymethylepoxyketone,*C1(CO)CO1,[],True,True,True,True,True,False,[],[],[],True
+DPD,"N1,N1-dimethylpropane-1,2- diamine",CC(N)CN(C)C,[],True,True,True,True,True,False,[],[],[],True
+Me-Epoxyketone,Methylepoxyketone,*C1(C)CO1,[],True,True,True,True,True,False,[],[],[],True
+"2-hydroxy-3,3(2H)-2,4-dimethylfuranone",OH-DM-furanone,*C1=C(C)C(=O)C(C)(O)O1,[],True,True,True,False,False,False,[],[],[],True
+"5,6-dihydrouricial","5,6-dihydrouricial",*N1CCC(=O)NC1=O,[],True,True,True,False,False,False,[],[],[],True
+Chloroform,Chloroform,*C(=O)C(Cl)(Cl)Cl,[],True,True,True,False,False,False,[],[],[],True
+Cl-pro-ene,Cl-pro-ene,*C/C(*)=C/Cl,[],True,True,True,False,False,False,[],[],[],True
+diketo,diketo,*C(=O)C(*)=O,['pk'],True,True,True,False,False,False,[],[],[],True
+Geldanamycin-AHBA,Gdm-AHBA,*NC1=CC(=O)C(OC)=C(*)C1=O,[],True,True,True,False,False,False,[],[],[],True
+LYDICAMYCIN_starter,LYDICAMYCIN_starter,*CC1CCCN1C(=N)N,[],True,True,True,False,False,False,[],[],[],True
+p-Nitrobenzoic acid-starter,pNBA-starter,*c1ccc([N+](=O)[O-])cc1,[],True,True,True,False,False,False,[],[],[],True
+2-hydroxy-7-methoxy-5-methyl-1-naphthoic acid,2-OH-7-MeOH-3-Me-1-NA,*C(=O)c1c(O)ccc2c(C)cc(OC)cc12,[],True,True,True,False,False,False,[],[],[],True
+"3-amino-4,7-dihydroxycoumarin","3-amino-4,7-dihydroxycoumarin",*Nc1c(O)c2ccc(O*)cc2oc1=O,[],True,True,True,False,False,False,[],[],[],True
+"2-(aminomethyl)tetrahydrofuran-3,4-diol",NH-TF,*NCC1OC(*)C(O)C1O,[],True,True,True,False,False,False,[],[],[],True
+aldgarose,aldgarose,*C1OC(C)CC2(OC(=O)OC2C)C1O,[],True,True,True,False,False,False,[],[],[],True
+aminoquinone,aminoquinone,*NC1=CC(=O)C=C(*)C1=O,[],True,True,True,False,False,False,[],[],[],True
+tiacumicin halogenated benzyl,tiacumicin halogenated benzyl,*C(=O)c1c(O)c(Cl)c(O)c(Br)c1CC,[],True,True,True,False,False,False,[],[],[],True
+hypoxanthine,hypoxanthine,*n1cnc2c(=O)[nH]cnc21,[],True,True,True,True,True,False,[],[],[],True
+zeamine-tail,zeamine-tail,*NCCC(O)CCCCCCCC(N)CCCCCCCC(N)CCCCCCCC(N)CCCCCCCC(N)CCCCC,[],True,True,True,True,True,False,[],[],[],True
+3-aminoproprionamide,3-aminoproprionamide,N=C(N)CCN,[],True,True,True,True,True,False,[],[],[],True
+tryptamine,tryptamine,NCCc1c[nH]c2ccccc12,[],True,True,True,True,True,False,[],[],[],True
+Putrescine,Putrescine,NCCCCN,[],True,True,True,True,True,False,[],[],[],True
+Gly | LkCE,Glycine LkCE Bundlin,*C1CC(=O)C(C(*)N)C(=O)O1,"['LkCE', 'michael_condensation', 'aa']",False,True,True,True,True,False,"[1, 2, 3, 4, 5, 9, 10, 11]","[1, 2, 11, 8, 5]",[],True
+CO_linker,CO_linker,NC(N)=O,[],True,True,True,True,True,False,"[0, 2]",[],[],True
+DHCCA,5-dehydroshikimate,O=C(O)C1CCC(O)C(O)C1,[],True,True,True,True,True,False,[],[],[],True
+Mal-KR-TtnI,Alkene-Terminal,*C=C,"['pk', 'TE']",False,True,True,True,True,False,[],[],['pk'],True
+4HBA,4-hydroxybutyl acrylate | Xanthomonadin,COc1c([*])ccc([*])c1,"['pk', 'starter']",True,True,True,True,True,False,[],[],[],True
+maleimide,maleimide,O=C([*])/C=C/c1c(/C=C/[*])c(O)[nH]c1O,[],True,True,True,True,True,False,[],[],[],True
+dialkylmaleic anhydride,dialkylmaleic anhydride,[*]C(CC(c1c(C)c(O)oc1O)=O)=O,[],True,True,True,True,True,False,[],[],[],True
+holothin,holothin,[*]Nc(c(ssc1)c1[nH]2)c2=O,[],True,True,True,True,True,False,[],[],[],True
+C8 dialkylmaleic anhydride,C8 dialkylmaleic anhydride,[*]C(CC(C1=C(C(OC1=O)=O)C)O)=O,[],True,True,True,True,True,False,[],[],[],True
+3-aminoacetophenone,3-aminoacetophenone,CC(c1cc([*])ccc1)=O,[],True,True,True,True,True,False,[],[],[],True
+pct-Cyclopentane,pct-Cyclopentane,[*]N[C@H]1[C@@H]([C@@]([C@@H](O)C)([C@@](O)([C@]1(CO[*])O)C)N[*])N,[],True,True,True,True,True,False,[],[],[],True
+Modi EtMal,Modi EtMal,OC(C(CC[*])([*])C(O)=O)=O,[],True,True,True,True,True,False,[],[],[],True

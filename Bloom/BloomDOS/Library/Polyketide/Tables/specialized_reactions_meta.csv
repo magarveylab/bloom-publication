@@ -1,0 +1,13 @@
+reaction_id,rxn_smiles
+C1,[*]C(CC(CC(CC(O)=O)=O)O)=O>>[*]C1=CC=CC(O)=C1C(O)=O
+C2,[*]C(O)CC(CC(S)=O)=O>>[*]c(cc(O)c1)oc1=O
+C3,O=C(S)CC(CC(CC([*])=O)=O)=O>>OC1=CC=C(C([*])=O)C(O)=C1
+C4,[*]CC(CC/C(C)=C\[*])O>>[*]CC1OCC(C[*])CC1
+C5 (spa5),[*][C@@H](OC(C[*])=C1)CC1=O
+C6,[*]C(CC(C[*])O)=O.NC=O>>OC1(CC([*])OC(N1)=O)C[*]
+C7,[*]C(C/C=C/C(O)=O)=O>>[*]C1=CC=CC(O1)=O
+DH-1 + DH-2,SC(CC/C=C/[*])=O>>SC(C/C=C/C[*])=O
+DH-1 + DH-2 + DH-3,SC(CC/C=C/C=C/[*])=O>>SC(C/C=C/C=C/C[*])=O
+DH-4 + DH-5,O=C([*])C/C=C/C(S)=O>>O=C([*])/C=C/CC(S)=O
+DH-4 + DH-5 + DH-6,[*]/C=C/C=C/CCC(S)=O>>[*]C/C=C/C=C/CC(S)=O
+DA,[*]/C=C/[*].[*]/C=C/C=C/[*]>>[*]C1C=CC(C(C1[*])[*])[*]

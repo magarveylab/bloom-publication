@@ -1,0 +1,5 @@
+notation,smiles,smarts_atoms_to_ignore
+carboxy,*C(=O)O,[3]
+amido,*C(N)=O,[2]
+amino,*C(=O)N,[3]
+alkene,*C=C,[]

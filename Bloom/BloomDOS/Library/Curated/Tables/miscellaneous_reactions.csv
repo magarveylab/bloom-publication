@@ -1,0 +1,2 @@
+reaction_id,reaction_smarts
+carboxyl_rxn,[#8:1]=[#6:2]-[#8H1:3]>>[#8:1]=[#6:2]-[#0:4]

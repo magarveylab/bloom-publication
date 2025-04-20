@@ -1,0 +1,2 @@
+substrate_id,substrate_family,aa_id,notation,description,smarts,enums,avoid_dereplication,ignore_patt_idx
+Gly,Gly,Gly,Gly | DS-1,Gly | DS-1,[#7]/[#6]=[#6]/[*],"['aa', 'DH-shift-1']",TRUE,"[2, 3]"

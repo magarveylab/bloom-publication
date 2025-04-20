@@ -1,0 +1,7 @@
+notation,description,smiles
+Adenine,Adenine,C1=NC2=NC=NC(=C2N1)N
+Guanine,Guanine,C1=NC2=C(N1)C(=O)NC(=N2)N
+Thymine,Thymine,CC1=CNC(=O)NC1=O
+Cytosine,Cytosine,C1=C(NC(=O)N=C1)N
+Cytosine_2,Cytosine_2,O=C1N=C(C=CN1)N
+Uracil,Uracil,C1=CNC(=O)NC1=O

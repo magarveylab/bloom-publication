@@ -1,0 +1,10 @@
+patt,enum
+C1CNCS1,azole
+C1CN=CS1,azole
+C1=CNCS1,azole
+C1=CN=CS1,azole
+C1CNCO1,azole
+C1CN=CO1,azole
+C1=CNCO1,azole
+C1=CN=CO1,azole
+C1=CC=CC=N1,thiopeptide

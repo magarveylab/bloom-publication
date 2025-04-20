@@ -1,0 +1,2 @@
+molecule,description,notation,smiles,enums,linker_atoms,linker_atom_enums
+ansacarbamitocin,carbamoyl,carbamoyl,[*:1]C(N[*:2])=O,"['carbamyl', 'C6']","[1, 2]",['KR'] | ['KS']

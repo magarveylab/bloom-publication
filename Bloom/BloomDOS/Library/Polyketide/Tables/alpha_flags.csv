@@ -1,0 +1,9 @@
+notation,description,enum,smiles,smarts,ignore_patt_idx
+OH,hydroxy,C_adj_O,CO,[#6][OX2H],[1]
+CO,carbonyl,C_adj_O,C=O,[CX3]=[OX1],[1]
+COC,ester,C_adj_O,O=CO,[OD2]([#6])[#6],"[0, 1]"
+CN (VICENISTATIN),terminal_amide,C_starter,O=C(NC[*])/C=C\[*],[#8H0D1z0^2]=[#6H0D3z2^2](-[#7H1D2z0^2]-[#6H2D{2-3}z{1-2}]-[*])/[#6H1D2z0^2]=[#6H1D{2-3}z{0-1}]\[*],"[0, 1, 2, 4, 5, 6, 7]"
+C=C_1,alkene_1,C_alk,*/C=C/*,[*]/[#6H1D2z{0-1}]=[#6H1D2z{0-1}]/[*],"[0, 2, 3]"
+C=C_2,alkene_2,C_alk,*C=C(*)*,[*]-[#6H1D2z{0-1}]=[#6H0D3z{0-2}](-[*])-[*],"[0, 2, 3, 4]"
+C=C_3,alkene_3,C_alk,*C(*)=C(*)*,[*]-[#6H0D3z{0-2}](-[*])=[#6H0D3z{0-2}](-[*])-[*],"[0, 2, 3, 4, 5]"
+CC,methylmal,C_sat,*CC(*)C,[*]-[#6H2D2z{0-1}]-[#6H1D3z{0-1}](-[*])-[#6H3D1z0^3],"[0, 2, 3, 4]"

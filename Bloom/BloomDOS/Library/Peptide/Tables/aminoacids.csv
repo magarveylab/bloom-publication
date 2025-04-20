@@ -1,0 +1,337 @@
+substrate_id,substrate_family,aa_id,notation,description,smiles,aminoacid_type,smarts_atoms_to_ignore,ignore_patt_idx,source
+ACPC,ACPC,1-ACC,1-ACC,1-Aminocyclopropanecarboxylic acid,NC1(C(=O)O)CC1,alpha,[],[],curated
+,,2-6-diamino-3-hex,2-6-diamino-3-hex,"(3E)-2,6-Diamino-3-hexenoic acid",NCC/C=C/C(N)C(=O)O,alpha,[],[],curated
+2-am-5-NOH-pentacid,Orn,2-am-5-NOH-pentacid,2-am-5-NOH-pentacid,"2-amino-5-((R)-N,3-dihydroxybutanamido)pentanoic acid",C[C@@H](O)CC(=O)N(O)CCCC(N)C(=O)O,alpha,[],[],ibis
+2-EtMal,2-EtMal,2-EtMal,2-EtMal,2-ethylmalonamyl-CoA,CCC(C(N)=O)C(=O)O,beta,[],[],ibis
+,,2-GAHG,2-GAHG,2-[4-guanidyl-1-azabicyclo[3.1.0]hexan-2-yl] glycine,N=C(N)N[C@H]1C[C@@H](C(N)C(=O)O)N2C[C@H]12,alpha,[],[],curated
+2-NDoDecA,long_chain_fa,2-NDoDecA,2-NDoDecA,2-amino-dodecanoic acid,CCCCCCCCCCC(N)C(=O)O,alpha,[],[],ibis
+,,23DHP,23DHP,"(2S)-2,3-Dihydro-1H-pyrrole-2-carboxylic acid",O=C(O)C1CC=CN1,alpha,[],[],curated
+Trans-2CroGly,Trans-2CroGly,2AHen acid,2AHen acid,2-Aminohex-4-enoic acid,C/C=C/C[C@H](N)C(=O)O,alpha,[],[],curated
+,,2Br-5OH-Trp,2Br-5OH-Trp,2-bromo-5-hydroxytryptophan,NC(CC1=C(Br)[N]c2ccc(O)cc21)C(=O)O,alpha,[],[],curated
+,,2ClTrp,2ClTrp,2-Chlorotryptophan,NC(Cc1c(Cl)[nH]c2ccccc12)C(=O)O,alpha,[],[],curated
+,,2Me-2dH-Abu,2Me-2dH-Abu,2-methylamino-2-dehydrobutyric acid,CC=C(NC)C(=O)O,alpha,[],[],curated
+,,2Me-3Me-pGlu,2Me-3Me-pGlu,"2,3-dimethylpyroglutamic acid",CC1C(=O)NC(C(=O)O)C1C,alpha,[],[],curated
+Ser,Ser,2Me-Ser,2Me-Ser,2-methylserine,C[C@](N)(CO)C(=O)O,alpha,[],[],curated
+,,2OMe-Dpr,2OMe-Dpr,"2-methoxy,2,3-Diaminopropionic acid",COC(N)(CN)C(=O)O,alpha,[],[],curated
+3-(3-Pyr)-L-alanine,3-(3-Pyr)-L-alanine,3-(3-Pyr)-L-alanine,3-(3-Pyr)-L-alanine,3-(3-Pyridyl)-L-alanine,N[C@@H](Cc1cccnc1)C(=O)O,alpha,[],[],ibis
+3-CyaAla,Asn,3-CN-Alanine,3-CN-Alanine,3-cyanoalanine,N#CCC(N)C(=O)O,alpha,[],[],curated
+3-ICBA,3-ICBA,3-ICBA,3-ICBA,3-isocyanobutanoic acid,[C-]#[N+]C(C)CC(=O)O,beta,[],[],ibis
+,,3-OH-Pip,3-OH-Pip,3-hydroxypipecolic acid,O=C(O)C1NCCCC1O,alpha,[],[],curated
+,,"3,4-Dhpg","3,4-Dhpg","3,4-dihydroxyphenylglycine",N[C@H](C(=O)O)c1ccc(O)c(O)c1,alpha,[],[],curated
+"3,4diOHHomoTyr",Tyr,"3,4OH-Hty","3,4OH-Hty","3,4-dihydroxyhomotyrosine",NC(C(=O)O)C(O)C(O)c1ccc(O)cc1,alpha,[],[],curated
+,,3Br-bOH-Tyr,3Br-bOH-Tyr,3-bromo-beta-hydroxy-tyrosine,NC(C(=O)O)C(O)c1ccc(O)c(Br)c1,alpha,[],[],curated
+,,3Br-Tyr,3Br-Tyr,3-bromotyrosine,NC(Cc1ccc(O)c(Br)c1)C(=O)O,alpha,[],[],curated
+,,3ch-Ala,3ch-Ala,3-cyclohex-2-enylalanine,N[C@H](C(=O)O)[C@@H](O)[C@@H]1C=CCCC1,alpha,[],[],curated
+,,3Cl-4Cl-Pro,3Cl-4Cl-Pro,"3,4-dichloroproline",O=C(O)C1NCC(Cl)C1Cl,alpha,[],[],curated
+Dpg,Hpg,3Cl-5Cl-Hpg,3Cl-5Cl-Hpg,"3,5-dichloro-hydroxyphenylglycine",NC(C(=O)O)c1cc(Cl)c(O)c(Cl)c1,alpha,[],[],curated
+,,3Cl-Hpg,3Cl-Hpg,3-chloro-hydroxyphenylglycine,NC(C(=O)O)c1ccc(O)c(Cl)c1,alpha,[],[],curated
+,,3d-NMe-Bmt,3d-NMe-Bmt,3-Desoxy-Methyl-4-butenyl-4-methyl threonine,CC=CCC(C)CC(NC)C(=O)O,alpha,[],[],curated
+3h5mOmTyr,Tyr,3h5mOmTyr,3h5mOmTyr,3-hydroxy-5-methy-O-methyltyrosine,COc1c(C)cc(CC(N)C(=O)O)cc1O,alpha,[],[],ibis
+3hHyT,Tyr,3hHyT,3hHyT,3-Hydroxy homo tyrosine,NC(C(=O)O)C(O)Cc1ccc(O)cc1,alpha,[],[],ibis
+,,3Me-4Me-Gln,3Me-4Me-Gln,"3,4-dimethylglutamine",CC(C(N)=O)C(C)C(N)C(=O)O,alpha,[],[],curated
+3-MeGlu,Glu,3Me-Glu,3Me-Glu,3-Methyl-Glutamic acid,CC(CC(=O)O)C(N)C(=O)O,alpha,[],[],curated
+,,3Me-Hty,3Me-Hty,3-methyl-homotyrosine,CC(Cc1ccc(O)cc1)C(N)C(=O)O,alpha,[],[],curated
+,,3Me-Phe,3Me-Phe,3-methylphenylalanine,Cc1cccc(CC(N)C(=O)O)c1,alpha,[],[],curated
+3-MePro,Pro,3Me-Pro,3Me-Pro,3-methylproline,CC1CCNC1C(=O)O,alpha,[],[],curated
+3NcpAla,3NcpAla,3NcpAla,3NcpAla,3-(trans-20 -nitrocyclopropyl)alanine,NC(CC1CC1[N+](=O)O)C(=O)O,alpha,[],[],ibis
+3NTyr,Tyr,3NO2-Tyr,3NO2-Tyr,3-nitrotyrosine,NC(Cc1ccc(O)c([N+](=O)[O-])c1)C(=O)O,alpha,[],[],curated
+3OH4MePro,Pro,3OH-4Me-Pro,3OH-4Me-Pro,3-hydroxy-4-methylproline,CC1CNC(C(=O)O)C1O,alpha,[],[],curated
+,,3OH-5Me-Pro,3OH-5Me-Pro,3-Hydroxy-5-methylproline,CC1CC(O)C(C(=O)O)N1,alpha,[],[],curated
+Dab(OH),Dab(OH),3OH-Dab,3OH-Dab,"2,4-diamino-3-hydroxy butyric acid",NCC(O)C(N)C(=O)O,alpha,[],[],curated
+3_OHLeu,Leu,3OH-Leu,3OH-Leu,3-hydroxyleucine,CC(C)C(O)C(N)C(=O)O,alpha,[],[],curated
+3HyP,Pro,3OH-Pro,3OH-Pro,3-Hydroxyproline,O=C(O)C1NCCC1O,alpha,[],[],curated
+OHTyr,Tyr,3OH-Tyr,3OH-Tyr,3-hydroxytyrosine,NC(Cc1ccc(O)c(O)c1)C(=O)O,alpha,[],[],curated
+6C4H3CA,6C4H3CA,4-MeOx,4-MeOx,4-methyloxazoline,O=C(O)c1c[nH]c2cc(Cl)cc(O)c12,alpha,"[7, 10]",[],curated
+4-O-DiMe-Tyr,Tyr,4-O-DiMe-Tyr,4-O-DiMe-Tyr,4-O-dimethylallyl-L-Tyr,CC(C)=CCOc1ccc(C[C@H](N)C(=O)O)cc1,alpha,[],[],ibis
+"4,5-dearg",Arg,"4,5-dearg","4,5-dearg","L-(E)-4,5-dehydroarginine",N=C(N)N/C=C/C[C@@H](N)C(=O)O,alpha,[],[],ibis
+"4,5diOHOrn",Orn,"4,5OH-Orn","4,5OH-Orn","4,5-dihydroxyornithine",NC(CC(O)C(N)O)C(=O)O,alpha,[],[],curated
+,,4Cl-Thr,4Cl-Thr,4-Chloro-Threonine,NC(C(=O)O)C(O)CCl,alpha,[],[],curated
+ClPhg,ClPhg,4Cl6Me27DiOHPheGly,4Cl6Me27DiOHPheGly,"4-Chloro-6-Methyl-5,7-Dihydroxyphenylglycine",Cc1c(O)cc(C(N)C(=O)O)c(Cl)c1O,alpha,[],[],curated
+MePro,Pro,4Me-Pro,4Me-Pro,4-methylproline,CC1CNC(C(=O)O)C1,alpha,[],[],curated
+,,4OH-Glu,4OH-Glu,4-hydroxyglutamate,NC(CC(O)C(=O)O)C(=O)O,alpha,[],[],curated
+4-OHLys,Lys,4OH-Lys,4OH-Lys,4-hydroxylysine,NCCC(O)C[C@@H](N)C(=O)O,alpha,[],[],curated
+,,4OH-Piz,4OH-Piz,4-hydroxypiperazic acid,O=C(O)C1CC(O)CNN1,alpha,[],[],curated
+,,OH-N-Piz,OH-N-Piz,hydroxypiperazic acid,O=C(C1CCCN(O)N1)O,alpha,[],[],curated
+4HyP,Pro,4OH-Pro,4OH-Pro,4-Hydroxyproline,O=C(O)C1CC(O)CN1,alpha,[],[],curated
+,,4OH-Thr,4OH-Thr,4-Hydroxythreonine,NC(C(=O)O)C(O)CO,alpha,[],[],curated
+,,4OH-Val,4OH-Val,4-hydroxyvaline,CC(CO)C(N)C(=O)O,alpha,[],[],curated
+,,4oxo-5Me-Pro,4oxo-5Me-Pro,4-oxo-5-methylproline,CC1NC(C(=O)O)CC1=O,alpha,[],[],curated
+,,4oxo-Hpr,4oxo-Hpr,4-oxo-homoproline,O=C1CCNC(C(=O)O)C1,alpha,[],[],curated
+,,4oxo-Pro,4oxo-Pro,4-oxo-proline,O=C1CNC(C(=O)O)C1,alpha,[],[],curated
+4PP,Pro,4Pe-Pro,4Pe-Pro,(4-Pe)Proline,C/C=C/C1CNC(C(=O)O)C1,alpha,[],[],curated
+5-Cl-L-Trp,Trp,5Br-Trp,5Br-Trp,5-bromo-tryptophan,NC(Cc1c[nH]c2ccc(Br)cc12)C(=O)O,alpha,[],[],curated
+,,5Cl-5Cl-5Cl-2OH-Leu,5Cl-5Cl-5Cl-2OH-Leu,"5,5,5-trichloro-2-hydroxyleucine",CC(CC(N)(O)C(=O)O)C(Cl)(Cl)Cl,alpha,[],[],curated
+,,5Cl-5Cl-5Cl-5OH-Leu,5Cl-5Cl-5Cl-5OH-Leu,"5,5,5-trichloro-5-hydroxyleucine",NC(CC(CO)C(Cl)(Cl)Cl)C(=O)O,alpha,[],[],curated
+tcl,Leu,5Cl-5Cl-5Cl-Leu,5Cl-5Cl-5Cl-Leu,"5,5,5-trichloroleucine",CC(CC(N)C(=O)O)C(Cl)(Cl)Cl,alpha,[],[],curated
+,,5Cl-5Cl-Leu,5Cl-5Cl-Leu,"5,5-dichloroleucine",CC(CC(N)C(=O)O)C(Cl)Cl,alpha,[],[],curated
+,,5Cl-Trp,5Cl-Trp,5-chloro-tryptophan,NC(Cc1c[nH]c2ccc(Cl)cc12)C(=O)O,alpha,[],[],curated
+5hfOrn,Orn,5hfOrn,5hfOrn,5-hydroxy-5-formylornithine,NC(CCCN(O)C=O)C(=O)O,alpha,[],[],ibis
+D-Hleu,Leu,5M2NorLeu,5M2NorLeu,5-Methylnorleucine,CC(C)CCC(N)C(=O)O,alpha,[],[],curated
+,,5Me-Pro,5Me-Pro,5-methylproline,CC1CCC(C(=O)O)N1,alpha,[],[],curated
+,,5OH-Cap,5OH-Cap,5-hydroxy-capreomycidine,N=C1NC(O)CC(C(N)C(=O)O)N1,alpha,[],[],curated
+Dhl,Dhl,5OH-Lys,5OH-Lys,5-hydroxylysine,NC[C@@H](O)CC[C@@H](N)C(=O)O,alpha,[],[],curated
+,,5OH-Trp,5OH-Trp,5-hydroxytryptophan,NC(Cc1c[nH]c2ccc(O)cc12)C(=O)O,alpha,[],[],curated
+,,6Cl-His,6Cl-His,6-chlorohistidine,NC(Cc1c[nH]c(Cl)n1)C(=O)O,alpha,[4],[],curated
+6-Cl-Trp,Trp,6Cl-Trp,6Cl-Trp,6-chloro-tryptophan,NC(Cc1c[nH]c2cc(Cl)ccc12)C(=O)O,alpha,[],[],curated
+6OHisoquicarb,6OHisoquicarb,6OHisoquicarb,6OHisoquicarb,"6-Hydroxy-1,2,3,4-tetrahydroisoquinoline-1-carboxylic acid / 6-OH-tetrahydro-isoquinoline carboxylate",O=C(O)C1NCCc2cc(O)ccc21,alpha,[],[],ibis
+,,a-MeO-b-Tyr,a-MeO-b-Tyr,a-methoxy-b-tyrosine,COC(C(=O)O)C(N)c1ccc(O)cc1,beta,[],[],curated
+,,Aad,Aad,2-Aminoadipic acid,NC(CCCC(=O)O)C(=O)O,alpha,[],[],curated
+Abu,Abu,Abu,Abu,2-Aminobutyric acid,CCC(N)C(=O)O,alpha,[],[],curated
+,,Ac-Aib,Ac-Aib,N-Acetyl-2-aminoisobutyric acid,CC(=O)NC(C)(C)C(=O)O,alpha,[],[],curated
+,,Ac-Pro,Ac-Pro,acetylproline,CC(=O)N1CCCC1C(=O)O,alpha,[],[],curated
+,,Ac-Ser,Ac-Ser,O-acetyl-Serine,CC(=O)OCC(N)C(=O)O,alpha,[],[],curated
+,,aC9:0-OH(2)-NH2(3),aC9:0-OH(2)-NH2(3),alpha-hydroxy-6-methyl-3-aminooctanoic acid,CCC(C)CCC(N)C(O)C(=O)O,beta,[],[],curated
+,,Aca,Aca,Anticapsin,NC(CC1CCC(=O)C2OC12)C(=O)O,alpha,[],[],curated
+Acyl-Leu,Leu,Acyl-Leu,Acyl-Leu,Acyl-Leucine,CC(=O)N[C@@H](CC(C)C)C(=O)O,alpha,[],[],ibis
+acylSer,Ser,acylSer,acylSer,acyl-D-serine,CCCCCCCCCC(=O)NC(CO)C(=O)O,alpha,[],[],ibis
+ADH,ADH,ADH,ADH,"2-amino-3,5-dimethylhex-4-enoic acid",CC(C)=CC(C)C(N)C(=O)O,alpha,[],[],curated
+Aeo,Aeo,Aeo,Aeo,"2-amino-9,10- epoxi-8-oxodecanoic acid",NC(CCCCCC(=O)C1CO1)C(=O)O,alpha,[],[],curated
+,,aFo-Gly,aFo-Gly,alpha-formylGlycine,NC(C=O)C(=O)O,alpha,[],[],curated
+,,Ahad,Ahad,alpha-amino-hydroxyadipic acid,NC(CC(O)CC(=O)O)C(=O)O,alpha,[],[],curated
+,,Ahp-1,Ahp,3-amino-6-hydroxy-2-piperidone,NC1CCC(O)NC1=O,alpha,[],[],curated
+Ahp,Ahp,Ahp-2,Ahp,3-amino-6-hydroxy-2-piperidone,CC(O)C(C(=O)O)N1C(=O)C(N)CCC1O,alpha,[],[],ibis
+,,Ahp-Pro,Ahp-Pro,3-amino-6-hydroxy-2-piperidone,NC1CCC(O)NC1=O,alpha,[],[6],curated
+AHV,AHV,Ahv,Ahv,alpha-amino-hydroxyphenyl-valeric acid,NC(CCCc1ccc(O)cc1)C(=O)O,alpha,[],[],curated
+OH-3Pent,Leu,AHyMeOA,AHyMeOA,2-amino-6-hydroxy-4-methyl-8-oxodecanoic acid,CCC(=O)CC(O)CC(C)CC(N)C(=O)O,alpha,[],[],curated
+Aib,Aib,Aib,Aib,2-Aminoisobutyric acid,CC(C)(N)C(=O)O,alpha,[],[],curated
+Ala,Ala,Ala,Ala,Alanine,CC(N)C(=O)O,alpha,[],[],curated
+Cys,Cys,aMe-Cys,aMe-Cys,alpha-methylcysteine,CC(N)(CS)C(=O)O,alpha,[],[],curated
+AMHO,Orn,AMHO,AMHO,N5-trans-anhydromevalonyl-N5-hydroxyornithine,C/C(=C\C(=O)N(O)CCCC(N)C(=O)O)CCO,alpha,[],[],ibis
+,,AminoProp,AminoProp,L-2-Amino-3-(4-aminophenyl)propanoic acid,Nc1ccc(CC(N)C(=O)O)cc1,alpha,[],[],curated
+AMPA,AMPA,AMPA,AMPA,3-amino-2-methylpropionic acid,CC(CN)C(=O)O,beta,[],[],ibis
+,,Amv,Amv,alpha-amino-methoxyphenyl-valeric acid,COc1ccc(CCCC(N)C(=O)O)cc1,alpha,[],[],curated
+,,aOH-bAsp,aOH-bAsp,alpha-hydroxy-beta-asparagine,CNC(=O)C(O)C(N)C(=O)O,alpha,[],[],curated
+,,aOH-Orn,aOH-Orn,alpha-hydroxyornithine,NCCCC(N)(O)C(=O)O,alpha,[],[],curated
+APA,APA,APA,APA,"aziridino[1, 2a]pyrrolidinyl amino acid",N/C(C(=O)O)=C1\[C@@H](O)[C@H](O)C2CN12,alpha,[],[],ibis
+,,Apv,Apv,alpha-amino-phenyl-valeric acid,NC(CCCc1ccccc1)C(=O)O,alpha,[],[],curated
+Arg,Arg,Arg-1,Arg,Arginine,NC(N)=NCCCC(N)C(=O)O,alpha,"[5, 6]",[],curated
+Arg,Arg,Arg-2,Arg,Arginine,N=C(N)NCCCC(N)C(=O)O,alpha,"[5, 6]",[],curated
+Asn,Asn,Asn,Asn,Asparagine,NC(=O)CC(N)C(=O)O,alpha,[],[],curated
+Asp,Asp,Asp,Asp,Aspartic Acid,NC(CC(=O)O)C(=O)O,alpha,[2],[],curated
+,,Azd,Azd,aziridine dicarboxylic acid,O=C(O)C1NC1C(=O)O,alpha,[],[],curated
+bAla,Ala,bAla,bAla,beta-alanine,NCCC(=O)O,beta,[],[],curated
+bAMHDA,long_chain_fa,bAMHDA,bAMHDA,β-amino-14-methylhexadecanoic acid,CCC(C)CCCCCCCCCCC(N)CC(=O)O,beta,[],[],ibis
+,,bbMe2-O-Met,bbMe2-O-Met,"beta,beta-dimethyl-Methionine-S-oxide",CS(=O)CC(C)(C)C(N)C(=O)O,alpha,[],[],curated
+beta-Uda,Uda,beta-Uda,beta-Uda,β-ureidoalanine,NC(=O)NCC(N)C(=O)O,alpha,[],[],ibis
+Bh-L-End,End,Bh-L-End,Bh-L-End,Bh-L-enduracidine,N=C1NCC(C(O)C(N)C(=O)O)N1,alpha,[],[],ibis
+bLys,Lys,bLys,bLys,beta-lysine,NCCCC(N)CC(=O)O,beta,[],[],curated
+,,bMe-Asn,bMe-Asn,beta-methylasparagine,CC(C(N)=O)C(N)C(=O)O,alpha,[],[],curated
+,,bMe-bMe-Trp,bMe-bMe-Trp,"beta,beta-dimethyltryptophan",CC(C)(c1c[nH]c2ccccc12)C(N)C(=O)O,alpha,[],[],curated
+,,bMe-Br-Phe,bMe-Br-Phe,beta-methyl-bromophenylalanine,CC(c1ccc(Br)cc1)C(N)C(=O)O,alpha,[],[],curated
+Cys,Cys,bMe-Cys,bMe-Cys,Beta-methyl-cysteine,CC(S)C(N)C(=O)O,alpha,[],[],curated
+,,bMe-Gln,bMe-Gln,beta-methylglutamine,CC(CC(N)=O)C(N)C(=O)O,alpha,[],[],curated
+,,bMe-Ile,bMe-Ile,beta-methylisoleucine,CCC(C)(C)C(N)C(=O)O,alpha,[],[],curated
+,,bMe-Leu,bMe-Leu,beta-methylleucine,CC(C)C(C)C(N)C(=O)O,alpha,[],[],curated
+,,bMe-Trp,bMe-Trp,beta-methyltryptophan,CC(c1c[nH]c2ccccc12)C(N)C(=O)O,alpha,[],[],curated
+bmt,bmt,Bmt,Bmt,4-butenyl-4-methyl threonine,CC=CCC(C)C(O)C(N)C(=O)O,alpha,[],[],curated
+,,bOH-Arg,bOH-Arg,beta-hydroxyarginine,N=C(N)NCC[C@H](N)CC(=O)O,beta,[],[],curated
+,,bOH-Br-Phe,bOH-Br-Phe,beta-hydroxy-bromophenylalanine,NC(C(=O)O)C(O)c1ccc(Br)cc1,alpha,[],[],curated
+,,bOH-Cl-Tyr,bOH-Cl-Tyr,beta-hydroxy-chloro-tyrosine,NC(C(=O)O)C(O)c1ccc(O)c(Cl)c1,alpha,[],[],curated
+,,bOH-End,bOH-End,Beta-hydroxy-enduracididine,NC1=NCC(C(O)C(N)C(=O)O)N1,alpha,[],[],curated
+3HyG,Gln,bOH-Gln,bOH-Gln,beta-hydroxyglutamine,NC(=O)CC(O)C(N)C(=O)O,alpha,[],[],curated
+,,bOH-NMe-Val,bOH-NMe-Val,beta-hydroxy-N-Methyl-Valine,CNC(C(=O)O)C(C)(C)O,alpha,[],[],curated
+,,bOH-Trp,bOH-Trp,beta-hydroxytryphophan,N[C@H](C(=O)O)[C@H](O)C1=C[N]c2ccccc21,alpha,[],[],curated
+bOHTyr,Tyr,bOH-Tyr,bOH-Tyr,beta-hydroxy-tyrosine,NC(C(=O)O)C(O)c1ccc(O)cc1,alpha,[],[],curated
+y-OH-Val,Val,bOH-Val,bOH-Val,beta-hydroxyvaline,CC(C)(O)C(N)C(=O)O,alpha,[],[],curated
+,,bOMe-Asp,bOMe-Asp,beta-methoxy-aspartic acid,COC(=O)CC(N)C(=O)O,alpha,[],[],curated
+OMePhe,Phe,bOMe-Phe,bOMe-Phe,beta-methoxyphenylalanine,CO[C@H](c1ccccc1)[C@H](N)C(=O)O,alpha,[],[],curated
+,,bOMe-Tyr,bOMe-Tyr,beta-methoxy-tyrosine,COC(c1ccc(O)cc1)C(N)C(=O)O,alpha,[],[],curated
+bPhe,Phe,bPhe,bPhe,beta-phenylalanine,NC(CC(=O)O)c1ccccc1,beta,[],[],curated
+,,Br-Phe,Br-Phe,bromophenylalanine,NC(Cc1ccc(Br)cc1)C(=O)O,alpha,[],[],curated
+,,bTyr,bTyr,beta-tyrosine,NC(CC(=O)O)c1ccc(O)cc1,beta,[],[],curated
+,,bU-dAla,bU-dAla,beta-ureido-dehydroAlanine,NC(=O)NC=C(N)C(=O)O,alpha,[],[],curated
+Aoda,long_chain_fa,C10:0-NH2(2)-oxo(8),C10:0-NH2(2)-oxo(8),2-amino-8-oxo-decanoic acid,CCC(=O)CCCCCC(N)C(=O)O,alpha,[],[],curated
+,,C10:0-OH(2)-NH2(3),C10:0-OH(2)-NH2(3),3-amino-2-hydroxy decanoic acid,CCCCCCCC(N)C(O)C(=O)O,beta,[],[],curated
+,,C10:0-OH(8)-NH2(2),C10:0-OH(8)-NH2(2),8-hydroxy-2-amino-decanoic acid,CCC(O)CCCCCC(N)C(=O)O,alpha,[],[],curated
+,,C10:0-OH(9)-NH2(2),C10:0-OH(9)-NH2(2),9-hydroxy-2-amino-decanoic acid,CC(O)CCCCCCC(N)C(=O)O,alpha,[],[],curated
+,,C10:0-OH(9)-NH2(2)-oxo(8),C10:0-OH(9)-NH2(2)-oxo(8),9-hydroxy-2-amino-8-oxo-decanoic acid,CC(O)C(=O)CCCCCC(N)C(=O)O,alpha,[],[],curated
+,,C10:2(7.9)-OH(2.4.5)-NH2(3)-ePh(10),C10:2(7.9)-OH(2.4.5)-NH2(3)-ePh(10),"3-amino-10-(p-ethoxyphenyl)-2,4,5-trihydroxydeca-7,9-dienoic acid",CCOc1ccc(C=CC=CCC(O)C(O)C(N)C(O)C(=O)O)cc1,beta,[],[],curated
+,,C12:1(11)-Me(6)-OH(2.4.5)-NH2(3)-mPhe(11),C12:1(11)-Me(6)-OH(2.4.5)-NH2(3)-mPhe(11),"3-amino-6-methyl-12-(p-methoxyphenyl)-2,4,5-trihydroxydodec-11-enoic acid",COc1ccc(C=CCCCCC(C)C(O)C(O)C(N)C(O)C(=O)O)cc1,beta,[],[],curated
+,,C12:3(7.9.11)-Me(6.10)-OH(2.4.5)-NH2(3)-Ph(12),C12:3(7.9.11)-Me(6.10)-OH(2.4.5)-NH2(3)-Ph(12),"3-amino-6,10-dimethyl-12-phenyl-2,4,5-trihydroxydodeca-7,9,11-trienoic acid",CC(C=Cc1ccccc1)=CC=CC(C)C(O)C(O)C(N)C(O)C(=O)O,beta,[],[],curated
+,,C12:3(7.9.11)-Me(6)-OH(2.4.5)-NH2(3)-Ph(12),C12:3(7.9.11)-Me(6)-OH(2.4.5)-NH2(3)-Ph(12),"3-amino-6-methyl-12-phenyl-2,4,5-trihydroxydodeca-7,9,11-trienoic acid",CC(C=CC=CC=Cc1ccccc1)C(O)C(O)C(N)C(O)C(=O)O,beta,[],[],curated
+C13B-A-FA,long_chain_fa,C13B-A-FA,C13B-A-FA,C12–13 β-amino fatty acid,CCCCCCCCCCC(N)CC(=O)O,beta,[],[],ibis
+,,C5:0-NH2(3),C5:0-NH2(3),3-amino-pentanoic acid,CCC(N)CC(=O)O,beta,[],[],curated
+,,C6:0-Me(2)-NH2(3),C6:0-Me(2)-NH2(3),2-methyl-3-aminohexadecanoic acid,CCCC(N)C(C)C(=O)O,beta,[],[],curated
+,,C8:0:1(7)-Me(2)-NH2(3),C8:0:1(7)-Me(2)-NH2(3),3-amino-2-methyloct-7-ynoic acid,C#CCCCC(N)C(C)C(=O)O,beta,[],[],curated
+,,C8:1(7)-OH(2.4.5)-NH2(3)-Ph(8),C8:1(7)-OH(2.4.5)-NH2(3)-Ph(8),3-amino-8-phenyl-2.4.5-trihydroxyoct-7-enoic acid,NC(C(O)C(=O)O)C(O)C(O)CC=Cc1ccccc1,beta,[],[],curated
+,,C8:2(5.7)-Me(6)-OH(4)-NH2(3)-brPh(8),C8:2(5.7)-Me(6)-OH(4)-NH2(3)-brPh(8),"3-amino-4-hydroxy-6-methyl-8-(p-bromophenyl)-5,7-octadienoic acid",CC(C=Cc1ccc(Br)cc1)=CC(O)C(N)CC(=O)O,beta,[],[],curated
+,,C8:2(5.7)-Me(6)-OH(4)-NH2(3)-Ph(8),C8:2(5.7)-Me(6)-OH(4)-NH2(3)-Ph(8),"3-amino-4-hydroxy-6-methyl-8-phenyl-5,7-octadienoic acid",CC(C=Cc1ccccc1)=CC(O)C(N)CC(=O)O,beta,[],[],curated
+Cap,Cap,Cap-1,Cap,capreomycidine,N=C1NCCC(C(N)C(=O)O)N1,alpha,[],[],ibis
+Cap,Cap,Cap-2,Cap,capreomycidine,NC1=NCCC(C(N)C(=O)O)N1,alpha,[],[],curated
+Choi,Choi,Choi,Choi,2-carboxy-6-hydroxyoctahydroindole,O=C(O)C1CC2CCC(O)CC2N1,alpha,[],[],curated
+,,ChrA,ChrA,azotobactins chromophore,O=C(O)C1CCN2C(=O)NC3=Cc4cc(O)c(O)cc4N1C32,alpha,[],[],curated
+,,ChrD,ChrD,"5,6-dihydropyoverdin chromophore",NC1Cc2cc(O)c(O)cc2N2C(C(=O)O)CCNC12,alpha,[],[],curated
+,,ChrI,ChrI,isopyoverdin chromophore,NC1=Cc2cc(O)c(O)cc2N2CCC(C(=O)O)NC12,alpha,[],[],curated
+,,ChrP,ChrP,pyoverdin chromophore,NC1=Cc2cc(O)c(O)cc2N2C(C(=O)O)CCNC12,alpha,[],[],curated
+Cit,Arg,Cit,Cit,Citrulline,NC(=O)NCCCC(N)C(=O)O,alpha,[],[],curated
+,,Cl-Ile,Cl-Ile,Chloro-Isoleucine,CC(Cl)C(C)C(N)C(=O)O,alpha,[],[],curated
+,,Cl-NMe-Tyr,Cl-NMe-Tyr,Chloro-N-methyl-tyrosine,CNC(Cc1ccc(O)c(Cl)c1)C(=O)O,alpha,[],[],curated
+Cl-Pip,Piz,Cl-Pip,Cl-Pip,γ-chloro-piperazate,O=C(O)C1CC(Cl)CNN1,alpha,[],[],ibis
+,,CMA,CMA,coronamic acid,CCC1CC1(N)C(=O)O,alpha,[],[],curated
+Cys,Cys,Cys-1,Cys,Cysteine,NC(CS)C(=O)O,alpha,[],[],ibis
+,,CysA,CysA,cysteic acid,NC(CS(=O)(=O)O)C(=O)O,alpha,[],[],curated
+ClN-MeTyr,Tyr,D-Br-NMe-Tyr,D-Br-NMe-Tyr,D-3-bromo-N-methyl-Tyrosine,CNC(Cc1ccc(O)c(Br)c1)C(=O)O,alpha,[],[],curated
+,,D-Cl-CONH2-Trp,D-Cl-CONH2-Trp,D-6-chloro-N2-formamidotryptophan,NC(=O)n1cc(CC(N)C(=O)O)c2ccc(Cl)cc21,alpha,[],[],curated
+,,D-COOH-Trp,D-COOH-Trp,D-2-carboxy-tryptophan,NC(Cc1c(C(=O)O)[nH]c2ccccc12)C(=O)O,alpha,[],[],curated
+,,D-F-ph-Gly,D-F-ph-Gly,D-4-fluoroPhenylGlycin,NC(C(=O)O)c1ccc(F)cc1,alpha,[],[],curated
+,,D-I-NMe-Tyr,D-I-NMe-Tyr,D-3-iodo-N-methyl-Tyrosine,CNC(Cc1ccc(O)c(I)c1)C(=O)O,alpha,[],[],curated
+bMeAsp,Asp,D-T3-MeAsp,D-T3-MeAsp,D-threo-3-methyl-aspartic acid,C[C@@H](C(=O)O)[C@@H](N)C(=O)O,alpha,[],[],curated
+Dab,Dab,Dab,Dab,"2,4-diaminobutyric acid",NCCC(N)C(=O)O,alpha,[],[],curated
+DABA,DABA,DABA,DABA,"N-methyl 2,3-diaminobutyric acid",CNC(C(=O)O)C(C)N,alpha,[],[],ibis
+DADH,DADH,DADH,DADH,"(2S,6R)-diamino-(5R,7)-dihydroxy-heptanoic acid",NC(CCC(O)C(N)CO)C(=O)O,alpha,[],[],ibis
+,,Daz,Daz,"2,6-diamino-7-hydroxyazelaic acid",NC(CCCC(N)C(O)CC(=O)O)C(=O)O,alpha,[],[],curated
+"2,3-DABA",DABA,Dbu,Dbu,"(2S)-2,3-diaminobutyric acid",CC(N)C(N)C(=O)O,alpha,[],[],curated
+Cys,Cys,dH-Cys,dH-Cys,dehydro-cysteine,NC(=CS)C(=O)O,alpha,[],[],curated
+,,dH-Leu,dH-Leu,"4,5-dehydroleucine",C=C(C)CC(N)C(=O)O,alpha,[],[],curated
+,,dH-Serine,dH-Serine,dehydroserine,C=C(N)C(=O)O,alpha,[],[],curated
+,,dH-Trp,dH-Trp,"2,3-Dehydro-Tryptophan",NC(=Cc1c[nH]c2ccccc12)C(=O)O,alpha,[],[],curated
+Dha,Arg,Dha,Dha,dehydroalanine,N=C(N)NCC/C=C(\N)C(=O)O,alpha,[],[],ibis
+Dhb,Dhb,Dhb,Dhb,Dihydroxybenzoate,CN1CC(C(=O)O)C=C2c3cccc4[nH]cc(c34)CC21,beta,[],[],ibis
+DHPA,Pro,DHPA,DHPA,dehydroproline acrylamide,NC(=O)/C=C/C1=CNC(C(=O)O)C1,alpha,[],[],ibis
+Dhpg,Hpg,Dhpg,Dhpg,"3,5-dihydroxyphenylglycine",NC(C(=O)O)c1cc(O)cc(O)c1,alpha,[],[],curated
+,,DHPT,DHPT,dihydroxyphenylthiazol group,O=C(O)C1CSC(c2cccc(O)c2O)=N1,alpha,[],[],curated
+diClPIC,diClPIC,diClPIC,diClPIC,"(2S,3aR,8aS)-6,7-dichloro-3a-hydroxy-hexahydropyrrolo[2,3-b]indole-2-carboxylic acid",O=C(O)C1CC2(O)c3ccc(Cl)c(Cl)c3NC2N1,alpha,[],[],ibis
+,,diOH-Arg,diOH-Arg,"3,4-dihydroxyArginine",NC(N)=NCC(O)C(O)C(N)C(=O)O,alpha,[],[],curated
+,,DMOG,DMOG,DHP-methyloxazolinyl group,CC1OC(c2cccc(O)c2O)=NC1C(=O)O,alpha,[],[],curated
+N-diMeTrp,Trp,dMPTrp,dMPTrp,"1-(1,1-Dimethyl-2-propenyl)tryptophan",C=CC(C)(C)n1cc(CC(N)C(=O)O)c2ccccc21,alpha,[],[],curated
+5_OHLeu,Leu,dOH-Leu,dOH-Leu,deltahydroxy-leucine,CC(CO)CC(N)C(=O)O,alpha,[],[],curated
+,,Dov,Dov,Dolavaline,CC(C)C(C(=O)O)N(C)C,alpha,[],[],curated
+Dap,Dap,Dpr,Dpr,"2,3-Diaminopropionic acid",NCC(N)C(=O)O,alpha,[],[],curated
+End,End,End,End,enduracididine,N=C1NCC(CC(N)C(=O)O)N1,alpha,[],[],curated
+EPL,Pro,EPL,EPL,4-ethylidene-L-proline,C/C=C1/CNC(C(=O)O)C1,alpha,[],[],ibis
+,,Et-Nva,Et-Nva,alpha-ethylnorvaline,CCC(CC)C(N)C(=O)O,alpha,[],[],curated
+FGln,Glu,FGln,FGln,N-formyl Glutamine,NC(=O)CCC(N=O)C(=O)O,alpha,[],[],ibis
+Gln,Gln,Gln,Gln,Glutamine,NC(=O)CC[C@H](N)C(=O)O,alpha,[],[],curated
+Glu,Glu,Glu,Glu,Glutamic Acid,N[C@@H](CCC(=O)O)C(=O)O,alpha,"[2, 3]",[],curated
+Gly,Gly,Gly,Gly,Glycine,NCC(=O)O,alpha,[],[],curated
+,,Gly_ox,Gly_ox,Oxidized Glycine,N=CC(=O)O,alpha,[],[],curated
+,,Guan-Ser,Guan-Ser,alpha-guanidinoserine,N=C(N)NC(N)(O)C(=O)O,alpha,[],[],curated
+,,H_Trp_der,H_Trp_der,Himastatin_Trp_derivative,O=C(O)C1CC2(O)c3ccccc3NC2N1,alpha,"[11, 12, 13]",[],curated
+,,Har,Har,Homoarginine,NC(N)=NCCCCC(N)C(=O)O,alpha,[],[],curated
+,,Hil,Hil,Homoisoleucine,CCC(C)CC(N)C(=O)O,alpha,[],[],curated
+His,His,His-1,His,Histidine,NC(Cc1cnc[nH]1)C(=O)O,alpha,[],[],curated
+,,His-3,His,Histamine,NCCc1cnc[nH]1,alpha,[],[],curated
+,,hk-Arg,hk-Arg,hydrated alpha-ketoarginine,N=C(N)NCCCC(N)C(O)C(=O)O,beta,[],[],curated
+Hpg,Hpg,Hpg-1,Hpg,Hydroxyphenylglycine,N[C@H](C(=O)O)c1ccc(O)cc1,alpha,[],[],curated
+Hpg,Hpg,Hpg-2,Hpg,Hydroxyphenylglycine,N[C@H](C(=O)O)c1ccc(O)cc1,alpha,[9],[],curated
+Hph,Phe,Hph,Hph,Homophenylalanine,NC(CCc1ccccc1)C(=O)O,alpha,[],[],curated
+Pip,Pip,Hpr,Hpr,Homoproline,O=C(O)[C@@H]1CCCCN1,alpha,[],[],curated
+Hse1,Ser,Hse,Hse,Homoserine,N[C@@H](CCO)C(=O)O,alpha,[],[],curated
+,,HseL,HseL,Homoserine Lactone,NC1CCOC1=O,alpha,[],[],curated
+Ile,Ile,Ile,Ile,Isoleucine,CC[C@H](C)[C@H](N)C(=O)O,alpha,[],[],curated
+,,indolprop,indolprop,2-Amino-3-(1H-indol-4-yl)propanoic acid,NC(Cc1cccc2[nH]ccc12)C(=O)O,alpha,[],[],curated
+,,Iser,Iser,isoserine,NCC(O)C(=O)O,beta,[],[],curated
+Isoval,Val,Ival,Ival,isovaline,CCC(C)(N)C(=O)O,alpha,[],[],curated
+,,k-Arg,k-Arg,alpha-ketoarginine,N=C(N)NCCCC(N)C(=O)C(=O)O,beta,[],[],curated
+Kyn,Trp,Kyn,Kyn,kynurenine,Nc1ccccc1C(=O)C[C@H](N)C(=O)O,alpha,[],[],curated
+Leu,Leu,Leu,Leu,Leucine,CC(C)C[C@H](N)C(=O)O,alpha,[],[],curated
+Lys,Lys,Lys,Lys,Lysine,NCCCC[C@H](N)C(=O)O,alpha,[],[],curated
+,,Mab,Mab,2-methyl-3-aminobutanoic acid,CC(N)C(C)C(=O)O,beta,[],[],curated
+,,Mal-NH3,Mal-NH3,Aminomalonic acid,NC(C(=O)O)C(=O)O,alpha,[],[],curated
+,,Map,Map,2-methyl-3-aminopentanoic acid,CCC(N)C(C)C(=O)O,beta,[],[],curated
+Me-fOHOrn,Orn,Me-fOHOrn,Me-fOHOrn,N-methyl-N-formyl-hydroxyornithine,CN[C@@H](CCCNO)C(=O)O,alpha,[],[],ibis
+3-MePhe,Phe,Me-Phe,Me-Phe,Methyl-Phenylalanine,CC(c1ccccc1)[C@H](N)C(=O)O,alpha,[],[],curated
+,,Me2-Bmt,Me2-Bmt,"4-butenyl-4-methyl-N,4-methyl threonine",CC=CCC(C)(C)C(O)C(NC)C(=O)O,alpha,[],[],curated
+MeAla,Ala,MeAla,MeAla,methyl-alanine,CNC(C)C(=O)O,alpha,[],[],ibis
+MeAsp,Asp,MeAsp,MeAsp,N-methyl aspartic acid,CNC(CC(=O)O)C(=O)O,alpha,[],[],ibis
+MecPGly,MecPGly,MecPGly,MecPGly,2-(1-methylcyclopropyl)-D-glycine,CC1(C(N)C(=O)O)CC1,alpha,[],[],curated
+MeHpg,Hpg,MeHpg,MeHpg,methyl-HydroxyPhenylGlycine,CN[C@@H](C(=O)O)c1ccc(O)cc1,alpha,[],[],ibis
+,,MeO-D-Glu,MeO-D-Glu,D-Glutamic Acid methyl ester,COC(=O)CC[C@@H](N)C(=O)O,alpha,[],[],curated
+,,MeOx-Ile,MeOx-Ile,methyloxazoline-isoleucine,CCC(C)C(N)C1=NC(C(=O)O)C(C)O1,alpha,[],[],curated
+MePhe,Phe,MePhe,MePhe,N-methylphenylalanine,CNC(Cc1ccccc1)C(=O)O,alpha,[],[],ibis
+Met,Met,Met,Met,Methionine,CSCCC(N)C(=O)O,alpha,[],[],curated
+,,Met Sulfoxide,Met Sulfoxide,Methionine Sulfoxide,C[S+]([O-])CC[C@H](N)C(=O)O,alpha,[],[],curated
+MeVal,Val,MeVal,MeVal,N-Methylvaline,CNC(C(=O)O)C(C)C,alpha,[],[],ibis
+m-Tyr,Tyr,mTyr,mTyr,metatyrosine,NC(Cc1cccc(O)c1)C(=O)O,alpha,[],[],curated
+,,"N-(1,1-dimethyl-2,3-epoxypropyl)-bOH-Trp","N-(1,1-dimethyl-2,3-epoxypropyl)-bOH-Trp","N-(1,1-dimethyl-2,3-epoxypropyl)-bOH-tryptophan",CC(C)([C@@H]1CO1)n1cc([C@@H](O)[C@H](N)C(=O)O)c2ccccc21,alpha,[],[],curated
+N-Ac-DMPT,N-Ac-DMPT,N-Ac-DMPT,N-Ac-DMPT,N-acetyl-demethylphosphinothricin,CC(=O)NC(CC[PH](=O)O)C(=O)O,alpha,[],[],ibis
+N-ac-fOHOrn,Orn,N-ac-fOHOrn,N-ac-fOHOrn,N-acetyl-formyl-hydroxyornithine,CC(=O)NC(CCCN(O)C=O)C(=O)O,alpha,[],[],ibis
+N-Ac(D)MPT,N-Ac-DMPT,N-Ac(D)MPT,N-Ac(D)MPT,N-acetyldemethylphosphinothricin,O=C(O)NC(CC[P+](=O)O)C(=O)O,beta,[],[],ibis
+N-Me-bmt,N-Me-bmt,N-Me-bmt,N-Me-bmt,N-Me-2-Butenyl-4-methyl-threonine,C/C=C/CC(C)C(O)C(NC)C(=O)O,alpha,[],[],ibis
+N-Me-Thr,Thr,N-Me-Thr,N-Me-Thr,N-methylthreonine,CNC(C(=O)O)C(C)O,alpha,[],[],ibis
+N-MeGly,Gly,N-MeGly,N-MeGly,N-methyl-L-Glycine / sarconine,CNCC(=O)O,alpha,[],[],ibis
+N-MeLeu,Leu,N-MeLeu,N-MeLeu,N-methyl-L-leucine,CNC(CC(C)C)C(=O)O,alpha,[],[],ibis
+N-OHAla,Ala,N-OHAla,N-OHAla,N-hydroxyalanine,CC(NO)C(=O)O,alpha,[],[],ibis
+N-OHSer,Ser,N-OHSer,N-OHSer,N-Hydroxy serine,O=C(O)C(CO)NO,alpha,[],[],ibis
+N-OHVal,Val,N-OHVal,N-OHVal,N-Hydroxyvaline,CC(C)C(NO)C(=O)O,alpha,[],[],ibis
+,,N1-COOH-bhTrp,N1-COOH-bhTrp,N1-carboxy-bichomotryptophan,NC(CCCc1cn(C(=O)O)c2ccccc12)C(=O)O,alpha,[],[],curated
+NAc2hOrn,Orn,NAc2hOrn,NAc2hOrn,N2-Acetyl-N5-acetyl-N5-hydroxyornithine,CC(=O)NC(CCCN(O)C(C)=O)C(=O)O,alpha,[],[],ibis
+NANHLys,Lys,NANHLys,NANHLys,N6-acyl-N6-hydroxyl-Lysine,C/C=C/C(=O)N(O)CCCC[C@H](N)C(=O)O,alpha,[],[],ibis
+NHLys,Lys,NHLys,NHLys,N6-hydroxy-lysine,N[C@@H](CCCCNO)C(=O)O,alpha,[],[],ibis
+Nle,Leu,Nle,Nle,Norleucine,CCCCC(N)C(=O)O,alpha,[],[],ibis
+,,NMe-Cl-OH-Trp,NMe-Cl-OH-Trp,N-methyl-6-chloro-5-hydroxytryptophan,CNC(Cc1c[nH]c2cc(Cl)c(O)cc12)C(=O)O,alpha,[],[],curated
+,,NMe-Me2A-Phe,NMe-Me2A-Phe,N-methyl-4-dimethylamino-phenylalanine,CNC(Cc1ccc(N(C)C)cc1)C(=O)O,alpha,[],[],curated
+,,NMe-MeA-Phe,NMe-MeA-Phe,N-methyl-4-methylamino-phenylalanine,CNc1ccc(CC(NC)C(=O)O)cc1,alpha,[],[],curated
+,,NMe-OH-Ile,NMe-OH-Ile,N-methyl-hydroxyisoleucine,CNC(C(=O)O)C(C)CCO,alpha,[],[],curated
+,,NMe-OMe-Ile,NMe-OMe-Ile,"N,O-dimethyl-isoleucine",CCC(C)C(NC)C(=O)OC,alpha,[],[],curated
+,,NOMe-Ac-D-Phe,NOMe-Ac-D-Phe,N-methoxyacetyl-D-phenylalanine,COCC(=O)NC(Cc1ccccc1)C(=O)O,alpha,[],[],curated
+,,NOMe-Ac-Val,NOMe-Ac-Val,N-methoxyacetyl-valine,COCC(=O)NC(C(=O)O)C(C)C,alpha,[],[],curated
+NCA,NCA,norCMA,norCMA,norcoronamic acid,CC1CC1(N)C(=O)O,alpha,[],[],curated
+,,Nst,Nst,norstatine,CC(C)CC(N)C(O)C(=O)O,beta,[],[],curated
+,,NtMe-Leu,NtMe-Leu,N-trimethyl-leucine,CC(C)CC(C(=O)O)[N+](C)(C)C,alpha,[],[],curated
+,,NtMe-Tyr,NtMe-Tyr,N-trimethyl-tyrosine,C[N+](C)(C)C(Cc1ccc(O)cc1)C(=O)O,alpha,[],[],curated
+,,Nva,Nva,Norvaline,CCC[C@H](N)C(=O)O,alpha,[],[],curated
+O-MeAsp,Asp,O-MeAsp,O-MeAsp,O-methyl-aspartic acid,COC(=O)[C@@H](N)CC(=O)O,beta,[],[],ibis
+,,O-Met,O-Met,Methionine-S-oxide,CS(=O)CCC(N)C(=O)O,alpha,[],[],curated
+,,O2-Met,O2-Met,Methionine sulfone,CS(=O)(=O)CCC(N)C(=O)O,alpha,[],[],curated
+OHAsn,Asn,OH-Asn,OH-Asn,Hydroxyasparagine,NC(=O)C(O)C(N)C(=O)O,alpha,[],[],curated
+OHAsp,Asp,OH-Asp,OH-Asp,Hydroxyaspartic acid,NC(C(=O)O)C(O)C(=O)O,alpha,[],[],curated
+,,OH-bLys,OH-bLys,hydroxy-beta lysine,NCCC(O)C(N)CC(=O)O,beta,[],[],curated
+,,OH-dHpg,OH-dHpg,N-hydroxy-dehydro-HydroxyPhenylGlycine,O=C1C=CC(=C(NO)C(=O)O)C=C1,alpha,[],[],curated
+OH-Glu,Glu,OH-Glu,OH-Glu,3-hydroxy-D-glutamate,NC(C(=O)O)C(O)CC(=O)O,alpha,[],[],ibis
+,,OH-Gly,OH-Gly,Hydroxyglycine,NC(O)C(=O)O,alpha,[],[],curated
+,,OH-His,OH-His,Hydroxyhistidine,NC(C(=O)O)C(O)c1cnc[nH]1,alpha,[],[],curated
+OH-Orn,Orn,OH-Orn,OH-Orn,N5-hydroxy ornithine,NC(CCCNO)C(=O)O,alpha,[],[],ibis
+3-OH-3-MePro,Pro,ohmePro,ohmePro,3-hydroxyl-3-methyl proline,CC1(O)CCNC1C(=O)O,alpha,[],[],curated
+,,OMe-Asp,OMe-Asp,methoxyaspartic acid,COC(C(=O)O)C(N)C(=O)O,alpha,[],[],curated
+,,OMe-bAla-Thz,OMe-bAla-Thz,1-methoxy-beta-alanine-thiazole,COC(=O)CC(N)c1nccs1,beta,[],[],curated
+,,OMe-Thr,OMe-Thr,O-methyl-threonine,COC(C)C(N)C(=O)O,alpha,[],[],curated
+Mtrp,Trp,OMe-Trp,OMe-Trp,methoxytryptophan,COn1cc(CC(N)C(=O)O)c2ccccc21,alpha,[],[],curated
+,,OMe-Tyr,OMe-Tyr,O-Methyl-Tyrosine,COc1ccc(C[C@@H](N)C(=O)O)cc1,alpha,[],[],curated
+OMeTyr,Tyr,OMeTyr,OMeTyr,o-methyltyrosine,COc1cccc(C[C@H](N)C(=O)O)c1,alpha,[],[],ibis
+Orn,Orn,Orn,Orn,Ornithine,NCCC[C@H](N)C(=O)O,alpha,[],[],curated
+,,oTyr,oTyr,orthotyrosine,NC(Cc1ccccc1O)C(=O)O,alpha,[],[],curated
+Py-2-Car,Py-2-Car,P2C,P2C,pyrrole-2-carboxylicacid,O=C(O)c1ccc[nH]1,alpha,[],[],curated
+PAPS,Phe,PAPS,PAPS,p-aminophenylserine,Nc1ccc(C(O)C(N)C(=O)O)cc1,alpha,[],[],ibis
+,,pGlu,pGlu,pyroglutamic acid,O=C1CCC(C(=O)O)N1,alpha,[],[],curated
+,,Ph-Gly-1,Ph-Gly,Phenylglycine,N[C@H](C(=O)O)c1ccccc1,alpha,[],[],curated
+,,Ph-Gly-2,Ph-Gly,Phenylglycine,N[C@H](C(=O)O)c1ccccc1,alpha,"[6, 7, 8, 9, 10]",[],curated
+Phe,Phe,Phe,Phe,Phenylalanine,N[C@@H](Cc1ccccc1)C(=O)O,alpha,"[2, 4, 5, 6, 7, 8, 9]",[],curated
+Piz,Piz,Piz,Piz,piperazic acid,O=C(O)C1CCCNN1,alpha,"[4, 5, 6]",[],curated
+,,PO-Asn,PO-Asn,Phosphoarginine,NC(=O)C(OP(=O)(O)O)C(N)C(=O)O,alpha,[],[],curated
+PPCA,PPCA,PPCA,PPCA,"4-propenyl-2,3-dihydropyrrole-2-carboxylic acid",C/C=C/C1=CNC(C(=O)O)C1,alpha,[],[],ibis
+Pro,Pro,Pro,Pro,Proline,O=C(O)[C@@H]1CCCN1,alpha,[3],[],curated
+,,PT,PT,phosphinothricin,CP(=O)(O)CCC(N)C(=O)O,alpha,[],[],curated
+Trp,Trp,pTrp,pTrp,phototryptophan,O=C(O)C1CC2(O)c3ccccc3NC2N1,alpha,[],[],curated
+,,S-MeCys Sulfoxide,S-MeCys Sulfoxide,S-Methylcysteine Sulfoxide,C[S+]([O-])C[C@H](N)C(=O)O,alpha,[5],[],curated
+Ser,Ser,Ser-1,Ser,Serine,N[C@@H](CO)C1=NCCC(C(=O)O)N1,alpha,[],"[0, 1, 2, 3, 4, 5, 11, 12]",curated
+Ser,Ser,Ser-2,Ser,Serine,N[C@@H](CO)C(=O)O,alpha,[],[],curated
+Ser,Ser,Ser-OMT,Ser-OMT,O-Methylserine,COCC(N)C(=O)O,alpha,[],[],curated
+Cys,Cys,SMe-Cys,SMe-Cys,S-methylcysteine,CSCC(N)C(=O)O,alpha,[],[],curated
+N-MeTyr,Tyr,Surinamine,Surinamine,Surinamine,CNC(Cc1ccc(O)cc1)C(=O)O,alpha,[],[],curated
+,,t-Leu,t-Leu,tert-Leu,CC(C)(C)[C@H](N)C(=O)O,alpha,[],[],curated
+Tam,Tam,Tam,Tam,Tambroline,NC(C(=O)O)C1CCCN1,alpha,[],[],ibis
+,,Tamb,Tamb,Tambroline,NC(C(=O)O)C1CCCC1,alpha,[],[],curated
+,,Thpg,Thpg,"3,4,5-trihydroxyphenylglycine",NC(C(=O)O)c1cc(O)c(O)c(O)c1,alpha,[],[],curated
+,,Thr,Thr,Threonine,CC(O)C(N)C(=O)O,alpha,[],[],curated
+Trp,Trp,Trp-1,Trp,Tryptophan,N[C@@H](Cc1c[nH]c2ccccc12)C(=O)O,alpha,"[7, 8, 9, 10]",[],curated
+Trp,Trp,Trp-2,Trp,Tryptophan-derivative-fungal,NC(CC1(O)C=Nc2ccccc21)C(=O)O,alpha,[],[],curated
+Trp-bOH-diMePropenyl,Trp,Trp-bOH-diMePropenyl-1,Trp-bOH-diMePropenyl,"L-Tryptophan, β-hydroxy- 1-(1, 1- dimethyl- 2- propenyl) / (2S,3S)-2-amino-3-hydroxy-3-(1-(2-methylbut-3-en-2-yl)-1H-indol-3-yl)propanoic acid",C=CC(C)(C)n1cc([C@@H](O)[C@H](N)C(=O)O)c2ccccc21,alpha,[],[],ibis
+Tyr,Tyr,Tyr,Tyr,Tyrosine,N[C@@H](Cc1ccc(O)cc1)C(=O)O,alpha,[],[],curated
+,,Tyr5,Tyr5,Tyrosine,*c1cc(C(N)C(=O)O)ccc1O,alpha,[],[],curated
+Val,Val,Val,Val,Valine,CC(C)[C@H](N)C(=O)O,alpha,[],[],curated
+y-Asp,Asp,y-Asp,y-Asp,y-Aspartate,NC(CC(=O)O)C(=O)O,beta,[],[],ibis
+3S-B-BABA,Abu,3S-B-BABA,3S-B-BABA,3S-β-aminobutyric acid,O=C(O)C[C@H](C)N,alpha,[],[],curated_2023
+7-MeO-D-Trp,Trp,7-MeO-D-Trp,7-MeO-D-Trp,7-methoxy-D-tryptophan,NC(CC1=CNC2=C1C=CC=C2OC)C(O)=O,alpha,[],[],curated_2023
+N-Me-B-OH-L-Phe,Phe,N-Me-B-OH-L-Phe,N-Me-B-OH-L-Phe,"(2S,3S)-N-methyl-β-hydroxy-L-phenylalanine ",O[C@H]([C@H](NC)C(O)=O)c1ccccc1,alpha,[],[],curated_2023
+B-OH-L-Phe,Phe,B-OH-L-Phe,B-OH-L-Phe,"(2S,3R)-β-hydroxy-L-phenylalanine",N[C@H](C(O)=O)[C@H](O)c1ccccc1,alpha,[],[],curated_2023
+AnThr,Thr,AnThr,AnThr,anhydrothreonine,N/C(C(O)=O)=C\C,alpha,[],[],curated_2023
+MeDeTyr,Tyr,MeDeTyr,MeDeTyr,"N-methyl-(E)-2,3-didehydro-Tyr",O=C(O)/C(NC)=C/C1=CC=C(O)C=C1,alpha,[],[],curated_2023
+TrpOH,Trp,TrpOH,TrpOH,tryptophanol,NC(CO)CC1=CNC2=C1C=CC=C2,alpha,[],[],curated_2023
+Ahpb,Ahpb,Ahpb,Ahpb,2-amino-4-hydroxy-4-phenylbutyricacid,C1=CC(=CC=C1CCC(C(=O)O)N)O,alpha,[],[],curated_2023
+4-Cl-Kyn,Trp,4-Cl-Kyn,4-Cl-Kyn,4-Cl-kynurenine,Nc1c(C(CC(C(O)=O)N)=O)ccc(Cl)c1,alpha,[],[],curated_2023
+Py-indole,Tyr,Py-indole,Py-indole,Py-indole,[*]c1ccc2c([C@]3(O)C[C@H](C(O)=O)NC3N2)c1,alpha,[],[],curated_2023
+DiDTyr,Tyr,DiDTyr,DiDTyr,"2,3-DIDEHYDROTYROSINE",O=C(O)/C(N)=C/C1=CC=C(O)C=C1,alpha,[],[],curated_2023
+NMeCys,Cys,NMeCys,NMeCys,N-MethylCysteine,SCC(NC)C(O)=O,alpha,[],[],curated_2023
+mDap,Dap,mDap,mDap,N-methyldiaminopropionic acid,N[C@@H](CNC)C(S)=O,alpha,[],[],curated_2023
+3-ClTyr,Tyr,3-ClTyr,3-ClTyr,3-Chloro-Tyrosine,NC(Cc1ccc(O)c(Cl)c1)C(O)=O,alpha,[],[],curated_2023

@@ -1,0 +1,3 @@
+enum_1,enum_2,avoid_enum_1,avoid_enum_2
+tailoring,nonmodular,True,False
+tailoring,aa,True,False

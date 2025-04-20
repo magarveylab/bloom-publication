@@ -1,0 +1,13 @@
+enum_1,enum_2
+aa_hybrid,pk
+pk,tailoring
+pk,pk_specialized
+pk,nonmodular
+pk,starter
+tailoring,tailoring
+hpg,hpg
+aa,hybrid_KS
+aa-NMT,tailoring
+aa-OMT,tailoring
+curated_module,miscellaneous
+hybrid,imine

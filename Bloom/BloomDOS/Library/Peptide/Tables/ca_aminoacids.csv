@@ -1,0 +1,68 @@
+substrate_id,substrate_family,aa_id,notation,description,smiles,aminoacid_type,source
+1-HDecA,long_chain_fa,1-HDecA,1-HDecA,1-heptadecanoic acid,CCCCCCCCCCCCCCCCC(=O)O,CA,ibis
+13-MeMyA,long_chain_fa,13-MeMyA,13-MeMyA,13-methyl myristic acid,CC(C)CCCCCCCCCCCC(=O)O,CA,ibis
+,,2-hydroxybenzoxazolate,2-hydroxybenzoxazolate,2-hydroxybenzoxazolate,O=C(O)c1c(O)ccc2ocnc12,CA,curated
+,,2-OH-OCA,2-OH-OCA,(2-hydroxyoxazoline)carboxylic acid,O=C(O)C1COC(c2ccccc2O)=N1,CA,curated
+"2,3-DHB",Sal,"2,3-Dihydroxybenzoic acid","2,3-Dihydroxybenzoic acid","2,3-Dihydroxybenzoic acid",O=C(O)c1cccc(O)c1O,CA,curated
+3-Cl-4OHpheglyate,Hpg,3-Cl-4OHpheglyate,3-Cl-4OHpheglyate,3-Chloro-4-hydroxyphenylglyoxylic acid,O=C(O)C(=O)c1ccc(O)c(Cl)c1,CA,ibis
+3-FASC,3-FASC,3-formamidosalicylate,3-formamidosalicylate,3-formamidosalicylate,O=CNc1cccc(C(=O)O)c1O,CA,curated
+,,3-Hbu,3-Hbu,3-hydroxybutyric acid,CC(O)CC(=O)O,CA,curated
+3-HPA,3-HPA,3-HPA,3-HPA,3-Hydroxypyridine-2-carboxylic acid,O=C(O)c1ncccc1O,CA,ibis
+3-OH-AA,Ana,3-OH-AA,3-OH-AA,3-hydroxy anthranilic acid,Nc1c(O)cccc1C(=O)O,CA,ibis
+Pic,Pic,3-OH-PA,3-OH-PA,3-hydroxypicolinic acid,O=C(O)c1ccccn1,CA,curated
+OHQA,OHQA,3-OH-QA,3-OH-QA,3-hydroxyquinaldic acid,O=C(O)c1nc2ccccc2cc1O,CA,curated
+4-Acetamido-pyr-CA,4-Acetamido-pyr-CA,4-acetamidopyrrole-2-carboxylic acid,4-acetamidopyrrole-2-carboxylic acid,4-acetamidopyrrole-2-carboxylic acid,CC(=O)Nc1c[nH]c(C(=O)O)c1,CA,curated
+,,4-acetamidopyrrole-2-carboxylic acid modified,4-acetamidopyrrole-2-carboxylic acid modified,4-acetamidopyrrole-2-carboxylic acid modified,Nc1c[nH]c(C(=O)O)c1,CA,curated
+4-AOHMEBA,4-AOHMEBA,4-AOHMEBA,4-AOHMEBA,4-Amino-2-hydroxy-3-methoxybenzoic acid,COc1c(N)ccc(C(=O)O)c1O,CA,ibis
+4-HPGox,Hpg,4-HPGox,4-HPGox,4-hydroxyphenylglyoxylate,O=C(O)C(=O)c1ccc(O)cc1,CA,ibis
+4-MeHex-2-EA,4-MeHex-2-EA,4-MeHex-2-EA,4-MeHex-2-EA,4-methylhex-2-enoic acid,CCC(C)/C=C/C(=O)O,CA,ibis
+4-MHA,Ana,4-MHA,4-MHA,4-methyl-3-hydroxyl-anthranilic acid,Cc1ccc(C(=O)O)c(N)c1O,CA,ibis
+,,"4NH2-2,3OH Benzoic acid","4NH2-2,3OH Benzoic acid","4-Amino-2,3-dihydroxybenzoic acid",Nc1ccc(C(=O)O)c(O)c1O,CA,curated
+,,4NH2-3OH Benzoic acid,4NH2-3OH Benzoic acid,4NH2-3OH Benzoic acid,Nc1ccc(C(=O)O)cc1O,CA,curated
+6-MSA,6-MSA,6-MSA,6-MSA,6-methylsalicylic acid,Cc1cccc(O)c1C(=O)O,CA,ibis
+6C4H3CA,6C4H3CA,6C4H3CA,6C4H3CA,6-chloro-4-hydroxyindole-3-carboxylic acid,O=C(O)c1c[nH]c2cc(Cl)cc(O)c12,CA,ibis
+,,AHPA,AHPA,4-Amino-3-hydroxypentanoic acid,CC(N)C(O)CC(=O)O,CA,curated
+,,Albomycin_C7N_unit,Albomycin_C7N_unit,Albomycin_C7N_unit,Cn1c(=O)ccn([C@H]2S[C@@H]([C@H](O)[C@H](N)C(=O)O)[C@@H](O)[C@@H]2O)c1=O,CA,curated
+Ana,Ana,Ana,Ana,ANTHRANILATE / anthranilic acid,Nc1ccccc1C(=O)O,CA,ibis
+,,APTD,APTD,APTD,N[C@@H]([C@H](O)C(=O)O)[C@H](O)[C@@H](O)C/C=C/C=C/C=C/c1ccccc1,CA,curated
+benz,benz,benzoic_acid,benzoic_acid,benzoic acid,O=C(O)c1ccccc1,CA,curated
+,,Br_HP_tetraenic_acid,Br_HP_tetraenic_acid,"9-(3'-Bromo-4'-hydroxyphenyl)-nona-2,4,6,8-tetraenic acid",O=C(O)C=CC=CC=CC=Cc1ccc(O)c(Br)c1,CA,curated
+Sal,Sal,Chor_der,Chor_der,Chorismate_derivative,O=C(O)c1ccccc1O,CA,curated
+,,Chpca,Chpca,5-chloro-1-hydroxypyrrole-2-carboxylic acid,O=C(O)c1ccc(Cl)n1O,CA,curated
+CouA,CouA,CouA,CouA,coumaric acid,O=C(O)/C=C/c1ccc(O)cc1,CA,ibis
+Cro,Cro,Cro,Cro,crotonic acid,C/C=C/C(=O)O,CA,ibis
+DHAA,Ana,DHAA,DHAA,"trans-2,3-dihydro-3-hydroxyanthranilic acid",Nc1c(C(=O)O)ccc(O)c1O,CA,ibis
+,,Dhb,Dhb,Dhb,O=C(O)c1ccc(O)c(O)c1,CA,puffin
+,,DHMA,DHMA,Dehydromevalonic acid,C/C(=C\C(=O)O)CCO,CA,curated
+DiMMyA,long_chain_fa,DiMMyA-1,DiMMyA,"10,12-dimethylmyristicacid",CC[C@@H](C)C[C@@H](C)CCCCCCCCC(=O)O,CA,ibis
+,,DPlac,DPlac,D-phenyl-lactic-acid,O=C(O)C(O)Cc1ccccc1,CA,curated
+GuaAc,GuaAc,GAA,GAA,Guanidinoacetic acid,N=C(N)NCC(=O)O,CA,curated
+GaS,GaS,GaS,GaS,Glyceric acid 3-O sulphate,O=C(O)[C@H](O)COS(=O)(=O)O,CA,ibis
+HClN,HClN,HClN,HClN,hydrocinnamic acid,O=C(O)CCc1ccccc1,CA,ibis
+HDBA,Val,HDBA,HDBA,"(S)-2-hydroxy-3,3-dimethylbutyric acid",CC(C)(C)C(O)C(=O)O,CA,ibis
+hexnoic_acid,long_chain_fa,hexnoic_acid,hexnoic_acid,hexanoic acid,CCCCCC(=O)O,CA,ibis
+hfOrn,Orn,hfOrn,hfOrn,N5-Hydroxy-N5-formylornithine / N5-acetyl-N5-hydroxy-L-ornithine,O=CN(O)CCCCNC(=O)O,CA,ibis
+hiv,Val,Hiv,Hiv,2-Hydroxyisovaleric acid,CC(C)C(O)C(=O)O,CA,curated
+HMAA,Ana,HMAA,HMAA,"3,5-hydroxy-4-methylanthranilic acid",Cc1c(O)cc(C(=O)O)c(N)c1O,CA,ibis
+2-HVC,Ile,HMP,HMP,2-hydroxy-3-methylpentanoic acid,CCC(C)C(O)C(=O)O,CA,curated
+hpla,Tyr,hpla,hpla,2-Hydroxy-3-(4-hydroxyphenyl)propanoic acid / hydroxyphenyllactic acid,O=C(O)C(O)Cc1ccc(O)cc1,CA,ibis
+Hppy,Tyr,Hppy,Hppy,4-hydroxyphenylpyruvate,O=C(O)C(=O)Cc1ccc(O)cc1,CA,ibis
+lac,Ala,lac,lac,lactate,CC(O)C(=O)O,CA,ibis
+Dhb,Dhb,Lysergic Acid,Lysergic Acid,Lysergic Acid,CN1C[C@H](C(=O)O)C=C2c3cccc4[nH]cc(c34)C[C@H]21,CA,curated
+Moba,Val,Moba,Moba,3-Methyl-2-oxobutanoic acid,CC(C)C(=O)C(=O)O,CA,ibis
+Mopa,Val,Mopa,Mopa,3-methyl-2-oxopentanoic acid,CC[C@H](C)C(=O)C(=O)O,CA,ibis
+NPA,NPA,NPA,NPA,3-methoxy-5-methylnaphthoic acid,COc1cc(C(=O)O)c2cccc(C)c2c1,CA,ibis
+PheAc,Phe,PAA,PAA,Phenylacetic acid,O=C(O)Cc1ccccc1,CA,curated
+PABA,PABA,PABA,PABA,4-Aminobenzoic acid,Nc1ccc(C(=O)O)cc1,CA,ibis
+,,PalA-2,PalA,PalA,CCCCCCCCCCCCCC(C)C(=O)O,CA,puffin
+,,paranitrobenzoic acid,paranitrobenzoic acid,paranitrobenzoic acid,O=C(O)c1ccc([N+](=O)[O-])cc1,CA,curated
+PhePyruvate,Phe,PhePyruvate,PhePyruvate,phenyl pyruvic acid,O=C(O)C(=O)Cc1ccccc1,CA,ibis
+,,Pyrrolidone,Pyrrolidone,Pyrrolidone,NC1CC(=O)NC1(O)CC(=O)O,CA,curated
+pyruvate,Ala,pyruvate,pyruvate,pyruvic acid,CC(=O)C(=O)O,CA,ibis
+QxCA,QxCA,QXC,QXC,Quinoxaline-2-carboxylic acid,O=C(O)c1cnc2ccccc2n1,CA,curated
+AHIBA,PABA,AHIBA,AHIBA,4-amino-2-hydroxy-3-isopropoxybenzoic acid,Nc1ccc(C(O)=O)c(O)c1OC(C)C,CA,curated_2023
+CysA,CysA,CysA,CysA,Cysteic Acid,O=C(O)C(N)CS(=O)(O)=O,CA,curated_2023
+3-NH2-9-Me-DecA,long_chain_fa,3-NH2-9-Me-DecA,3-NH2-9-Me-DecA,3-NH2-9-Me-DecA,CC(C)CCCCCC(N)CC(O)=O,CA,curated_2023
+D-HIC,Leu,D-HIC,D-HIC,D-a-hydroxy isocaproic acid,OC([C@H](O)CC(C)C)=O,CA,curated_2023
+Ind,Trp,Ind,Ind,Indole acid,OC(CC1=CNC2=CC=CC=C21)=O,CA,curated_2023
+kLeu,Leu,kLeu,kLeu,ketoleucine,CC(CC(C(O)=O)=O)C,CA,curated_2023
