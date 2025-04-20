@@ -1,5 +1,6 @@
 # bloom-publication
-BLOOM package for external use (released with publication)
+Biosynthetic Learning from Ontological Organizations of Metabolism (BLOOM)
+Developers to contact: Mathusan Gunabalasingam
 
 ## Installation
 
