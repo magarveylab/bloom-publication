@@ -1,9 +1,10 @@
 import argparse
 import json
+import os
 from typing import List
 
 from Bloom.BloomDOS.DataStructs import EnhancedSmartsDict
-from Bloom.BloomDOS.GeneralUtils import create_dir, rendered_lib_dir
+from Bloom.BloomDOS.GeneralUtils import rendered_lib_dir
 from Bloom.BloomDOS.Library.Curated.Miscellaneous import Miscellaneous
 from Bloom.BloomDOS.Library.Curated.ModuleUnit import ModuleUnit
 from Bloom.BloomDOS.Library.FattyAcid.FattyAcid import FattyAcid
@@ -55,7 +56,7 @@ def render_library(
 ):
 
     # create directory for rendered library
-    create_dir(rendered_lib_dir)
+    os.makedirs(rendered_lib_dir, exist_ok=True)
     if render_curated or render_all:
         export_library(Miscellaneous().library, "miscellaneous")
         export_library(ModuleUnit().library, "curated_module")

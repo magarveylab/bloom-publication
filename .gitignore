@@ -1,3 +1,4 @@
 Bloom.egg-info/*
 **.pyc
 **-checkpoint.ipynb
+Bloom/BloomDOS/RenderedLibrary/*
