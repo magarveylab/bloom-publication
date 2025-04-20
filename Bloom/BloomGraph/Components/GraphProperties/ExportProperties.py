@@ -1,6 +1,6 @@
 from typing import Dict, List
 
-from Bloom.BloomGraph.BloomGraph import DataStructs
+from Bloom.BloomGraph import DataStructs
 
 
 class ExportProperties:

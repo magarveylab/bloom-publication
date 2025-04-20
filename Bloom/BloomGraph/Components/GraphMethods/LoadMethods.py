@@ -3,7 +3,7 @@ from typing import List, Optional, Set
 
 from rdkit import Chem
 
-from Bloom.BloomGraph.BloomGraph import DataStructs
+from Bloom.BloomGraph import DataStructs
 
 
 class LoadMethods:
