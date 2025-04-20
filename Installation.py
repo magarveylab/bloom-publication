@@ -2,25 +2,25 @@ import argparse
 import json
 from typing import List
 
-from BearLite.DataStructs import EnhancedSmartsDict
-from BearLite.GeneralUtils import create_dir, rendered_lib_dir
-from BearLite.Library.Curated.Miscellaneous import Miscellaneous
-from BearLite.Library.Curated.ModuleUnit import ModuleUnit
-from BearLite.Library.FattyAcid.FattyAcid import FattyAcid
-from BearLite.Library.Metabolite.Metabolite import (
+from Bloom.BloomDOS.DataStructs import EnhancedSmartsDict
+from Bloom.BloomDOS.GeneralUtils import create_dir, rendered_lib_dir
+from Bloom.BloomDOS.Library.Curated.Miscellaneous import Miscellaneous
+from Bloom.BloomDOS.Library.Curated.ModuleUnit import ModuleUnit
+from Bloom.BloomDOS.Library.FattyAcid.FattyAcid import FattyAcid
+from Bloom.BloomDOS.Library.Metabolite.Metabolite import (
     PrimaryMetabolite,
     SecondaryMetabolite,
 )
-from BearLite.Library.Nucleoside.Nucleoside import Nucleoside
-from BearLite.Library.Peptide.AminoAcid import AminoAcid
-from BearLite.Library.Peptide.Azole import Azole
-from BearLite.Library.Polyketide.AlphaChains import AlphaChains
-from BearLite.Library.Polyketide.AlphaSearch import AlphaSearch
-from BearLite.Library.Polyketide.Polyketide import Polyketide
-from BearLite.Library.Sugar.Sugar import Sugar
-from BearLite.Library.Tailoring.Tailoring import Tailoring
-from BearLite.Library.Terpene.Terpene import Terpene
-from BearLite.Library.Type2PK.Type2PK import Type2PK
+from Bloom.BloomDOS.Library.Nucleoside.Nucleoside import Nucleoside
+from Bloom.BloomDOS.Library.Peptide.AminoAcid import AminoAcid
+from Bloom.BloomDOS.Library.Peptide.Azole import Azole
+from Bloom.BloomDOS.Library.Polyketide.AlphaChains import AlphaChains
+from Bloom.BloomDOS.Library.Polyketide.AlphaSearch import AlphaSearch
+from Bloom.BloomDOS.Library.Polyketide.Polyketide import Polyketide
+from Bloom.BloomDOS.Library.Sugar.Sugar import Sugar
+from Bloom.BloomDOS.Library.Tailoring.Tailoring import Tailoring
+from Bloom.BloomDOS.Library.Terpene.Terpene import Terpene
+from Bloom.BloomDOS.Library.Type2PK.Type2PK import Type2PK
 
 
 def add_enums_to_library(library):
@@ -52,7 +52,6 @@ def render_library(
     render_terpene: bool,
     render_type2pk: bool,
     render_all: bool,
-    connect_to_cactus: bool,
 ):
 
     # create directory for rendered library
@@ -84,8 +83,6 @@ def render_library(
         export_library(SecondaryMetabolite().library, "secondary_metabolite")
     if render_primary_metabolite or render_all:
         export_library(PrimaryMetabolite().library, "primary_metabolite")
-    if connect_to_cactus:
-        get_cactus_lookup(from_cache=False, save=True)
 
 
 # script information
