@@ -1,5 +1,5 @@
 # bloom-publication
-Biosynthetic Learning from Ontological Organizations of Metabolism (BLOOM)
+Biosynthetic Learning from Ontological Organizations of Metabolism (BLOOM) \
 Developers to contact: Mathusan Gunabalasingam
 
 ## Installation
