@@ -1,6 +1,5 @@
 # bloom-publication
-Biosynthetic Learning from Ontological Organizations of Metabolism (BLOOM) \
-Developers to contact: Mathusan Gunabalasingam
+Biosynthetic Learning from Ontological Organizations of Metabolism (BLOOM)
 
 ## Installation
 
@@ -11,4 +10,8 @@ Developers to contact: Mathusan Gunabalasingam
     conda env create -f bloom-environment.yml
     conda activate bloom
     pip install -e .
+```
+2. Prep DOS library for molecular motif searching.
+```
+    python Installation.py -render_all
 ```
