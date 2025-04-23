@@ -1,0 +1,313 @@
+module_tag,substrate
+2-EtMal,2-EtMal
+3-(3-Pyr)-L-alanine,3-(3-Pyr)-L-alanine
+3-FASC,3-FASC
+3-HPA,3-HPA
+3-ICBA,3-ICBA
+3NcpAla,3NcpAla
+4-Acetamido-pyr-CA,4-Acetamido-pyr-CA
+4-AOHMEBA,4-AOHMEBA
+4-MeHex-2-EA,4-MeHex-2-EA
+6-MSA,6-MSA
+6C4H3CA,6C4H3CA
+6OHisoquicarb,6OHisoquicarb
+Abu,Abu
+ACPC,ACPC
+ADH,ADH
+Aeo,Aeo
+Ahp,Ahp
+AHV,AHV
+Aib,Aib
+Ala,Ala
+pyruvate,pyruvate
+bAla,bAla
+lac,lac
+MeAla,MeAla
+N-OHAla,N-OHAla
+AMPA,AMPA
+3-OH-AA,3-OH-AA
+Ana,Ana
+4-MHA,4-MHA
+DHAA,DHAA
+HMAA,HMAA
+APA,APA
+Arg,Arg
+"4,5-dearg","4,5-dearg"
+Dha,Dha
+Cit,Cit
+Asn,Asn
+3-CyaAla,3-CyaAla
+OHAsn,OHAsn
+Asp,Asp
+OHAsp,OHAsp
+MeAsp,MeAsp
+y-Asp,y-Asp
+bMeAsp,bMeAsp
+O-MeAsp,O-MeAsp
+benz,benz
+bmt,bmt
+Cap,Cap
+Choi,Choi
+ClPhg,ClPhg
+CouA,CouA
+Cro,Cro
+Cys,Cys
+Dab,Dab
+Dab(OH),Dab(OH)
+DABA,DABA
+"2,3-DABA","2,3-DABA"
+DADH,DADH
+Dap,Dap
+Dhb,Dhb
+Dhl,Dhl
+diClPIC,diClPIC
+Bh-L-End,Bh-L-End
+End,End
+GaS,GaS
+Gln,Gln
+3HyG,3HyG
+Glu,Glu
+FGln,FGln
+OH-Glu,OH-Glu
+3-MeGlu,3-MeGlu
+Gly,Gly
+N-MeGly,N-MeGly
+GuaAc,GuaAc
+HClN,HClN
+His,His
+Hpg,Hpg
+Dhpg,Dhpg
+4-HPGox,4-HPGox
+3-Cl-4OHpheglyate,3-Cl-4OHpheglyate
+MeHpg,MeHpg
+Dpg,Dpg
+Ile,Ile
+2-HVC,2-HVC
+Leu,Leu
+N-MeLeu,N-MeLeu
+Nle,Nle
+3_OHLeu,3_OHLeu
+tcl,tcl
+D-Hleu,D-Hleu
+5_OHLeu,5_OHLeu
+Acyl-Leu,Acyl-Leu
+OH-3Pent,OH-3Pent
+1-HDecA,1-HDecA
+13-MeMyA,13-MeMyA
+hexnoic_acid,hexnoic_acid
+Aoda,Aoda
+DiMMyA,DiMMyA
+2-NDoDecA,2-NDoDecA
+bAMHDA,bAMHDA
+C13B-A-FA,C13B-A-FA
+Lys,Lys
+4-OHLys,4-OHLys
+NHLys,NHLys
+NANHLys,NANHLys
+bLys,bLys
+MecPGly,MecPGly
+Met,Met
+N-Ac(D)MPT,N-Ac(D)MPT
+N-Ac-DMPT,N-Ac-DMPT
+N-Me-bmt,N-Me-bmt
+NCA,NCA
+NPA,NPA
+OHQA,OHQA
+OH-Orn,OH-Orn
+AMHO,AMHO
+hfOrn,hfOrn
+NAc2hOrn,NAc2hOrn
+5hfOrn,5hfOrn
+Orn,Orn
+2-am-5-NOH-pentacid,2-am-5-NOH-pentacid
+N-ac-fOHOrn,N-ac-fOHOrn
+Me-fOHOrn,Me-fOHOrn
+"4,5diOHOrn","4,5diOHOrn"
+PABA,PABA
+Phe,Phe
+MePhe,MePhe
+PAPS,PAPS
+PhePyruvate,PhePyruvate
+PheAc,PheAc
+OMePhe,OMePhe
+3-MePhe,3-MePhe
+Pic,Pic
+Pip,Pip
+Piz,Piz
+Cl-Pip,Cl-Pip
+PPCA,PPCA
+Pro,Pro
+3-MePro,3-MePro
+DHPA,DHPA
+EPL,EPL
+MePro,MePro
+4HyP,4HyP
+3HyP,3HyP
+3OH4MePro,3OH4MePro
+4PP,4PP
+3-OH-3-MePro,3-OH-3-MePro
+Py-2-Car,Py-2-Car
+QxCA,QxCA
+"2,3-DHB","2,3-DHB"
+Sal,Sal
+Ser,Ser
+MeSer,MeSer
+aMe-Ser,aMe-Ser
+N-OHSer,N-OHSer
+acylSer,acylSer
+Hse1,Hse1
+Tam,Tam
+Thr,Thr
+N-Me-Thr,N-Me-Thr
+Trans-2CroGly,Trans-2CroGly
+Trp,Trp
+Kyn,Kyn
+Mtrp,Mtrp
+5-Cl-L-Trp,5-Cl-L-Trp
+6-Cl-Trp,6-Cl-Trp
+Trp-bOH-diMePropenyl,Trp-bOH-diMePropenyl
+N-diMeTrp,N-diMeTrp
+Tyr,Tyr
+4-O-DiMe-Tyr,4-O-DiMe-Tyr
+m-Tyr,m-Tyr
+3h5mOmTyr,3h5mOmTyr
+Hppy,Hppy
+hpla,hpla
+3hHyT,3hHyT
+"3,4diOHHomoTyr","3,4diOHHomoTyr"
+bOHTyr,bOHTyr
+3NTyr,3NTyr
+OHTyr,OHTyr
+ClN-MeTyr,ClN-MeTyr
+OMeTyr,OMeTyr
+N-MeTyr,N-MeTyr
+beta-Uda,beta-Uda
+Val,Val
+MeVal,MeVal
+Moba,Moba
+hiv,hiv
+Mopa,Mopa
+N-OHVal,N-OHVal
+HDBA,HDBA
+y-OH-Val,y-OH-Val
+7-MeO-D-Trp,7-MeO-D-Trp
+N-Me-B-OH-L-Phe,N-Me-B-OH-L-Phe
+B-OH-L-Phe,B-OH-L-Phe
+AnThr,AnThr
+MeDeTyr,MeDeTyr
+Ahpb,Ahpb
+4-Cl-Kyn,4-Cl-Kyn
+AHIBA,AHIBA
+CysA,CysA
+3-NH2-9-Me-DecA,3-NH2-9-Me-DecA
+Butyl-KS,Butyl
+Butyl-KR,Butyl
+Butyl-ER,Butyl
+Butyl,Butyl
+Butyl-KS | TE,Butyl
+Butyl-KR | TE,Butyl
+Butyl-ER | TE,Butyl
+EtMal-KS,EtMal
+EtMal-KR,EtMal
+EtMal-DH,EtMal
+EtMal-ER,EtMal
+EtMal,EtMal
+EtMal-KS | TE,EtMal
+EtMal-KR | TE,EtMal
+EtMal-DH | TE,EtMal
+EtMal-ER | TE,EtMal
+Mal-KS,Mal
+Mal-KR,Mal
+Mal-DH,Mal
+Mal-ER,Mal
+Mal-B,Mal
+Mal,Mal
+Mal-KS | TE,Mal
+Mal-KR | TE,Mal
+Mal-DH | TE,Mal
+Mal-ER | TE,Mal
+Mal-B | TE,Mal
+MeMal-KS,MeMal
+MeMal-KR,MeMal
+MeMal-DH,MeMal
+MeMal-ER,MeMal
+MeMal,MeMal
+MeMal-KS | TE,MeMal
+MeMal-KR | TE,MeMal
+MeMal-DH | TE,MeMal
+MeMal-ER | TE,MeMal
+OMeMal-KS,OMeMal
+OMeMal-KR,OMeMal
+OMeMal-DH,OMeMal
+OMeMal-ER,OMeMal
+OMeMal,OMeMal
+OMeMal-KS | TE,OMeMal
+OMeMal-KR | TE,OMeMal
+OMeMal-DH | TE,OMeMal
+OMeMal-ER | TE,OMeMal
+HexaMal-KS,HexaMal
+HexaMal-KR,HexaMal
+HexaMal-DH,HexaMal
+HexaMal-ER,HexaMal
+HexaMal,HexaMal
+HexaMal-KS | TE,HexaMal
+HexaMal-KR | TE,HexaMal
+HexaMal-DH | TE,HexaMal
+HexaMal-ER | TE,HexaMal
+OH-ProMal-KS,OH-ProMal
+OH-ProMal-KR,OH-ProMal
+OH-ProMal-DH,OH-ProMal
+OH-ProMal-ER,OH-ProMal
+OH-ProMal,OH-ProMal
+OH-ProMal-KS | TE,OH-ProMal
+OH-ProMal-KR | TE,OH-ProMal
+OH-ProMal-DH | TE,OH-ProMal
+OH-ProMal-ER | TE,OH-ProMal
+"3,5-AHBA","3,5-AHBA"
+Isoval,Isoval
+isoButMal-KS,isoButMal
+isoButMal-KR,isoButMal
+isoButMal-DH,isoButMal
+isoButMal-ER,isoButMal
+isoButMal,isoButMal
+isoButMal-KS | TE,isoButMal
+isoButMal-KR | TE,isoButMal
+isoButMal-DH | TE,isoButMal
+isoButMal-ER | TE,isoButMal
+2Cl-pyrrole,2Cl-pyrrole
+Py-indole,Py-indole
+2EtButMal-KS,2EtButMal
+2EtButMal-KR,2EtButMal
+2EtButMal-DH,2EtButMal
+2EtButMal-ER,2EtButMal
+2EtButMal,2EtButMal
+2EtButMal-KS | TE,2EtButMal
+2EtButMal-KR | TE,2EtButMal
+2EtButMal-DH | TE,2EtButMal
+2EtButMal-ER | TE,2EtButMal
+2Cl-Pyr-Mal-KS,2Cl-Pyr-Mal
+2Cl-Pyr-Mal-KR,2Cl-Pyr-Mal
+2Cl-Pyr-Mal-DH,2Cl-Pyr-Mal
+2Cl-Pyr-Mal-ER,2Cl-Pyr-Mal
+2Cl-Pyr-Mal,2Cl-Pyr-Mal
+2Cl-Pyr-Mal-KS | TE,2Cl-Pyr-Mal
+2Cl-Pyr-Mal-KR | TE,2Cl-Pyr-Mal
+2Cl-Pyr-Mal-DH | TE,2Cl-Pyr-Mal
+2Cl-Pyr-Mal-ER | TE,2Cl-Pyr-Mal
+D-HIC,D-HIC
+DiDTyr,DiDTyr
+Ind,Ind
+NMeCys,NMeCys
+Hph,Hph
+"1,3BPG","1,3BPG"
+tCin,tCin
+mDap,mDap
+kLeu,kLeu
+Dda,Dda
+C3:0,C3:0
+oxoMal,oxoMal
+3-ClTyr,3-ClTyr
+OH13MePda,OH13MePda
+TrpOH,TrpOH
+bPhe,bPhe
+3S-B-BABA,3S-B-BABA

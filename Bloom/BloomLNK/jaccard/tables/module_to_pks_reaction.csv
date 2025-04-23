@@ -1,0 +1,81 @@
+module_tag,pks_reaction_tag
+Butyl-KS,KS
+Butyl-KR,KR
+Butyl-ER,ER
+Butyl-KS | TE,KS
+Butyl-KR | TE,KR
+Butyl-ER | TE,ER
+EtMal-KS,KS
+EtMal-KR,KR
+EtMal-DH,DH
+EtMal-ER,ER
+EtMal-KS | TE,KS
+EtMal-KR | TE,KR
+EtMal-DH | TE,DH
+EtMal-ER | TE,ER
+Mal-KS,KS
+Mal-KR,KR
+Mal-DH,DH
+Mal-ER,ER
+Mal-B,B
+Mal-KS | TE,KS
+Mal-KR | TE,KR
+Mal-DH | TE,DH
+Mal-ER | TE,ER
+Mal-B | TE,B
+MeMal-KS,KS
+MeMal-KR,KR
+MeMal-DH,DH
+MeMal-ER,ER
+MeMal-KS | TE,KS
+MeMal-KR | TE,KR
+MeMal-DH | TE,DH
+MeMal-ER | TE,ER
+OMeMal-KS,KS
+OMeMal-KR,KR
+OMeMal-DH,DH
+OMeMal-ER,ER
+OMeMal-KS | TE,KS
+OMeMal-KR | TE,KR
+OMeMal-DH | TE,DH
+OMeMal-ER | TE,ER
+HexaMal-KS,KS
+HexaMal-KR,KR
+HexaMal-DH,DH
+HexaMal-ER,ER
+HexaMal-KS | TE,KS
+HexaMal-KR | TE,KR
+HexaMal-DH | TE,DH
+HexaMal-ER | TE,ER
+OH-ProMal-KS,KS
+OH-ProMal-KR,KR
+OH-ProMal-DH,DH
+OH-ProMal-ER,ER
+OH-ProMal-KS | TE,KS
+OH-ProMal-KR | TE,KR
+OH-ProMal-DH | TE,DH
+OH-ProMal-ER | TE,ER
+isoButMal-KS,KS
+isoButMal-KR,KR
+isoButMal-DH,DH
+isoButMal-ER,ER
+isoButMal-KS | TE,KS
+isoButMal-KR | TE,KR
+isoButMal-DH | TE,DH
+isoButMal-ER | TE,ER
+2EtButMal-KS,KS
+2EtButMal-KR,KR
+2EtButMal-DH,DH
+2EtButMal-ER,ER
+2EtButMal-KS | TE,KS
+2EtButMal-KR | TE,KR
+2EtButMal-DH | TE,DH
+2EtButMal-ER | TE,ER
+2Cl-Pyr-Mal-KS,KS
+2Cl-Pyr-Mal-KR,KR
+2Cl-Pyr-Mal-DH,DH
+2Cl-Pyr-Mal-ER,ER
+2Cl-Pyr-Mal-KS | TE,KS
+2Cl-Pyr-Mal-KR | TE,KR
+2Cl-Pyr-Mal-DH | TE,DH
+2Cl-Pyr-Mal-ER | TE,ER
