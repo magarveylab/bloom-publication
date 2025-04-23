@@ -59,3 +59,8 @@ BloomDOS.multiprocess_subission(
     output_dir="sample_output/bloom_dos_predictions",
 )
 ```
+BLOOM-DOS includes a Streamlit-based web application that provides a visual interface for submitting molecules and exploring biosynthetic breakdown results. Run the following commands to deploy the app on a server:
+```
+cd WebApp
+streamlit run BloomDOSApp.py
+```
