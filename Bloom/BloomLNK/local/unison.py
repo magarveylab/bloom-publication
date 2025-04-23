@@ -3,12 +3,12 @@ from typing import List
 import networkx as nx
 import pandas as pd
 
-from Bloom.BloomLNK import curdir
 from Bloom.BloomLNK.local.common import (
     create_graph_from_dags,
     get_edge_subgraph,
     get_node_subgraph,
 )
+from Bloom.BloomLNK.utils import curdir
 
 ########################################################################
 # Graph Schema

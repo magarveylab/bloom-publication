@@ -5,12 +5,12 @@ from glob import glob
 import networkx as nx
 import numpy as np
 
-from Bloom.BloomLNK import curdir
+from Bloom.BloomLNK.utils import curdir
 from Bloom.CommonUtils.HeteroGraph import HeteroGraph
 
 
 def get_vocab(
-    vocab_dir: str = f"{curdir}/preprocess/graph/node_vocab/*",
+    vocab_dir: str = f"{curdir}/models/vocab/*",
 ):
     vocab_filenames = glob(vocab_dir)
     vocab = {}

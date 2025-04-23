@@ -1,6 +1,6 @@
 import pandas as pd
 
-from Bloom.BloomLNK import curdir
+from Bloom.BloomLNK.utils import curdir
 
 library_dir = f"{curdir}/jaccard/tables/"
 

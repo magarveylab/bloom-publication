@@ -1,0 +1,11 @@
+contig_id,contig_start,contig_stop,chemotype,metabolite_id,jaccard_score,graphormer_metric,graphormer_score,rank
+241833068,2881,57090,TypeIPolyketide,45266,0.15,s4-5-j,0.563,1
+241833068,2881,57090,TypeIPolyketide,44534,0.14,s4-5-j,0.556,2
+241833068,2881,57090,TypeIPolyketide,44535,0.14,s4-5-j,0.5555,3
+241833068,2881,57090,TypeIPolyketide,37004,0.14,s4-5-j,0.5515,4
+241833068,2881,57090,TypeIPolyketide,45268,0.14,s4-5-j,0.5515,5
+241833068,2881,57090,TypeIPolyketide,45356,0.14,s4-5-j,0.5515,6
+241833068,2881,57090,TypeIPolyketide,23893,0.14,s4-5-j,0.5515,7
+241833068,2881,57090,TypeIPolyketide,24480,0.14,s4-5-j,0.5515,8
+241833068,2881,57090,TypeIPolyketide,38016,0.14,s4-5-j,0.5515,9
+241833068,2881,57090,TypeIPolyketide,36339,0.14,s4-5-j,0.55125,10

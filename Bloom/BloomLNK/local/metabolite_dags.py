@@ -3,7 +3,7 @@ from typing import List
 
 import pandas as pd
 
-from Bloom.BloomLNK import curdir
+from Bloom.BloomLNK.utils import curdir
 
 ########################################################################
 # Load libraries

@@ -4,8 +4,8 @@ from typing import List
 
 import pandas as pd
 
-from Bloom.BloomLNK import curdir
 from Bloom.BloomLNK.local.common import create_graph_from_dags
+from Bloom.BloomLNK.utils import curdir
 
 ########################################################################
 # Graph Schema
@@ -117,6 +117,32 @@ def get_cluster_to_orfs(bgc_data: List[dict]):
         f'{c["contig_id"]}_{c["contig_start"]}_{c["contig_stop"]}': c["orfs"]
         for c in bgc_data
     }
+
+
+def get_cluster_to_modules(
+    bgc_data: List[dict], module_data: List[dict], orf_to_protein: dict
+):
+    protein_to_modules = {}
+    for p in module_data:
+        protein_id = p["protein_id"]
+        module_ids = [
+            f'{protein_id}_{m["protein_start"]}_{m["protein_stop"]}'
+            for m in p["modules"]
+        ]
+        if protein_id not in protein_to_modules:
+            protein_to_modules[protein_id] = set()
+        protein_to_modules[protein_id].update(module_ids)
+    cluster_to_modules = {}
+    for c in bgc_data:
+        cluster_id = f'{c["contig_id"]}_{c["contig_start"]}_{c["contig_stop"]}'
+        if cluster_id not in cluster_to_modules:
+            cluster_to_modules[cluster_id] = set()
+        for o in c["orfs"]:
+            protein_id = orf_to_protein[o]
+            cluster_to_modules[cluster_id].update(
+                protein_to_modules.get(protein_id, set())
+            )
+    return cluster_to_modules
 
 
 def get_cluster_to_chemotypes(bgc_data: List[dict]):
@@ -306,12 +332,7 @@ def get_protein_family_tag_dag(
     return dags
 
 
-def get_bgc_graphs(
-    ibis_dir: str,
-    min_orf_count: int = 4,
-    min_module_count: int = 4,
-    run_all: bool = False,
-):
+def get_orf_to_dags(ibis_dir: str) -> dict:
     # load input data
     input_data = {}
     input_data["prodigal"] = json.load(open(f"{ibis_dir}/prodigal.json"))
@@ -326,11 +347,6 @@ def get_bgc_graphs(
     input_data["gene"] = json.load(open(f"{ibis_dir}/gene_predictions.json"))
     # get protein to orfs
     protein_to_orfs = get_protein_to_orfs(input_data["prodigal"])
-    orf_to_protein = get_orf_to_protein(input_data["prodigal"])
-    # get cluster to orfs
-    cluster_to_orfs = get_cluster_to_orfs(input_data["bgc"])
-    # get cluster to chemotypes
-    cluster_to_chemotypes = get_cluster_to_chemotypes(input_data["bgc"])
     # get all dags
     dags = []
     dags.extend(get_module_adj_dag(input_data["module"], protein_to_orfs))
@@ -352,9 +368,81 @@ def get_bgc_graphs(
         if orf_id not in orf_to_dags:
             orf_to_dags[orf_id] = []
         orf_to_dags[orf_id].append(d)
+    return orf_to_dags
+
+
+def quality_control_bgc_filtering(
+    ibis_dir: str,
+    min_orf_count: int = 4,
+    min_module_count: int = 4,
+) -> List[dict]:
+    input_data = {}
+    input_data["prodigal"] = json.load(open(f"{ibis_dir}/prodigal.json"))
+    input_data["bgc"] = json.load(open(f"{ibis_dir}/bgc_predictions.json"))
+    input_data["module"] = json.load(
+        open(f"{ibis_dir}/module_predictions.json")
+    )
+    # get protein to orfs
+    orf_to_protein = get_orf_to_protein(input_data["prodigal"])
+    # get cluster to orfs
+    cluster_to_orfs = get_cluster_to_orfs(input_data["bgc"])
+    # get cluster to modules
+    cluster_to_modules = get_cluster_to_modules(
+        input_data["bgc"],
+        input_data["module"],
+        orf_to_protein,
+    )
+    # get cluster to chemotypes
+    cluster_to_chemotypes = get_cluster_to_chemotypes(input_data["bgc"])
+    quality_clusters = []
+    for cluster_id, chemotypes in cluster_to_chemotypes.items():
+        quality = False
+        # control for type I PKS and NRPS (need at least 4 modules)
+        if (
+            "TypeIPolyketide" in chemotypes
+            or "NonRibosomalPeptide" in chemotypes
+        ):
+            module_count = len(cluster_to_modules[cluster_id])
+            if module_count >= min_module_count:
+                quality = True
+            else:
+                quality = False
+        elif "Ripp" in chemotypes or "Bacteriocin" in chemotypes:
+            quality = False
+        # control for other BGCs (need at least 4 orfs)
+        else:
+            orf_count = len(cluster_to_orfs[cluster_id])
+            if orf_count >= min_orf_count:
+                quality = True
+            else:
+                quality = False
+        if quality == True:
+            quality_clusters.append(
+                {
+                    "cluster_id": cluster_id,
+                    "chemotypes": chemotypes,
+                }
+            )
+    return quality_clusters
+
+
+def get_bgc_graphs(
+    ibis_dir: str,
+    orf_to_dags: dict,
+    clusters_to_run: List[str],
+):
+    # load input data
+    input_data = {}
+    input_data["prodigal"] = json.load(open(f"{ibis_dir}/prodigal.json"))
+    input_data["bgc"] = json.load(open(f"{ibis_dir}/bgc_predictions.json"))
+    # get protein to orfs
+    orf_to_protein = get_orf_to_protein(input_data["prodigal"])
+    # get cluster to orfs
+    cluster_to_orfs = get_cluster_to_orfs(input_data["bgc"])
     # create graphs
     out = []
-    for cluster_id, orfs in cluster_to_orfs.items():
+    for cluster_id in clusters_to_run:
+        orfs = cluster_to_orfs[cluster_id]
         connected_orfs = [orf_id for orf_id in orfs if orf_id in orf_to_dags]
         dags = [d for orf_id in connected_orfs for d in orf_to_dags[orf_id]]
         dags.extend(
@@ -374,33 +462,7 @@ def get_bgc_graphs(
             col_name_to_edge_type=col_name_to_edge_type,
             col_name_to_edge_properties=col_name_to_edge_properties,
         )
-        # check if graph passes quality control
-        if run_all == True:
-            quality = True
-        else:
-            quality = False
-            chemotypes = cluster_to_chemotypes[cluster_id]
-            # control for type I PKS and NRPS (need at least 4 modules)
-            if (
-                "TypeIPolyketide" in chemotypes
-                or "NonRibosomalPeptide" in chemotypes
-            ):
-                module_count = len([n for n in G.nodes if n[0] == "Module"])
-                if module_count >= min_module_count:
-                    quality = True
-                else:
-                    quality = False
-            elif "Ripp" in chemotypes or "Bacteriocin" in chemotypes:
-                quality = False
-            # control for other BGCs (need at least 4 orfs)
-            else:
-                orf_count = len([n for n in G.nodes if n[0] == "Orf"])
-                if orf_count >= min_orf_count:
-                    quality = True
-                else:
-                    quality = False
-        if quality == True:
-            out.append({"cluster_id": cluster_id, "graph": G})
+        out.append({"cluster_id": cluster_id, "graph": G})
     return out
 
 

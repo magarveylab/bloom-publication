@@ -1,0 +1,17 @@
+chemotype,metric,threshold
+Aminoglycoside,s4-5,0.644
+Antimetabolite,s2,0.297
+BetaLactam,s4,0.443
+Bisindole,s2-5-j,0.378
+Butyrolactone,s5,0.819
+Cyclodipeptide,s5,0.743
+Hapalindole,s2,0.524
+Melanin,s3,0.186
+NonRibosomalPeptide,s4-j,0.408
+Hybrid,s4-5-j,0.436
+Nucleoside,s4-5-j,0.416
+Phosphonate,s5-j,0.441
+Polysaccharide,s1,0.038
+Resorcinol,s2,0.729
+TypeIPolyketide,s4-5-j,0.4210
+TypeIIPolyketide,s3-5,0.746

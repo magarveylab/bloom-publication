@@ -1,4 +1,5 @@
 import json
+import os
 import pickle
 from glob import glob
 from typing import List, Literal, Optional
@@ -9,13 +10,10 @@ from torch_geometric.data import Batch
 from tqdm import tqdm
 
 from Bloom import dataset_dir
-from Bloom.BloomLNK import curdir
 from Bloom.BloomLNK.graph import MetaboloGraph, get_vocab
-from Bloom.BloomLNK.local.bgc_graph import (
-    get_bgc_graphs,
-    get_embeddings_for_bgc_graph,
-)
+from Bloom.BloomLNK.local.bgc_graph import get_bgc_graphs
 from Bloom.BloomLNK.local.unison import unite_graphs
+from Bloom.BloomLNK.utils import curdir
 from Bloom.CommonUtils.HeteroGraph import (
     batch_to_homogeneous,
     get_lookup_from_hetero,
@@ -26,7 +24,7 @@ VersionOptions = Literal[
 ]
 
 
-class BearLinkerPipeline:
+class LNKPipeline:
 
     def __init__(
         self, version: VersionOptions = "final", gpu_id: Optional[int] = None
@@ -131,36 +129,30 @@ class BearLinkerPipeline:
             output[head_name] = round(float(logits[-1]), 3)
         return output
 
-    def run_from_local_filenames(
+    def run_on_ibis_result(
         self,
         ibis_dir: str,
-        genome: str,
-        metabolite_ids: List[int],
-        clusters_to_run: Optional[List[str]] = None,
+        metabolites_to_run: List[int],
+        clusters_to_run: List[str],
+        orf_to_dags: dict,
+        embeddings: dict,
         sm_dag_dir: str = f"{dataset_dir}/sm_dags",
         sm_graph_dir: str = f"{dataset_dir}/sm_graphs",
-        min_orf_count: int = 4,
-        min_module_count: int = 4,
-        run_all: bool = False,
     ):
         # prepare bgc graphs
-        ibis_genome_dir = f"{ibis_dir}/{genome}"
         bgc_graphs = get_bgc_graphs(
-            ibis_dir=ibis_genome_dir,
-            min_orf_count=min_orf_count,
-            min_module_count=min_module_count,
-            run_all=run_all,
+            ibis_dir=ibis_dir,
+            orf_to_dags=orf_to_dags,
+            clusters_to_run=clusters_to_run,
         )
         bgc_graphs = {i["cluster_id"]: i["graph"] for i in bgc_graphs}
-        if len(bgc_graphs) == 0:
-            return []
-        # prepare bgc embeddings
-        embeddings = get_embeddings_for_bgc_graph(ibis_dir=ibis_genome_dir)
         # run analysis
         output = []
-        if clusters_to_run == None:
-            clusters_to_run = list(bgc_graphs.keys())
-        for m in tqdm(metabolite_ids, desc="Inference"):
+        for m in tqdm(metabolites_to_run, desc="Running Graphormer"):
+            if os.path.exists(f"{sm_graph_dir}/{m}.pkl") == False:
+                continue
+            if os.path.exists(f"{sm_dag_dir}/{m}.json") == False:
+                continue
             # load metabolite graph
             mol_G = pickle.load(open(f"{sm_graph_dir}/{m}.pkl", "rb"))
             mol_dags = json.load(open(f"{sm_dag_dir}/{m}.json", "r"))
