@@ -48,11 +48,11 @@ from Bloom import BloomDOS
 
 submission_list = [
     {
-        "submission_id": 1,
+        "metabolite_id": 1,
         "smiles": "CCC1OC(=O)C(C)C(OC2CC(C)(OC)C(O)C(C)O2)C(C)C(OC3OC(C)CC(C3O)N(C)C)C(C)(O)CC(C)C(=O)C(C)C(O)C1(C)O ",
     },
     {
-        "submission_id": 2,
+        "metabolite_id": 2,
         "smiles": "CCC(CCCC/C=C/C=C/C(=O)NC(C(C)O)C(=O)NC1CC(CCNC(=O)/C=C\C(NC1=O)C)O)O",
     },
 ]

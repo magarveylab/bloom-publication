@@ -1,7 +1,12 @@
+import json
+import os
+import pickle
+from glob import glob
 from typing import List
 
 import numpy as np
 import pandas as pd
+from tqdm import tqdm
 
 from Bloom import dataset_dir
 from Bloom.BloomLNK.chemotypes import (
@@ -182,3 +187,31 @@ def get_bgc_mol_associations(
         to_export.extend(hits[:report_top_n])
     # export
     pd.DataFrame(to_export).to_csv(output_fp, index=False)
+
+
+def generate_sm_dags(bloom_dos_pred_dir: str, output_dir: str):
+    from Bloom.BloomLNK.local.metabolite_dags import get_metabolite_dags
+
+    filenames = glob(f"{bloom_dos_pred_dir}/*.json")
+    for fp in tqdm(filenames, desc="Generating SM DAGS"):
+        metabolite_id = int(fp.split("/")[-1].split(".")[0])
+        output_fp = f"{output_dir}/{metabolite_id}.json"
+        if os.path.exists(output_fp) == False:
+            continue
+        out = get_metabolite_dags(breakdown_fps=[fp])
+        json.dump(out, open(output_fp, "w"))
+
+
+def generate_sm_graphs(bloom_dos_pred_dir: str, output_dir: str):
+    from Bloom.BloomLNK.local.metabolite_graph import get_metabolite_graphs
+
+    filenames = glob(f"{bloom_dos_pred_dir}/*.json")
+    for fp in tqdm(filenames, desc="Generating SM Graphs"):
+        metabolite_id = int(fp.split("/")[-1].split(".")[0])
+        output_fp = f"{output_dir}/{metabolite_id}.pkl"
+        if os.path.exists(output_fp) == False:
+            continue
+        out = get_metabolite_graphs(
+            metabolite_id=metabolite_id, breakdown_fps=[fp]
+        )
+        pickle.dump(out, open(output_fp, "wb"))

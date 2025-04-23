@@ -113,5 +113,4 @@ def get_metabolite_graphs(metabolite_id: int, breakdown_fps: List[str]):
         col_name_to_edge_type=col_name_to_edge_type,
         col_name_to_edge_properties=col_name_to_edge_properties,
     )
-    out = [{"metabolite_id": metabolite_id, "graph": G}]
-    return out
+    return G
