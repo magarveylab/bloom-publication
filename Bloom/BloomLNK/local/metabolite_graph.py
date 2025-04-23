@@ -3,14 +3,28 @@ from typing import List
 
 import pandas as pd
 
-from BearLinker import curdir
-from BearLinker.neo4j.common import create_graph_from_dags
-from BearLinker.neo4j.metabolite_graph import (
-    col_name_to_edge_properties,
-    col_name_to_edge_type,
-    col_name_to_node_properties,
-    col_name_to_node_type,
-)
+from Bloom.BloomLNK import curdir
+from Bloom.BloomLNK.local.common import create_graph_from_dags
+
+########################################################################
+# Graph Schema
+########################################################################
+
+col_name_to_node_type = {
+    "metabolite_id": "Metabolite",
+    "breakdown_id": "MetaboliteBreakdown",
+    "unit_region_id": "MetaboliteMolecularRegion",
+    "adj_unit_region_id": "MetaboliteMolecularRegion",
+}
+col_name_to_node_properties = {
+    "unit_region_id": ["unit"],
+}
+col_name_to_edge_type = {
+    ("metabolite_id", "breakdown_id"): "metabolite_to_breakdown",
+    ("breakdown_id", "unit_region_id"): "metab_breakdown_to_mol_region",
+    ("unit_region_id", "adj_unit_region_id"): "mol_region_adj",
+}
+col_name_to_edge_properties = {}
 
 ########################################################################
 # Load libraries

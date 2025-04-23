@@ -4,14 +4,49 @@ from typing import List
 
 import pandas as pd
 
-from BearLinker import curdir
-from BearLinker.neo4j.bgc_graph import (
-    col_name_to_edge_properties,
-    col_name_to_edge_type,
-    col_name_to_node_properties,
-    col_name_to_node_type,
-)
-from BearLinker.neo4j.common import create_graph_from_dags
+from Bloom.BloomLNK import curdir
+from Bloom.BloomLNK.local.common import create_graph_from_dags
+
+########################################################################
+# Graph Schema
+########################################################################
+
+col_name_to_node_type = {
+    "cluster_id": "BGC",
+    "orf_id": "Orf",
+    "module_id": "Module",
+    "domain_id": "Domain",
+    "adj_module_id": "Module",
+    "module_tag": "ModuleTag",
+    "substrate": "Substrate",
+    "substrate_family_tag": "SubstrateFamilyTag",
+    "pks_reaction_tag": "PKSReactionTag",
+    "ec4": "EC4",
+    "ec3": "EC3",
+    "gene": "Gene",
+    "protein_family_tag": "ProteinFamilyTag",
+    "domain_label": "DomainLabel",
+}
+col_name_to_node_properties = {
+    "orf_id": ["orf_hash_id"],
+    "domain_id": ["domain_hash_id"],
+}
+col_name_to_edge_type = {
+    ("cluster_id", "orf_id"): "cluster_to_orf",
+    ("orf_id", "domain_label"): "orf_to_domain_label",
+    ("orf_id", "module_id"): "orf_to_module",
+    ("module_id", "adj_module_id"): "module_adj",
+    ("module_id", "module_tag"): "module_to_tag",
+    ("module_id", "domain_id"): "module_to_domain",
+    ("module_id", "substrate"): "module_to_substrate",
+    ("module_id", "substrate_family_tag"): "module_to_substrate_family_tag",
+    ("module_id", "pks_reaction_tag"): "module_to_pks_reaction_tag",
+    ("orf_id", "ec4"): "orf_to_ec4",
+    ("ec4", "ec3"): "ec4_to_ec3",
+    ("orf_id", "gene"): "orf_to_gene",
+    ("gene", "protein_family_tag"): "gene_to_protein_family_tag",
+}
+col_name_to_edge_properties = {}
 
 ########################################################################
 # Load libraries

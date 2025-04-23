@@ -1,10 +1,14 @@
+import json
+import pickle
 from glob import glob
 from typing import List, Literal, Optional
 
 import numpy as np
 import torch
 from torch_geometric.data import Batch
+from tqdm import tqdm
 
+from Bloom import dataset_dir
 from Bloom.BloomLNK import curdir
 from Bloom.BloomLNK.graph import MetaboloGraph, get_vocab
 from Bloom.BloomLNK.local.bgc_graph import (
@@ -127,18 +131,14 @@ class BearLinkerPipeline:
             output[head_name] = round(float(logits[-1]), 3)
         return output
 
-    @staticmethod
-    def softmax(x):
-        return np.exp(x) / np.exp(x).sum(-1, keepdims=True)
-
     def run_from_local_filenames(
         self,
         ibis_dir: str,
         genome: str,
         metabolite_ids: List[int],
         clusters_to_run: Optional[List[str]] = None,
-        sm_dag_dir: str = "/home/airflow/storage/working/bearlinker/sm_dags",
-        sm_graph_dir: str = "/home/airflow/storage/working/bearlinker/sm_graphs",
+        sm_dag_dir: str = f"{dataset_dir}/sm_dags",
+        sm_graph_dir: str = f"{dataset_dir}/sm_graphs",
         min_orf_count: int = 4,
         min_module_count: int = 4,
         run_all: bool = False,
@@ -176,7 +176,7 @@ class BearLinkerPipeline:
                     min_rxn_anno_freq=0,
                     min_rule_rxn_freq=0,
                 )
-                G = MetaboloGraph.build_from_neo4j_output(
+                G = MetaboloGraph.build_graph(
                     graph_id=f"{m}-{c}",
                     graph=unified_G,
                     orf_embedding=orf_embedding,
@@ -184,3 +184,7 @@ class BearLinkerPipeline:
                 )
                 output.append(self(G))
         return output
+
+    @staticmethod
+    def softmax(x):
+        return np.exp(x) / np.exp(x).sum(-1, keepdims=True)

@@ -3,8 +3,7 @@ from typing import List
 
 import pandas as pd
 
-from BearLinker import curdir
-from BearLinker.neo4j.common import create_graph_from_dags
+from Bloom.BloomLNK import curdir
 
 ########################################################################
 # Load libraries

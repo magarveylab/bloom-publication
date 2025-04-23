@@ -4,7 +4,7 @@ from typing import List, Literal, Set
 
 import networkx as nx
 
-from BearLinker.jaccard.library import (
+from Bloom.BloomLNK.jaccard.library import (
     ec3_to_tailoring_unit,
     ec4_to_reaction,
     ec4_to_sugar_tag,
@@ -26,7 +26,7 @@ from BearLinker.jaccard.library import (
     unit_to_substrate_family,
     unit_to_sugar_tag,
 )
-from BearLinker.jaccard.utils import (
+from Bloom.BloomLNK.jaccard.utils import (
     get_kmers,
     get_modular_bear_graph,
     get_nonmodular_bear_graph,

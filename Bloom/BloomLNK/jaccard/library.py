@@ -1,6 +1,6 @@
 import pandas as pd
 
-from BearLinker import curdir
+from Bloom.BloomLNK import curdir
 
 library_dir = f"{curdir}/jaccard/tables/"
 
