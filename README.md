@@ -17,26 +17,22 @@ Biosynthetic Learning from Ontological Organizations of Metabolism (BLOOM)
 ```
 3. Enabling BLOOM-LNK predictions: 
     - Download and extract the pre-generated data files (`sm_dags.zip`, `molecular_jaccard_signature_library.pkl` and `sm_graphs.zip`) from the accompanying Zenodo repository. Place the extracted contents in this [directory](https://github.com/magarveylab/bloom-publication/tree/main/Bloom/datasets).
-    - Alternatively, you can generate a custom database by processing a directory of BLOOM-DOS outputs. Ensure that the [reference table](https://github.com/magarveylab/bloom-publication/blob/main/Bloom/datasets/metabolites.csv) is updated so that metabolite_id values align with those in your dataset.
+    - Alternatively, you can generate a custom database by processing a directory of BLOOM-DOS outputs. Ensure that the [reference table](https://github.com/magarveylab/bloom-publication/blob/main/Bloom/datasets/metabolites.csv) is updated so that `metabolite_id` values align with those in your dataset.
 
 ```python
-from Bloom.BloomLNK import (
-    build_molecular_jacccard_signature_library,
-    build_sm_dags,
-    build_sm_graphs,
-)
+from Bloom import BloomLNK
 
-build_sm_dags(
+BloomLNK.build_sm_dags(
     bloom_dos_pred_dir="sample_output/bloom_dos_predictions/",
     output_dir="sample_output/custom_database/",
 )
 
-build_sm_graphs(
+BloomLNK.build_sm_graphs(
     bloom_dos_pred_dir="sample_output/bloom_dos_predictions/",
     output_dir="sample_output/custom_database/",
 )
 
-build_molecular_jacccard_signature_library(
+BloomLNK.build_molecular_jacccard_signature_library(
     bloom_dos_pred_dir="sample_output/bloom_dos_predictions/",
     output_dir="sample_output/custom_database/",
 )
@@ -103,4 +99,24 @@ BloomEmbedder.generate_molecular_embeddings(
 )
 ```
 
-### BGC-Molecule Association Prediction with BLOOM-LNK
+### Predicting BGC-Molecule Associations with BLOOM-LNK
+BLOOM associates BGCs and metabolites using AI-powered knowledge graph reasoning. The following function compares BGCs from an IBIS result to a molecular database, performs chemotype filtering, and returns the top n metabolites that meet the defined cutoff. 
+
+For scalability:
+1. Use `only_consider_metabolite_ids` to restrict the search to a specific subset of metabolites.
+2. Use `top_n_jaccard` to pre-filter candidates based on Jaccard similarity before applying Graphormer inference.
+3. Apply quality filters using `min_orf_count` for non-modular chemotypes and `min_module_count` for modular chemotypes (e.g., Type I PKS, NRPS) to exclude incomplete BGCs.
+
+```python
+from Bloom.BloomLNK import get_bgc_mol_associations
+
+out = get_bgc_mol_associations(
+    ibis_dir="sample_data/example_ibis_output/",
+    output_fp="sample_output/example_bgc_mol_associations.csv",
+    min_orf_count=4,
+    min_module_count=4,
+    top_n_jaccard=1000,
+    report_top_n=10,
+    only_consider_metabolite_ids=None, # default all metabolites
+)
+```
