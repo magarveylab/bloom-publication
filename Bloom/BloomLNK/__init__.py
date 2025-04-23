@@ -14,7 +14,10 @@ from Bloom.BloomLNK.chemotypes import (
     sorted_metabolites,
 )
 from Bloom.BloomLNK.inference.Pipeline import LNKPipeline
-from Bloom.BloomLNK.jaccard import run_jaccard_on_ibis_result
+from Bloom.BloomLNK.jaccard import (
+    build_molecular_jacccard_signature_library,
+    run_jaccard_on_ibis_result,
+)
 from Bloom.BloomLNK.local.bgc_graph import (
     get_embeddings_for_bgc_graph,
     get_orf_to_dags,
@@ -189,9 +192,11 @@ def get_bgc_mol_associations(
     pd.DataFrame(to_export).to_csv(output_fp, index=False)
 
 
-def generate_sm_dags(bloom_dos_pred_dir: str, output_dir: str):
+def build_sm_dags(bloom_dos_pred_dir: str, output_dir: str):
     from Bloom.BloomLNK.local.metabolite_dags import get_metabolite_dags
 
+    output_dir = f"{output_dir}/sm_dags"
+    os.makedirs(output_dir, exist_ok=True)
     filenames = glob(f"{bloom_dos_pred_dir}/*.json")
     for fp in tqdm(filenames, desc="Generating SM DAGS"):
         metabolite_id = int(fp.split("/")[-1].split(".")[0])
@@ -202,9 +207,11 @@ def generate_sm_dags(bloom_dos_pred_dir: str, output_dir: str):
         json.dump(out, open(output_fp, "w"))
 
 
-def generate_sm_graphs(bloom_dos_pred_dir: str, output_dir: str):
+def build_sm_graphs(bloom_dos_pred_dir: str, output_dir: str):
     from Bloom.BloomLNK.local.metabolite_graph import get_metabolite_graphs
 
+    output_dir = f"{output_dir}/sm_graphs"
+    os.makedirs(output_dir, exist_ok=True)
     filenames = glob(f"{bloom_dos_pred_dir}/*.json")
     for fp in tqdm(filenames, desc="Generating SM Graphs"):
         metabolite_id = int(fp.split("/")[-1].split(".")[0])

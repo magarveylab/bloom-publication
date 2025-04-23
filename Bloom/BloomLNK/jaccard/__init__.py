@@ -14,14 +14,15 @@ from Bloom.BloomLNK.jaccard.utils import jaccard_similarity
 
 
 def build_molecular_jacccard_signature_library(
-    bloom_graph_dir: str = f"{dataset_dir}/bloom_graphs",
+    bloom_dos_pred_dir: str, output_dir: str
 ):
-    filenames = glob(f"{bloom_graph_dir}/*")
+    os.makedirs(output_dir, exist_ok=True)
+    filenames = glob(f"{bloom_dos_pred_dir}/*")
     out = {}
     for fp in filenames:
         metabolite_id = int(fp.split("/")[-1].split(".")[0])
         out[metabolite_id] = get_final_signature_from_molecule(fp)
-    output_fp = f'{dataset_dir}/molecular_jaccard_signature_library.pkl"'
+    output_fp = f"{output_dir}/molecular_jaccard_signature_library.pkl"
     pickle.dump(out, open(output_fp, "wb"))
 
 
