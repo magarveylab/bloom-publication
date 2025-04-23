@@ -1,10 +1,6 @@
-import os
-from functools import partial
-from multiprocessing import Pool
-from typing import List, Optional, TypedDict, Union
+from typing import List
 
 from rdkit import Chem
-from tqdm import tqdm
 
 from Bloom.BloomDOS.Annotation.AlphaAnnotation import AlphaAnnotation
 from Bloom.BloomDOS.Annotation.EnhancedSmarts import EnhancedSmarts
@@ -172,46 +168,3 @@ class Molecule:
     def tabulate_annotations(self, index: int = 0):
         if index <= self.solution_count - 1:
             return self.graphs[index].node_table
-
-
-####################################################################
-# Multiprocessing
-####################################################################
-
-
-class SmilesInput(TypedDict):
-    smiles_id: Union[int, str]
-    smiles: str
-
-
-def single_submission_from_smiles(
-    smiles: SmilesInput,
-    standardize: bool = False,
-    working_dir: Optional[str] = None,
-):
-    smiles_id = smiles["smiles_id"]
-    output_fp = f"{working_dir}/{smiles_id}.json"
-    if os.path.exists(output_fp) == False:
-        m = Molecule(smiles["smiles"])
-        if standardize:
-            m.standardize()
-        m.predict_biosynthesis()
-        if working_dir != None:
-            m.export_graph(output_fp)
-
-
-def multiprocess_subission_from_smiles(
-    smiles_list: List[SmilesInput],
-    working_dir: str,
-    cpus: int = 3,
-    standardize: bool = False,
-):
-    os.makedirs(working_dir, exist_ok=True)
-    funct = partial(
-        single_submission_from_smiles,
-        standardize=standardize,
-        working_dir=working_dir,
-    )
-    pool = Pool(cpus)
-    process = pool.imap_unordered(funct, smiles_list)
-    [p for p in tqdm(process, total=len(smiles_list))]
