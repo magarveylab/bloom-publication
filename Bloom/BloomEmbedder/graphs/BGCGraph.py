@@ -1,12 +1,12 @@
 import json
 from glob import glob
 
-from Bloom.BloomEmbedder import curdir
 from Bloom.BloomEmbedder.genomic_preprocess.bgc_graph import (
     get_bgc_graphs,
     get_embeddings_for_bgc_graph,
     get_node_labels_for_bgc_graph,
 )
+from Bloom.BloomEmbedder.utils import curdir
 from Bloom.CommonUtils.HeteroGraph import HeteroGraph
 
 

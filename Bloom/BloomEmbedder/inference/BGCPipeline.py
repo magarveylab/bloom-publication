@@ -4,8 +4,8 @@ from typing import Dict, Optional
 import torch
 from torch_geometric.data import Batch
 
-from Bloom.BloomEmbedder import curdir
 from Bloom.BloomEmbedder.graphs.BGCGraph import BGCGraph, get_node_vocab
+from Bloom.BloomEmbedder.utils import curdir
 from Bloom.CommonUtils.HeteroGraph import (
     batch_to_homogeneous,
     get_lookup_from_hetero,

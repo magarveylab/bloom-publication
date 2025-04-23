@@ -19,7 +19,7 @@ Biosynthetic Learning from Ontological Organizations of Metabolism (BLOOM)
 ## Inference
 
 ### Biosynthetic Breakdown Prediction with BLOOM-DOS
-BLOOM-DOS utilizes a custom SMARTS-based motif library and and post-filtering prioritization to infer combinations of biosynthetic building blocks that plausibly explain the biosynthesis of a given metabolite. Run the following command to generate a `.json` file that maps atom indices in the SMILES structure to candidate biosynthetic units. Set `standardization=True` to resolve SMILES inconsistencies such as tautomerization.
+BLOOM utilizes a custom SMARTS-based motif library and and post-filtering prioritization to infer combinations of biosynthetic building blocks that plausibly explain the biosynthesis of a given metabolite. Run the following command to generate a `.json` file that maps atom indices in the SMILES structure to candidate biosynthetic units. Set `standardization=True` to resolve SMILES inconsistencies such as tautomerization.
 
 **Single Submission**
 ```python
@@ -63,4 +63,16 @@ BLOOM-DOS includes a Streamlit-based web application that provides a visual inte
 ```
 cd WebApp
 streamlit run BloomDOSApp.py
+```
+
+### Biosynthetic Molecular Embeddings with Bloom-Mol
+BLOOM generates AI-based embeddings from BLOOM molecular graphs, where nodes represent atoms and mapped biosynthetic substructures. Embeddings are learned through self-supervised masked language modeling and enable rapid molecular comparison that reflects underlying biochemical ontologies. Embeddings are generated for both the complete molecular structure and individual biosynthetic units. Unit-level embeddings can be used to group chemically similar substructures by context and support downstream correlative analyses with gene groupings across paired genomic–molecular datasets, enabling the discovery of new biosynthetic rules.
+```python
+from Bloom import BloomEmbedder
+
+BloomEmbedder.generate_molecular_embeddings(
+    bloom_graph_fp="sample_output/bloom_dos_predictions/1.json",
+    output_fp="sample_output/bloom_mol_embeddings/1.pkl",
+    gpu_id=0,
+)
 ```

@@ -5,12 +5,12 @@ from typing import Dict, Optional
 import torch
 from torch_geometric.data import Batch
 
-from Bloom.BloomEmbedder import curdir
 from Bloom.BloomEmbedder.graphs.MoleculeGraph import (
     MoleculeGraph,
     get_edge_vocab,
     get_node_vocab,
 )
+from Bloom.BloomEmbedder.utils import curdir
 from Bloom.CommonUtils.HeteroGraph import (
     batch_to_homogeneous,
     get_lookup_from_hetero,
@@ -82,16 +82,16 @@ class MolPipeline:
                 result_reformatted["Unit"][unit_id] = result["Unit"][node_id]
         return result_reformatted
 
-    def embed_molecule_from(self, metabolite_id: int, bear_fp: str):
-        r = MoleculeGraph.build_from_bear_output(
-            graph_id=metabolite_id, bear_fp=bear_fp
+    def embed_molecule_from(self, metabolite_id: int, bloom_graph_fp: str):
+        r = MoleculeGraph.build_from_bloom_graph(
+            graph_id=metabolite_id, bloom_graph_fp=bloom_graph_fp
         )
         out = self(
             G=r["graph"],
             unit_traceback=r["unit_traceback"],
         )
         # add smiles (useful meta data)
-        out["smiles"] = json.load(open(bear_fp))["smiles"]
+        out["smiles"] = json.load(open(bloom_graph_fp))["smiles"]
         return out
 
     def preprocess(self, G: MoleculeGraph) -> Batch:
@@ -102,7 +102,6 @@ class MolPipeline:
             node_types_to_consider=None,  # default consider all
             edge_types_to_consider=None,  # default consider all
             apply_edge_attr=True,
-            apply_multigraph_wrapper=False,
         )
         data = Batch.from_data_list([data])
         return data

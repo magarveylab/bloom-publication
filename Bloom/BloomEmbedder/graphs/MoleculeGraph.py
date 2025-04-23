@@ -4,7 +4,7 @@ from glob import glob
 from rdkit import Chem
 from rdkit.Chem import PeriodicTable
 
-from Bloom.BloomEmbedder import curdir
+from Bloom.BloomEmbedder.utils import curdir
 from Bloom.CommonUtils.HeteroGraph import HeteroGraph
 
 periodic_table = Chem.GetPeriodicTable()
