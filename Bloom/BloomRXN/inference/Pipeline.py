@@ -5,25 +5,13 @@ import pandas as pd
 import torch
 from torch_geometric.data import Batch, Data
 
-from Bloom.BloomRXN import model_dir, vocab_dir
 from Bloom.BloomRXN.inference import Preprocess
+from Bloom.BloomRXN.utils import model_dir, vocab_dir
 
 
 def get_vocab(fp: str) -> Dict[str, int]:
     df = pd.read_csv(fp)
     return dict(zip(df.word, df.index))
-
-
-class BlankConfig:
-
-    def __init__(self):
-        self.task_specific_params = None
-
-
-class BlankModel:
-
-    def __init__(self):
-        self.config = BlankConfig()
 
 
 class ReactionInferencePipeline:
@@ -56,7 +44,7 @@ class ReactionInferencePipeline:
             self.gnn.to(f"cuda:{self.gpu_id}")
             self.transformer.to(f"cuda:{self.gpu_id}")
             self.graph_pooler.to(f"cuda:{self.gpu_id}")
-        super().__init__(model=BlankModel())
+        super().__init__()
 
     def __call__(self, smiles: str) -> np.array:
         data = self.preprocess(smiles)
@@ -83,4 +71,4 @@ class ReactionInferencePipeline:
         data.x = self.transformer(data.x, data.batch)
         # graph readout
         pooled_output = self.graph_pooler(data.x, data.batch)
-        return np.array(pooled_output.cpu())[0]
+        return np.array(pooled_output.detach().cpu())[0]
