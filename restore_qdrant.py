@@ -2,7 +2,8 @@ import os
 from glob import glob
 
 import requests
-from Maple.Embedder import curdir
+
+from Bloom import curdir
 
 node_url = "http://localhost:6333"
 local_snapshot_paths = glob(f"{curdir}/QdrantSnapshots/*.snapshot")
