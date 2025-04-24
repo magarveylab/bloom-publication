@@ -142,9 +142,9 @@ BloomLNK.get_bgc_mol_associations(
 )
 ```
 ### Predicting BGC-Molecule Associations with BLOOM-MOL and BLOOM-BGC
-BLOOM predicts gene–unit associations by identifying correlations between embedding-derived groupings. These embeddings are learned through self-supervised masked language modeling. Statistical association is evaluated using the chi-squared (χ²) test.
+BLOOM predicts gene–unit associations by identifying correlations between embedding-derived groupings.
 
-BLOOM-BGC generates embeddings for open reading frames (ORFs) based on domain architecture and sequence context
+BLOOM-BGC generates embeddings for open reading frames (ORFs) based on domain architecture and sequence context. These embeddings are learned through self-supervised masked language modeling. 
 ```python
 from Bloom import BloomEmbedder
 
@@ -154,7 +154,7 @@ BloomEmbedder.generate_gene_embeddings(
     gpu_id=0,
 )
 ```
-**Density-based clustering of ORFs and Units**
+Density-based clustering of ORF and Unit embeddings.
 ```python
 from Bloom import BloomEmbedder
 
@@ -172,7 +172,7 @@ BloomEmbedder.compute_clustering_from_matrix(
     output_fp="sample_output/unit_orf_groups/units.csv",
 )
 ```
-**Association Mining**
+Statistical association is evaluated using the chi-squared (χ²) test.
 ```python 
 from Bloom import BloomEmbedder
 
