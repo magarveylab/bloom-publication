@@ -44,3 +44,15 @@ def compute_clustering_from_matrix(
     matrix_keys = pd.read_csv(matrix_keys_fp).to_dict("records")
     out = compute_clustering(matrix=matrix, matrix_keys=matrix_keys)
     pd.DataFrame(out).to_csv(output_fp, index=False)
+
+
+def compute_unit_orf_associations(
+    units_cluster_fp: str, orfs_clustering_fp: str, output_fp: str
+):
+    from Bloom.BloomEmbedder.clustering import get_unit_orf_associations
+
+    out = get_unit_orf_associations(
+        units_hdbscan_fp=units_cluster_fp,
+        orfs_hdbscan_fp=orfs_clustering_fp,
+    )
+    pd.DataFrame(out).to_csv(output_fp, index=False)

@@ -154,8 +154,31 @@ BloomEmbedder.generate_gene_embeddings(
     gpu_id=0,
 )
 ```
-Density-based clustering of ORFs and Units
+**Density-based clustering of ORFs and Units**
 ```python
+from Bloom import BloomEmbedder
 
+# compute orf groupings
+BloomEmbedder.compute_clustering_from_matrix(
+    matrix_fp="sample_data/example_orf_unit_matrix/orf_embeddings.npy",
+    matrix_keys_fp="sample_data/example_orf_unit_matrix/orf_embeddings_keys.csv",
+    output_fp="sample_output/unit_orf_groups/orfs.csv",
+)
 
+# compute unit groupings
+BloomEmbedder.compute_clustering_from_matrix(
+    matrix_fp="sample_data/example_orf_unit_matrix/unit_embeddings.npy",
+    matrix_keys_fp="sample_data/example_orf_unit_matrix/unit_embeddings_keys.csv",
+    output_fp="sample_output/unit_orf_groups/units.csv",
+)
+```
+**Association Mining**
+```python 
+from Bloom import BloomEmbedder
+
+BloomEmbedder.compute_unit_orf_associations(
+    units_cluster_fp="sample_output/unit_orf_groups/units.csv",
+    orfs_clustering_fp="sample_output/unit_orf_groups/orfs.csv",
+    output_fp="sample_output/unit_orf_associations.csv",
+)
 ```
