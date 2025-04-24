@@ -8,7 +8,7 @@ Biosynthetic Learning from Ontological Organizations of Metabolism (BLOOM)
     - Create and activate the Conda environment, then install the package in editable mode:
 ```
     conda env create -f bloom-environment.yml
-    conda activate bloom
+    conda activate bloom2
     pip install -e .
 ```
 2. Prep Bloom-DOS library for molecular substructure matching.
@@ -16,9 +16,8 @@ Biosynthetic Learning from Ontological Organizations of Metabolism (BLOOM)
     python prepare_dos_library.py -render_all
 ```
 3. Enabling BLOOM-LNK predictions: 
-    - Download and extract the pre-generated data files (`sm_dags.zip`, `molecular_jaccard_signature_library.pkl` and `sm_graphs.zip`) from the accompanying Zenodo repository. Place the extracted contents in this [directory](https://github.com/magarveylab/bloom-publication/tree/main/Bloom/datasets).
+    - Download and extract the pre-generated data files (`sm_dags.zip`, `molecular_jaccard_signature_library.pkl` and `sm_graphs.zip`) from the accompanying [Zenodo repository](https://zenodo.org/doi/10.5281/zenodo.15226521). Place the extracted contents in this [directory](https://github.com/magarveylab/bloom-publication/tree/main/Bloom/datasets).
     - Alternatively, you can generate a custom database by processing a directory of BLOOM-DOS outputs. Ensure that the [reference table](https://github.com/magarveylab/bloom-publication/blob/main/Bloom/datasets/metabolites.csv) is updated so that `metabolite_id` values align with those in your dataset.
-
 ```python
 from Bloom import BloomLNK
 
@@ -36,6 +35,21 @@ BloomLNK.build_molecular_jacccard_signature_library(
     bloom_dos_pred_dir="sample_output/bloom_dos_predictions/",
     output_dir="sample_output/custom_database/",
 )
+```
+
+4. Set Up Qdrant
+    - Install Qdrant and restore the Qdrant reference databases from the provided snapshots. Look under **Qdrant Setup** for more details.
+
+## Qdrant Setup 
+BLOOM-RXN utilize [Qdrant](https://qdrant.tech/) embedding databases for approximate nearest neighbor (ANN) lookups. Since system configurations may vary, we recommend setting up Qdrant locally using a Docker container, following the [official documentation](https://qdrant.tech/documentation/quickstart/).
+
+The required Qdrant databases for inference are provided as QdrantSnapshots.zip in the accompanying [Zenodo repository](https://zenodo.org/doi/10.5281/zenodo.15226521).
+
+### Restoring Qdrant Databases
+To restore the Qdrant databases, ensure that the snapshot files (unzipped) are placed [here](https://github.com/magarveylab/bloom-publication/tree/main/Bloom/QdrantSnapshots) and run the following command.
+```
+conda activate bloom2
+python restore_qdrant.py
 ```
 
 ## Inference
