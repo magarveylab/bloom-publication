@@ -99,6 +99,27 @@ BloomEmbedder.generate_molecular_embeddings(
 )
 ```
 
+### Reaction Embeddings with BLOOM-Rxn
+BLOOM-Rxn generates AI-based embeddings for chemical reaction that capture features reflective of the Enzyme Commission (EC) hierarchy. These embeddings are integrated into the BLOOM knowledge graph and serve as a core input to BLOOM-LNK for BGC–metabolite association.
+
+```python
+from Bloom import BloomRXN
+
+BloomRXN.generate_embeddings_from_csv(
+    csv_fp="sample_data/sample_rxns.csv",
+    output_fp="sample_output/example_rxn_embeddings.pkl",
+)
+```
+ANN Classification to infer enzyme classes for reactions lacking annotation
+```python
+from Bloom import BloomRXN
+
+BloomRXN.generate_ec_from_csv(
+    csv_fp="sample_data/sample_rxns.csv",
+    output_fp="sample_output/example_rxn_ec_classification.csv",
+)
+```
+
 ### Predicting BGC-Molecule Associations with BLOOM-LNK
 BLOOM associates BGCs and metabolites using AI-powered knowledge graph reasoning. The following function compares BGCs from an IBIS result to a molecular database, performs chemotype filtering, and returns the top n metabolites that meet the defined cutoff. 
 
@@ -108,9 +129,9 @@ For scalability:
 3. Apply quality filters using `min_orf_count` for non-modular chemotypes and `min_module_count` for modular chemotypes (e.g., Type I PKS, NRPS) to exclude incomplete BGCs.
 
 ```python
-from Bloom.BloomLNK import get_bgc_mol_associations
+from Bloom import BloomLNK 
 
-out = get_bgc_mol_associations(
+BloomLNK.get_bgc_mol_associations(
     ibis_dir="sample_data/example_ibis_output/",
     output_fp="sample_output/example_bgc_mol_associations.csv",
     min_orf_count=4,

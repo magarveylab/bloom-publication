@@ -89,10 +89,10 @@ def ontology_neighborhood_classification(
 def KNNClassification(
     query_list: List[DataQuery],
     qdrant_db: QdrantBase = None,
-    top_n: int = 10,
+    top_n: int = 5,
     dist_cutoff: float = 500.0,  # arbitrarily large.
     batch_size: int = 100,
-    return_n: int = 5,
+    return_n: int = 1,
     ignore_self_matches: bool = False,
 ) -> List[KnnOutput]:
     # Initialize Qdrant Database
