@@ -74,7 +74,7 @@ def compute_clustering(
 ):
 
     # run umap
-    reduced_matrix, _ = run_umap(
+    reduced_matrix = run_umap(
         matrix=matrix,
         n_components=n_components,
         n_neighbors=n_neighbors,
