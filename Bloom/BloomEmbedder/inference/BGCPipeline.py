@@ -89,7 +89,6 @@ class BGCPipeline:
             node_types_to_consider=None,  # default consider all
             edge_types_to_consider=None,  # default consider all
             apply_edge_attr=False,
-            apply_multigraph_wrapper=False,
         )
         data = Batch.from_data_list([data])
         return data

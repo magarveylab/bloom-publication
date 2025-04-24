@@ -99,8 +99,8 @@ BloomEmbedder.generate_molecular_embeddings(
 )
 ```
 
-### Reaction Embeddings with BLOOM-Rxn
-BLOOM-Rxn generates AI-based embeddings for chemical reaction that capture features reflective of the Enzyme Commission (EC) hierarchy. These embeddings are integrated into the BLOOM knowledge graph and serve as a core input to BLOOM-LNK for BGC–metabolite association.
+### Reaction Embeddings with BLOOM-RXN
+BLOOM generates AI-based embeddings for chemical reaction that capture features reflective of the Enzyme Commission (EC) hierarchy. These embeddings are integrated into the BLOOM knowledge graph and serve as a core input to BLOOM-LNK for BGC–metabolite association.
 
 ```python
 from Bloom import BloomRXN
@@ -139,5 +139,18 @@ BloomLNK.get_bgc_mol_associations(
     top_n_jaccard=1000,
     report_top_n=10,
     only_consider_metabolite_ids=None, # default all metabolites
+)
+```
+### Predicting BGC-Molecule Associations with BLOOM-MOL and BLOOM-BGC
+BLOOM predicts gene–unit associations by identifying correlations between embedding-derived groupings. These embeddings are learned through self-supervised masked language modeling. Statistical association is evaluated using the chi-squared (χ²) test.
+
+BLOOM-BGC generates embeddings for open reading frames (ORFs) based on domain architecture and sequence context
+```python
+from Bloom import BloomEmbedder
+
+BloomEmbedder.generate_gene_embeddings(
+    ibis_dir="sample_data/example_ibis_output/",
+    output_fp="sample_output/example_bgc_embeddings.pkl",
+    gpu_id=0,
 )
 ```
