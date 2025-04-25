@@ -14,11 +14,11 @@ def get_vocab(fp: str) -> Dict[str, int]:
     return dict(zip(df.word, df.index))
 
 
-def get_atom_vocab(fp: str) -> Dict[str, int]:
+def get_atom_vocab() -> Dict[str, int]:
     return get_vocab(f"{vocab_dir}/atom_vocab.csv")
 
 
-def get_bond_vocab(fp: str) -> Dict[str, int]:
+def get_bond_vocab() -> Dict[str, int]:
     return get_vocab(f"{vocab_dir}/bond_vocab.csv")
 
 

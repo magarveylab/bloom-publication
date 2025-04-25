@@ -3,3 +3,4 @@ Bloom.egg-info/*
 **-checkpoint.ipynb
 Bloom/BloomDOS/RenderedLibrary/*
 WebApp/tmp/
+test.py

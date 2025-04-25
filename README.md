@@ -5,10 +5,10 @@ Biosynthetic Learning from Ontological Organizations of Metabolism (BLOOM)
 
 ### Inference-Only Installation
 1. Install the package via pip Symlinks:
-    - Create and activate the Conda environment, then install the package in editable mode:
+    - Create and activate the Conda environment, then install the package in editable mode. **Note** env is currently only compatible with cuda:11 for embedding calculation.
 ```
-    conda env create -f bloom-environment.yml
-    conda activate bloom2
+    conda env create -f envs/bloom.yml
+    conda activate bloom
     pip install -e .
 ```
 2. Prep Bloom-DOS library for molecular substructure matching.
@@ -168,7 +168,9 @@ BloomEmbedder.generate_gene_embeddings(
     gpu_id=0,
 )
 ```
-Density-based clustering of ORF and Unit embeddings.
+#### Density-based clustering of ORF and Unit embeddings.
+
+**Note**: This step uses a separate conda environment (bloom-cluster-cuda11.yml) due to package incompatibilities with the main **CUDA** environment.
 ```python
 from Bloom import BloomEmbedder
 
