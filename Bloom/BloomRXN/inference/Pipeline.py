@@ -14,6 +14,14 @@ def get_vocab(fp: str) -> Dict[str, int]:
     return dict(zip(df.word, df.index))
 
 
+def get_atom_vocab(fp: str) -> Dict[str, int]:
+    return get_vocab(f"{vocab_dir}/atom_vocab.csv")
+
+
+def get_bond_vocab(fp: str) -> Dict[str, int]:
+    return get_vocab(f"{vocab_dir}/bond_vocab.csv")
+
+
 class ReactionInferencePipeline:
 
     def __init__(
@@ -23,13 +31,11 @@ class ReactionInferencePipeline:
         gnn_fp: str = f"{model_dir}/gnn.pt",
         transformer_fp: str = f"{model_dir}/transformer.pt",
         graph_pooler_fp: str = f"{model_dir}/graph_pooler.pt",
-        atom_vocab_fp: str = f"{vocab_dir}/atom_vocab.csv",
-        bond_vocab_fp: str = f"{vocab_dir}/bond_vocab.csv",
         gpu_id: Optional[int] = None,
     ):
         # load vocab
-        self.atom_vocab = get_vocab(atom_vocab_fp)
-        self.bond_vocab = get_vocab(bond_vocab_fp)
+        self.atom_vocab = get_atom_vocab()
+        self.bond_vocab = get_bond_vocab()
         # load models (torchscript format)
         self.node_encoder = torch.jit.load(node_encoder_fp)
         self.edge_encoder = torch.jit.load(edge_encoder_fp)
