@@ -100,6 +100,15 @@ BLOOM-DOS includes a Streamlit-based web application that provides a visual inte
 cd WebApp
 streamlit run BloomDOSApp.py
 ```
+Using BLOOM-DOS Annotations to Predict Polyketide Classes
+```python
+from Bloom.BloomGraph.BloomGraph import BloomGraph
+
+G = BloomGraph.load_from_json(
+    json_fp="sample_output/bloom_dos_predictions/1.json"
+)
+print(G.polyketide_subclasses)
+```
 
 ### Biosynthetic Molecular Embeddings with BLOOM-Mol
 BLOOM generates AI-based embeddings from BLOOM molecular graphs, where nodes represent atoms and mapped biosynthetic substructures. Embeddings are learned through self-supervised masked language modeling and enable rapid molecular comparison that reflects underlying biochemical ontologies. Embeddings are generated for both the complete molecular structure and individual biosynthetic units. Unit-level embeddings can be used to group chemically similar substructures by context and support downstream correlative analyses with gene groupings across paired genomic–molecular datasets, enabling the discovery of new biosynthetic rules.
