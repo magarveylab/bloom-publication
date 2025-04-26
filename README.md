@@ -56,12 +56,12 @@ The required Qdrant databases for inference are provided as QdrantSnapshots.zip 
 ### Restoring Qdrant Databases
 To restore the Qdrant databases, ensure that the snapshot files (unzipped) are placed [here](https://github.com/magarveylab/bloom-publication/tree/main/Bloom/QdrantSnapshots) and run the following command.
 ```
-conda activate bloom2
+conda activate bloom
 python restore_qdrant.py
 ```
 
 ## Graphormer Training
-Training scripts for all models are provided [here](https://github.com/magarveylab/bloom-graphormer-training)
+Training scripts for all models can be found [here](https://github.com/magarveylab/bloom-graphormer-training).
 
 
 ## Inference
