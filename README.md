@@ -40,6 +40,14 @@ BloomLNK.build_molecular_jacccard_signature_library(
 4. Set Up Qdrant
     - Install Qdrant and restore the Qdrant reference databases from the provided snapshots. Look under **Qdrant Setup** for more details.
 
+## Supplementary Package Installation for Genomic and Molecular Analysis
+
+The following packages were used to support various analysis including strain prioritization, computation of the polyketide molecular universe, and large-scale analysis of encoded metabolite landscapes. Outputs are integrated with metabolite-level analyses for comprehensive multi-omic interpretation.
+
+| Package | Description | Publication Link
+|---|---| ---|
+| [IBIS](https://github.com/magarveylab/ibis-publication/tree/main)          | Integrated Biosynthetic Inference Suite (IBIS) - AI-based platform for high-throughput identification and comparison of bacterial metabolism from genomic data   | [Here](https://www.pnas.org/doi/10.1073/pnas.2425048122) | 
+
 ## Qdrant Setup 
 BLOOM-RXN utilize [Qdrant](https://qdrant.tech/) embedding databases for approximate nearest neighbor (ANN) lookups. Since system configurations may vary, we recommend setting up Qdrant locally using a Docker container, following the [official documentation](https://qdrant.tech/documentation/quickstart/).
 
@@ -51,6 +59,10 @@ To restore the Qdrant databases, ensure that the snapshot files (unzipped) are p
 conda activate bloom2
 python restore_qdrant.py
 ```
+
+## Graphormer Training
+Training scripts for all models are provided [here](https://github.com/magarveylab/bloom-graphormer-training)
+
 
 ## Inference
 
