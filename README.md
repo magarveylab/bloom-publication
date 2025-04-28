@@ -16,7 +16,7 @@ Biosynthetic Learning from Ontological Organizations of Metabolism (BLOOM)
     python prepare_dos_library.py -render_all
 ```
 3. Enabling BLOOM-LNK predictions: 
-    - Download and extract the pre-generated data files (`sm_dags.zip`, `molecular_jaccard_signature_library.pkl` and `sm_graphs.zip`) from the accompanying [Zenodo repository](https://zenodo.org/doi/10.5281/zenodo.15226521). Place the extracted contents in this [directory](https://github.com/magarveylab/bloom-publication/tree/main/Bloom/datasets).
+    - Download and extract the pre-generated data files (`sm_dags.zip`, `molecular_jaccard_signature_library.pkl` and `sm_graphs.zip`) from the accompanying [Zenodo repository](https://zenodo.org/doi/10.5281/zenodo.15285626). Place the extracted contents in this [directory](https://github.com/magarveylab/bloom-publication/tree/main/Bloom/datasets).
     - Alternatively, you can generate a custom database by processing a directory of BLOOM-DOS outputs. Ensure that the [reference table](https://github.com/magarveylab/bloom-publication/blob/main/Bloom/datasets/metabolites.csv) is updated so that `metabolite_id` values align with those in your dataset.
 ```python
 from Bloom import BloomLNK
