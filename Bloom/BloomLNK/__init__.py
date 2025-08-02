@@ -201,7 +201,7 @@ def build_sm_dags(bloom_dos_pred_dir: str, output_dir: str):
     for fp in tqdm(filenames, desc="Generating SM DAGS"):
         metabolite_id = int(fp.split("/")[-1].split(".")[0])
         output_fp = f"{output_dir}/{metabolite_id}.json"
-        if os.path.exists(output_fp) == False:
+        if os.path.exists(output_fp):
             continue
         out = get_metabolite_dags(breakdown_fps=[fp])
         json.dump(out, open(output_fp, "w"))
@@ -216,7 +216,7 @@ def build_sm_graphs(bloom_dos_pred_dir: str, output_dir: str):
     for fp in tqdm(filenames, desc="Generating SM Graphs"):
         metabolite_id = int(fp.split("/")[-1].split(".")[0])
         output_fp = f"{output_dir}/{metabolite_id}.pkl"
-        if os.path.exists(output_fp) == False:
+        if os.path.exists(output_fp):
             continue
         out = get_metabolite_graphs(
             metabolite_id=metabolite_id, breakdown_fps=[fp]

@@ -3,6 +3,7 @@ from functools import partial
 from multiprocessing import Pool
 from typing import List, Optional, TypedDict, Union
 
+import timeout_decorator
 from tqdm import tqdm
 
 from Bloom.BloomDOS.Molecule import Molecule
@@ -13,6 +14,7 @@ class BloomSubmission(TypedDict):
     smiles: str
 
 
+@timeout_decorator.timeout(300)
 def single_submission(
     submission: BloomSubmission,
     standardize: bool = False,
@@ -23,12 +25,18 @@ def single_submission(
     smiles = submission["smiles"]
     output_fp = f"{output_dir}/{metabolite_id}.json"
     if os.path.exists(output_fp) == False:
-        m = Molecule(smiles)
-        if standardize:
-            m.standardize()
-        m.predict_biosynthesis()
-        if output_dir != None:
-            m.export_graph(output_fp)
+        try:
+            print(f"Processing {metabolite_id}...")
+            m = Molecule(smiles)
+            if standardize:
+                m.standardize()
+            m.predict_biosynthesis()
+            if output_dir != None:
+                m.export_graph(output_fp)
+        except Exception as e:
+            print(f"Error processing {metabolite_id}: {e}")
+    else:
+        print(f"Skipping {metabolite_id}, already processed.")
 
 
 def multiprocess_subission(
