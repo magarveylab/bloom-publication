@@ -168,7 +168,17 @@ def parse_ibis_dir_modular(
         protein_id = p["protein_id"]
         if len(p["modules"]) == 0:
             continue
-        module_tags = [m["tags"][0]["tag"] for m in p["modules"]]
+        module_tags = []
+        for m in p["modules"]:
+            module_idx = m["module_idx"]
+            protein_id = m["protein_id"]
+            protein_start = m["protein_start"]
+            protein_stop = m["protein_stop"]
+            module_id = f"{protein_id}_{protein_start}_{protein_stop}"
+            tag = m["tags"][0]["tag"]
+            module_tags.append(
+                {"module_id": module_id, "tag": tag, "module_idx": module_idx}
+            )
         protein_to_module_tags[protein_id] = module_tags
     bgc_dat = json.load(open(f"{ibis_dir}/bgc_predictions.json"))
     if cluster_ids is None:
@@ -291,16 +301,24 @@ def parse_ibis_dir_nonmodular(
     return list(reorganized.values())
 
 
+def build_module_graph_from_module_lookup(module_lookup: dict):
+    G = nx.Graph()
+    G.add_nodes_from(module_lookup.keys())
+    sorted_indexes = sorted(module_lookup.keys())
+    edges = [
+        (a, b)
+        for a, b in zip(sorted_indexes, sorted_indexes[1:])
+        if b - a == 1
+    ]
+    G.add_edges_from(edges)
+    return G
+
+
 def get_module_signatures_from_module_paths(module_paths):
     module_kmers = []
     for path in module_paths:
-        path_len = len(path)
-        module_lookup = {
-            idx: module_tag for idx, module_tag in enumerate(path)
-        }
-        G = nx.Graph()
-        G.add_nodes_from(module_lookup.keys())
-        G.add_edges_from(list(zip(range(path_len), range(1, path_len + 1))))
+        module_lookup = {m["module_idx"]: m["tag"] for m in path}
+        G = build_module_graph_from_module_lookup(module_lookup)
         kmers = get_kmers(graph=G, nodes=set(module_lookup), kmer_length=3)
         module_kmers.extend(
             translate_kmers(kmers=kmers, label_lookup=module_lookup)
@@ -501,4 +519,5 @@ def get_nonmodular_signature_from_molecule(
         nonmod_lookup[n] = unit_id_to_unit[unit_id]
     # no kmers in this method.
     signature = set(nonmod_lookup.values())
+    return {"nonmodular_signature": signature}
     return {"nonmodular_signature": signature}
