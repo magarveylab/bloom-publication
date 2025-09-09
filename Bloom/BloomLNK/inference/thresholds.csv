@@ -1,4 +1,5 @@
 chemotype,metric,threshold
+All,s4-5-j,0.436
 Aminoglycoside,s4-5,0.644
 Antimetabolite,s2,0.297
 BetaLactam,s4,0.443

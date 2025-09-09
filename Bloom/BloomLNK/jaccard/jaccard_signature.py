@@ -368,6 +368,8 @@ def get_module_signatures_from_molecule(bear_fp: str, nodes: List[str] = None):
     pks_rxn_lookup = {}
     for n in target_nodes:
         smarts_hash_id = G.nodes[n]["smarts_hash_id"]
+        if smarts_hash_id not in smarts_to_unit:
+            continue
         unit_id = smarts_to_unit[smarts_hash_id]
         if unit_id in unit_to_module_tag:
             module_lookup[n] = unit_to_module_tag[unit_id]
@@ -493,6 +495,8 @@ def get_nonmodular_signature_from_molecule(
     nonmod_lookup = {}
     for n in target_nodes:
         smarts_hash_id = G.nodes[n]["smarts_hash_id"]
+        if smarts_hash_id not in smarts_to_unit:
+            continue
         unit_id = smarts_to_unit[smarts_hash_id]
         nonmod_lookup[n] = unit_id_to_unit[unit_id]
     # no kmers in this method.

@@ -41,11 +41,15 @@ def get_bgc_mol_associations(
     output_fp: str,
     min_orf_count: int = 4,
     min_module_count: int = 4,
+    filtered_bgc_chemotypes: List[str] = None,
     sm_dag_dir: str = f"{dataset_dir}/sm_dags",
     sm_graph_dir: str = f"{dataset_dir}/sm_graphs",
     top_n_jaccard: int = 1000,
     report_top_n: int = 10,
     only_consider_metabolite_ids: List[int] = None,
+    filter_metabolites_by_chemotypes: bool = True,
+    gpu_id: int = 0,
+    version: str = "final",
 ):
     filtered_bgcs = quality_control_bgc_filtering(
         ibis_dir=ibis_dir,
@@ -56,26 +60,40 @@ def get_bgc_mol_associations(
         raise ValueError(
             "No BGCs passed the filtering criteria. Please check your parameters."
         )
+    if filtered_bgc_chemotypes is not None:
+        filtered_bgc_chemotypes = set(filtered_bgc_chemotypes)
+        filtered_bgcs = [
+            i
+            for i in filtered_bgcs
+            if len(set(i["chemotypes"]) & filtered_bgc_chemotypes) > 0
+        ]
     # find metabolites to run
     normalized_filtered_bgcs = normalize_bgc_chemotypes(filtered_bgcs)
     bgc_to_metabolites_to_run = {}
     for bgc in normalized_filtered_bgcs:
         cluster_id = bgc["cluster_id"]
         bgc_to_metabolites_to_run[cluster_id] = set()
-        for chemotype in bgc["chemotypes"]:
-            bgc_to_metabolites_to_run[cluster_id].update(
-                sorted_metabolites.get(chemotype, [])
-            )
-    if only_consider_metabolite_ids != None:
-        to_remove = set()
-        for bgc in bgc_to_metabolites_to_run:
-            bgc_to_metabolites_to_run[bgc] = set(
-                bgc_to_metabolites_to_run[bgc]
-            ) & set(only_consider_metabolite_ids)
-            if len(bgc_to_metabolites_to_run[bgc]) == 0:
-                to_remove.add(bgc)
-        for bgc in to_remove:
-            del bgc_to_metabolites_to_run[bgc]
+        if filter_metabolites_by_chemotypes == False:
+            if only_consider_metabolite_ids is not None:
+                bgc_to_metabolites_to_run[cluster_id] = set(
+                    only_consider_metabolite_ids
+                )
+        else:
+            for chemotype in bgc["chemotypes"]:
+                bgc_to_metabolites_to_run[cluster_id].update(
+                    sorted_metabolites.get(chemotype, [])
+                )
+            if only_consider_metabolite_ids is not None:
+                bgc_to_metabolites_to_run[cluster_id] = (
+                    bgc_to_metabolites_to_run[cluster_id]
+                    & set(only_consider_metabolite_ids)
+                )
+    to_remove = set()
+    for bgc in bgc_to_metabolites_to_run:
+        if len(bgc_to_metabolites_to_run[bgc]) == 0:
+            to_remove.add(bgc)
+    for bgc in to_remove:
+        del bgc_to_metabolites_to_run[bgc]
     # run jaccard similarity scores
     clusters_to_run = list(bgc_to_metabolites_to_run.keys())
     metabolites_to_run = set(
@@ -101,7 +119,7 @@ def get_bgc_mol_associations(
     # run Graphormer
     orf_to_dags = get_orf_to_dags(ibis_dir=ibis_dir)
     embeddings = get_embeddings_for_bgc_graph(ibis_dir=ibis_dir)
-    pipe = LNKPipeline(gpu_id=0)
+    pipe = LNKPipeline(gpu_id=gpu_id, version=version)
     graphormer_matrix = {}
     for cluster_id, metabolites_to_run in bgc_to_metabolites_to_run.items():
         if len(metabolites_to_run) == 0:
@@ -118,7 +136,7 @@ def get_bgc_mol_associations(
         )
         for i in result:
             metabolite_id = i["metabolite_id"]
-            j = jaccard_matrix[cluster_id][metabolite_id]
+            j = jaccard_matrix[cluster_id].get(metabolite_id, 0)
             s1 = i["s1"]
             s2 = i["s2"]
             s3 = i["s3"]
@@ -156,33 +174,49 @@ def get_bgc_mol_associations(
             and "TypeIPolyketide" in chemotypes
         ):
             threshold_key = "Hybrid"
+            chemotype = "Hybrid"
         elif "NonRibosomalPeptide" in chemotypes:
             threshold_key = "NonRibosomalPeptide"
+            chemotype = "NonRibosomalPeptide"
         elif "TypeIPolyketide" in chemotypes:
             threshold_key = "TypeIPolyketide"
-        else:
+            chemotype = "TypeIPolyketide"
+        elif chemotypes[0] in lnk_thresholds:
             threshold_key = chemotypes[0]
-        if threshold_key not in lnk_thresholds:
-            continue
+            chemotype = chemotypes[0]
+        else:
+            threshold_key = "All"
+            chemotype = chemotypes[0]
         metric = lnk_thresholds[threshold_key]["metric"]
         threshold = lnk_thresholds[threshold_key]["threshold"]
         for metabolite_id in graphormer_matrix[cluster_id]:
             j = graphormer_matrix[cluster_id][metabolite_id]["jaccard"]
+            s1 = graphormer_matrix[cluster_id][metabolite_id]["s1"]
+            s2 = graphormer_matrix[cluster_id][metabolite_id]["s2"]
+            s3 = graphormer_matrix[cluster_id][metabolite_id]["s3"]
+            s4 = graphormer_matrix[cluster_id][metabolite_id]["s4"]
+            s5 = graphormer_matrix[cluster_id][metabolite_id]["s5"]
             score = graphormer_matrix[cluster_id][metabolite_id][metric]
-            if score > threshold:
-                hits.append(
-                    {
-                        "contig_id": contig_id,
-                        "contig_start": contig_start,
-                        "contig_stop": contig_stop,
-                        "chemotype": threshold_key,
-                        "metabolite_id": metabolite_id,
-                        "jaccard_score": j,
-                        "graphormer_metric": metric,
-                        "graphormer_score": round(score, 5),
-                        "rank": None,
-                    }
-                )
+            pass_threshold = True if score > threshold else False
+            hits.append(
+                {
+                    "contig_id": contig_id,
+                    "contig_start": contig_start,
+                    "contig_stop": contig_stop,
+                    "chemotype": chemotype,
+                    "metabolite_id": metabolite_id,
+                    "jaccard": j,
+                    "s1": s1,
+                    "s2": s2,
+                    "s3": s3,
+                    "s4": s4,
+                    "s5": s5,
+                    "graphormer_metric": metric,
+                    "graphormer_score": round(score, 5),
+                    "pass_threshold": pass_threshold,
+                    "rank": None,
+                }
+            )
         # sort by score and update rank
         hits = sorted(hits, key=lambda x: x["graphormer_score"], reverse=True)
         for i, r in enumerate(hits, 1):
