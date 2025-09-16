@@ -71,7 +71,7 @@ def get_final_signatures_from_genome(
             "pks_rxn_signature",
         ]
     ] = ["module_signature", "pks_rxn_signature"],
-    nonmod_clust_min_size: int = 3,
+    nonmod_clust_min_size: int = 1,
 ):
     # load module proteins
     module_proteins = set(

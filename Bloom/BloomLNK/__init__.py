@@ -26,16 +26,6 @@ from Bloom.BloomLNK.local.bgc_graph import (
 from Bloom.BloomLNK.utils import curdir
 
 
-# load thresholds
-def load_lnk_thresholds():
-    thresholds_fp = f"{curdir}/inference/thresholds.csv"
-    data = pd.read_csv(thresholds_fp).to_dict("records")
-    return {r["chemotype"]: r for r in data}
-
-
-lnk_thresholds = load_lnk_thresholds()
-
-
 def get_bgc_mol_associations(
     ibis_dir: str,
     output_fp: str,
@@ -146,15 +136,10 @@ def get_bgc_mol_associations(
                 "jaccard": j,
                 "s1": s1,
                 "s2": s2,
-                "s2-5-j": np.mean([np.mean([s2, s5]), j]),
                 "s3": s3,
-                "s3-5": np.mean([s3, s5]),
                 "s4": s4,
-                "s4-5": np.mean([s4, s5]),
-                "s4-5-j": np.mean([np.mean([s4, s5]), j]),
                 "s4-j": np.mean([s4, j]),
                 "s5": s5,
-                "s5-j": np.mean([s5, j]),
             }
     # find hits that pass threshold
     to_export = []
@@ -167,28 +152,6 @@ def get_bgc_mol_associations(
         contig_stop = int(contig_stop)
         if cluster_id not in graphormer_matrix:
             continue
-        chemotypes = bgc["chemotypes"]
-        threshold_key = None
-        if (
-            "NonRibosomalPeptide" in chemotypes
-            and "TypeIPolyketide" in chemotypes
-        ):
-            threshold_key = "Hybrid"
-            chemotype = "Hybrid"
-        elif "NonRibosomalPeptide" in chemotypes:
-            threshold_key = "NonRibosomalPeptide"
-            chemotype = "NonRibosomalPeptide"
-        elif "TypeIPolyketide" in chemotypes:
-            threshold_key = "TypeIPolyketide"
-            chemotype = "TypeIPolyketide"
-        elif chemotypes[0] in lnk_thresholds:
-            threshold_key = chemotypes[0]
-            chemotype = chemotypes[0]
-        else:
-            threshold_key = "All"
-            chemotype = chemotypes[0]
-        metric = lnk_thresholds[threshold_key]["metric"]
-        threshold = lnk_thresholds[threshold_key]["threshold"]
         for metabolite_id in graphormer_matrix[cluster_id]:
             j = graphormer_matrix[cluster_id][metabolite_id]["jaccard"]
             s1 = graphormer_matrix[cluster_id][metabolite_id]["s1"]
@@ -196,8 +159,8 @@ def get_bgc_mol_associations(
             s3 = graphormer_matrix[cluster_id][metabolite_id]["s3"]
             s4 = graphormer_matrix[cluster_id][metabolite_id]["s4"]
             s5 = graphormer_matrix[cluster_id][metabolite_id]["s5"]
-            score = graphormer_matrix[cluster_id][metabolite_id][metric]
-            pass_threshold = True if score > threshold else False
+            score = graphormer_matrix[cluster_id][metabolite_id]["s4-j"]
+            match = True if score > 0.5 else False
             hits.append(
                 {
                     "contig_id": contig_id,
@@ -211,14 +174,13 @@ def get_bgc_mol_associations(
                     "s3": s3,
                     "s4": s4,
                     "s5": s5,
-                    "graphormer_metric": metric,
-                    "graphormer_score": round(score, 5),
-                    "pass_threshold": pass_threshold,
+                    "final_score": round(score, 5),
+                    "match": match,
                     "rank": None,
                 }
             )
         # sort by score and update rank
-        hits = sorted(hits, key=lambda x: x["graphormer_score"], reverse=True)
+        hits = sorted(hits, key=lambda x: x["final_score"], reverse=True)
         for i, r in enumerate(hits, 1):
             r["rank"] = i
         to_export.extend(hits[:report_top_n])
