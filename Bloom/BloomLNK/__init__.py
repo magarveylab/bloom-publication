@@ -31,6 +31,7 @@ def get_bgc_mol_associations(
     output_fp: str,
     min_orf_count: int = 4,
     min_module_count: int = 4,
+    only_consider_cluster_ids: List[int] = None,
     filtered_bgc_chemotypes: List[str] = None,
     sm_dag_dir: str = f"{dataset_dir}/sm_dags",
     sm_graph_dir: str = f"{dataset_dir}/sm_graphs",
@@ -41,15 +42,18 @@ def get_bgc_mol_associations(
     gpu_id: int = 0,
     version: str = "final",
 ):
+    # get subgraphs for all clusters to make sure nothing is missed
+    if only_consider_cluster_ids is not None:
+        min_orf_count = 0
+        min_module_count = 0
+        filtered_bgc_chemotypes = None
+    # find clusters to run
     filtered_bgcs = quality_control_bgc_filtering(
         ibis_dir=ibis_dir,
         min_orf_count=min_orf_count,
         min_module_count=min_module_count,
     )
-    if len(filtered_bgcs) == 0:
-        raise ValueError(
-            "No BGCs passed the filtering criteria. Please check your parameters."
-        )
+    # filter bgcs by chemotypes
     if filtered_bgc_chemotypes is not None:
         filtered_bgc_chemotypes = set(filtered_bgc_chemotypes)
         filtered_bgcs = [
@@ -57,33 +61,52 @@ def get_bgc_mol_associations(
             for i in filtered_bgcs
             if len(set(i["chemotypes"]) & filtered_bgc_chemotypes) > 0
         ]
+    # select target clusters
+    if only_consider_cluster_ids is not None:
+        filtered_bgcs = [
+            i
+            for i in filtered_bgcs
+            if i["cluster_id"] in only_consider_cluster_ids
+        ]
+    if len(filtered_bgcs) == 0:
+        raise ValueError(
+            "No BGCs passed the filtering criteria. Please check your parameters."
+        )
     # find metabolites to run
-    normalized_filtered_bgcs = normalize_bgc_chemotypes(filtered_bgcs)
+    # sort metabolites by chemotype for assignment
     bgc_to_metabolites_to_run = {}
-    for bgc in normalized_filtered_bgcs:
-        cluster_id = bgc["cluster_id"]
-        bgc_to_metabolites_to_run[cluster_id] = set()
-        if filter_metabolites_by_chemotypes == False:
-            if only_consider_metabolite_ids is not None:
-                bgc_to_metabolites_to_run[cluster_id] = set(
-                    only_consider_metabolite_ids
-                )
-        else:
-            for chemotype in bgc["chemotypes"]:
-                bgc_to_metabolites_to_run[cluster_id].update(
-                    sorted_metabolites.get(chemotype, [])
-                )
-            if only_consider_metabolite_ids is not None:
-                bgc_to_metabolites_to_run[cluster_id] = (
-                    bgc_to_metabolites_to_run[cluster_id]
-                    & set(only_consider_metabolite_ids)
-                )
-    to_remove = set()
-    for bgc in bgc_to_metabolites_to_run:
-        if len(bgc_to_metabolites_to_run[bgc]) == 0:
-            to_remove.add(bgc)
-    for bgc in to_remove:
-        del bgc_to_metabolites_to_run[bgc]
+    if only_consider_cluster_ids is not None:
+        normalized_filtered_bgcs = normalize_bgc_chemotypes(filtered_bgcs)
+        for bgc in normalized_filtered_bgcs:
+            cluster_id = bgc["cluster_id"]
+            bgc_to_metabolites_to_run[cluster_id] = set()
+            if filter_metabolites_by_chemotypes == False:
+                if only_consider_metabolite_ids is not None:
+                    bgc_to_metabolites_to_run[cluster_id] = set(
+                        only_consider_metabolite_ids
+                    )
+            else:
+                for chemotype in bgc["chemotypes"]:
+                    bgc_to_metabolites_to_run[cluster_id].update(
+                        sorted_metabolites.get(chemotype, [])
+                    )
+                if only_consider_metabolite_ids is not None:
+                    bgc_to_metabolites_to_run[cluster_id] = (
+                        bgc_to_metabolites_to_run[cluster_id]
+                        & set(only_consider_metabolite_ids)
+                    )
+            to_remove = set()
+            for bgc in bgc_to_metabolites_to_run:
+                if len(bgc_to_metabolites_to_run[bgc]) == 0:
+                    to_remove.add(bgc)
+            for bgc in to_remove:
+                del bgc_to_metabolites_to_run[bgc]
+    else:
+        for bgc in filtered_bgcs:
+            cluster_id = bgc["cluster_id"]
+            bgc_to_metabolites_to_run[cluster_id] = (
+                only_consider_metabolite_ids
+            )
     # run jaccard similarity scores
     clusters_to_run = list(bgc_to_metabolites_to_run.keys())
     metabolites_to_run = set(
@@ -138,8 +161,8 @@ def get_bgc_mol_associations(
                 "s2": s2,
                 "s3": s3,
                 "s4": s4,
-                "s4-j": np.mean([s4, j]),
                 "s5": s5,
+                "s4-j": np.mean([s4, j]),
             }
     # find hits that pass threshold
     to_export = []
@@ -166,7 +189,7 @@ def get_bgc_mol_associations(
                     "contig_id": contig_id,
                     "contig_start": contig_start,
                     "contig_stop": contig_stop,
-                    "chemotype": chemotype,
+                    "chemotypes": bgc["chemotypes"],
                     "metabolite_id": metabolite_id,
                     "jaccard": j,
                     "s1": s1,
