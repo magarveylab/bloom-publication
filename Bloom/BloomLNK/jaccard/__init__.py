@@ -1,7 +1,7 @@
 import os
 import pickle
 from glob import glob
-from typing import List
+from typing import List, Optional
 
 from tqdm import tqdm
 
@@ -26,8 +26,7 @@ def build_molecular_jacccard_signature_library(
     pickle.dump(out, open(output_fp, "wb"))
 
 
-def load_molecular_jaccard_signature_library():
-    signature_fp = f"{dataset_dir}/molecular_jaccard_signature_library.pkl"
+def load_molecular_jaccard_signature_library(signature_fp: str):
     if os.path.exists(signature_fp) == False:
         raise ValueError(
             f"Signature file {signature_fp} does not exist. Please run build_molecular_jacccard_signature_library() first."
@@ -35,16 +34,13 @@ def load_molecular_jaccard_signature_library():
     return pickle.load(open(signature_fp, "rb"))
 
 
-molecular_jaccard_signature_library = (
-    load_molecular_jaccard_signature_library()
-)
-
-
 def run_jaccard_on_ibis_result(
     ibis_dir: str,
     clusters_to_run: List[str],
     metabolites_to_run: List[int],
+    sm_jaccard_fp: str,
 ):
+    library = load_molecular_jaccard_signature_library(sm_jaccard_fp)
     cluster_signatures = get_final_signatures_from_genome(
         ibis_dir=ibis_dir,
         cluster_ids=clusters_to_run,
@@ -55,9 +51,9 @@ def run_jaccard_on_ibis_result(
     ):
         hits = {}
         for m in tqdm(metabolites_to_run, leave=False):
-            if m not in molecular_jaccard_signature_library:
+            if m not in library:
                 continue
-            metabolite_signature = molecular_jaccard_signature_library[m]
+            metabolite_signature = library[m]
             jaccard = jaccard_similarity(bgc_signature, metabolite_signature)
             if jaccard > 0:
                 hits[m] = jaccard

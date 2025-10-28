@@ -2,7 +2,7 @@ import json
 import os
 import pickle
 from glob import glob
-from typing import List
+from typing import List, Optional
 
 import numpy as np
 import pandas as pd
@@ -35,6 +35,7 @@ def get_bgc_mol_associations(
     filtered_bgc_chemotypes: List[str] = None,
     sm_dag_dir: str = f"{dataset_dir}/sm_dags",
     sm_graph_dir: str = f"{dataset_dir}/sm_graphs",
+    sm_jaccard_fp: str = f"{dataset_dir}/molecular_jaccard_signature_library.pkl",
     top_n_jaccard: int = 1000,
     report_top_n: int = 10,
     only_consider_metabolite_ids: List[int] = None,
@@ -75,7 +76,7 @@ def get_bgc_mol_associations(
     # find metabolites to run
     # sort metabolites by chemotype for assignment
     bgc_to_metabolites_to_run = {}
-    if only_consider_cluster_ids is not None:
+    if only_consider_cluster_ids is None:
         normalized_filtered_bgcs = normalize_bgc_chemotypes(filtered_bgcs)
         for bgc in normalized_filtered_bgcs:
             cluster_id = bgc["cluster_id"]
@@ -118,6 +119,7 @@ def get_bgc_mol_associations(
         ibis_dir=ibis_dir,
         clusters_to_run=clusters_to_run,
         metabolites_to_run=metabolites_to_run,
+        sm_jaccard_fp=sm_jaccard_fp,
     )
     # filter metabolites to run with Graphormer
     for cluster_id, metabolites_to_run in bgc_to_metabolites_to_run.items():
