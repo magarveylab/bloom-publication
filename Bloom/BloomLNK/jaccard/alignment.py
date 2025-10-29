@@ -77,7 +77,7 @@ def get_module_fingerprint_from_molecules(bear_fp: str):
         unit_id = smarts_to_unit[smarts_hash_id]
         if unit_id not in unit_to_module_tag:
             continue
-        module_tag = unit_to_module_tag[unit_id]
+        module_tag = unit_to_module_tag[unit_id].split(" | ")[0]
         module_lookup[n] = module_tag
         if unit_id in unit_to_pks_reaction_tag:
             pks_rxn_lookup[n] = unit_to_pks_reaction_tag[unit_id]
@@ -111,18 +111,20 @@ def bgc_molecule_module_alignment(
     # sort units by tag
     tag_to_units = {}
     for unit_id, profile in mol_module_fingerprints.items():
-        tag = profile["module_tag"]
+        tag = profile["module_tag"].split(" | ")[0]
         if tag not in tag_to_units:
             tag_to_units[tag] = set()
         tag_to_units[tag].add(unit_id)
     # sort units by modules
     tag_to_modules = {}
     for module_id, profile in bgc_module_fingerprints.items():
-        tag = profile["module_tag"]
+        tag = profile["module_tag"].split(" | ")[0]
         if tag not in tag_to_modules:
             tag_to_modules[tag] = set()
         tag_to_modules[tag].add(module_id)
     # align modules to units
+    print(tag_to_units.keys())
+    print(tag_to_modules.keys())
     overlapping_tags = set(tag_to_units) & set(tag_to_modules)
     hits = []
     for tag in overlapping_tags:
